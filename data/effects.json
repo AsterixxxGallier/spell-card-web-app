@@ -154,7 +154,7 @@
     {
       "original name": "Thaumaturgy",
       "name": "Booming Voice",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -174,7 +174,7 @@
     {
       "original name":  "Thaumaturgy",
       "name": "Manipulate Flames",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -194,7 +194,7 @@
     {
       "original name":  "Thaumaturgy",
       "name": "Harmless Tremors",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -214,7 +214,7 @@
     {
       "original name":  "Thaumaturgy",
       "name": "Create Sound",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -234,7 +234,7 @@
     {
       "original name":  "Thaumaturgy",
       "name": "Blast of Air",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -254,7 +254,7 @@
     {
       "original name":  "Thaumaturgy",
       "name": "Manipulate Eyes",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
       "school": "Transmutation",
       "verbal": true,
@@ -380,7 +380,7 @@
     {
       "original name":  "Ceremony",
       "name": "Bless Water",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nBless Water. You touch one vial of water and cause it to become holy water.",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nBless Water. You touch one vial of water and cause it to become holy water.",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
       "verbal": true,
@@ -401,7 +401,7 @@
     {
       "original name":  "Ceremony",
       "name": "Coming of Age",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
       "verbal": true,
@@ -422,7 +422,7 @@
     {
       "original name":  "Ceremony",
       "name": "Dedication",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
       "verbal": true,
@@ -443,7 +443,7 @@
     {
       "original name":  "Ceremony",
       "name": "Funeral Rite",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
       "verbal": true,
@@ -464,7 +464,7 @@
     {
       "original name":  "Ceremony",
       "name": "Wedding",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
       "verbal": true,
