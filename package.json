@@ -1,0 +1,14 @@
+{
+  "name": "spell-card-web-app",
+  "version": "1.0.0",
+  "description": "Spell manager for Dungeons & Dragons",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asterixxx",
+  "license": "ISC",
+  "dependencies": {
+    "material-bottom-nav": "^1.3.0"
+  }
+}

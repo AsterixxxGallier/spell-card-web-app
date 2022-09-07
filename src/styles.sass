@@ -1,0 +1,241 @@
+@use 'material-bottom-nav/bottom-nav'
+@use '@material/card'
+
+@include card.core-styles
+
+$primary: #f44236
+$secondary: #f4a136
+
+@mixin chips($scale: 1.0, $weight: 400, $background-alpha: 1.0, $color-alpha: 1.0, $letter-spacing: 0.25px, $outline: false)
+  display: flex
+  gap: 8px * $scale
+
+  div
+    display: inline-flex
+    align-items: center
+    height: 32px * $scale
+    padding-left: 12px * $scale
+    padding-right: 12px * $scale
+    border-radius: 16px * $scale
+    @if $outline
+      box-sizing: border-box
+      border: 1px solid rgb(0 0 0 / 0.3)
+    @else
+      background-color: rgba(224, 224, 224, $background-alpha)
+
+    span
+      font-size: 14px * $scale
+      font-weight: $weight
+      line-height: 1.5
+      letter-spacing: $letter-spacing
+      color: rgb(0 0 0 / $color-alpha)
+
+.spell-card-list
+  display: flex
+  flex-direction: column
+  gap: 16px
+  padding: 16px
+
+  .spell-card
+    &, &-scaffold
+      border-radius: 4px
+      box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%)
+      padding: 16px
+
+    &-scaffold
+      // works for my phone, approximate value (desktop: 210)
+      height: 233px
+      box-sizing: border-box
+
+    overflow: hidden
+
+    hr
+      margin-block-start: 1em
+      margin-block-end: 1em
+      border: none
+      height: 1px
+      background: rgb(0 0 0 / 0.15)
+
+      &.light
+        margin-block-start: 0.8em
+        margin-block-end: 0.8em
+        height: 2px
+        width: 75%
+        background: radial-gradient(rgb(0 0 0 / 0.1), transparent)
+
+    .spell
+      display: grid
+      grid-template-areas: "spell-tags level" "name level"
+      grid-template-columns: 1fr auto
+
+      .spell-tags
+        grid-area: spell-tags
+        @include chips(0.65, 500, 0.5, 0.9, 0.5px)
+
+      .name
+        grid-area: name
+        font-size: 32px
+        font-weight: 500
+        //line-height: 1.5
+        margin-top: .2em
+        letter-spacing: 0.5px
+
+      .level
+        grid-area: level
+        width: 64px
+        height: 64px
+        display: grid
+        place-content: center
+
+        div
+          font-family: "Abril Fatface", serif
+          font-size: 32px
+
+        img
+          width: 32px
+          height: 32px
+
+        &.outline
+          // cantrips (unused)
+          &-0
+            background-image: url("../icons/level outline 0.svg")
+
+          // levels 1, 2
+          &-1
+            background-image: url("../icons/level outline 1.svg")
+
+          // levels 3, 4
+          &-2
+            background-image: url("../icons/level outline 2.svg")
+
+          // levels 5, 6, 7
+          &-3
+            background-image: url("../icons/level outline 3.svg")
+
+          // levels 8, 9
+          &-4
+            background-image: url("../icons/level outline 4.svg")
+
+
+    .casting
+      margin-top: .8em
+
+      .casting-tags
+        @include chips(0.8, $outline: true)
+
+      .required-material
+        margin-top: .5em
+
+    .effects
+      display: flex
+      flex-direction: column
+      gap: 1em
+
+      .effect-tags
+        @include chips(0.8)
+
+      .effect-description
+        margin-top: .5em
+
+    .expansion
+      height: 0
+      margin-bottom: -1em
+      transition: height .3s ease-out, margin-bottom .3s ease-out
+
+    &.selected
+      .expansion
+        margin-bottom: 0
+
+@font-face
+  font-family: "Roboto Flex"
+  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations")
+  font-weight: 100 1000
+  font-stretch: 25% 151%
+
+@font-face
+  font-family: "Abril Fatface"
+  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype")
+  font-weight: 400
+
+body
+  margin: 0
+
+*
+  font-family: "Roboto Flex", sans-serif
+
+.bottom-nav
+  display: flex
+  align-items: center
+  justify-content: center
+
+  position: sticky
+  bottom: 0
+  left: 0
+  right: 0
+
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%)
+  border-top: 1px solid hsl(0, 0%, 88%)
+  background-color: $primary
+  z-index: 1000
+
+  -webkit-tap-highlight-color: transparent
+
+  box-sizing: border-box
+
+  *,
+  *:before,
+  *:after
+    box-sizing: inherit
+
+
+  &__destination
+    flex: 1 1 0
+
+    position: relative
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    padding-right: 12px
+    padding-left: 12px
+
+    color: white
+    text-decoration: none
+
+    &:focus
+      outline: 0
+
+
+  &__destination--active
+    .bottom-nav__icon
+      font-size: 36px
+
+
+  &__icon
+    flex: 0 0 auto
+
+    display: block
+    width: 1em
+    height: 1em
+
+    margin-left: auto
+    margin-right: auto
+
+    font-size: 24px
+
+  &__destination
+    padding-top: 8px
+    padding-bottom: 8px
+
+    min-width: 80px
+    max-width: 160px
+
+
+  &__destination--active
+    padding-top: 8px
+    padding-bottom: 8px
+
+    min-width: 80px
+    max-width: 160px

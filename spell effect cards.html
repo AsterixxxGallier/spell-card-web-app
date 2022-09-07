@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cleric spells</title>
+    <style>
+        * {
+            -webkit-print-color-adjust: exact !important; /* Chrome, Safari 6 – 15.3, Edge */
+            color-adjust: exact !important; /* Firefox 48 – 96 */
+            print-color-adjust: exact !important; /* Firefox 97+, Safari 15.4+ */
+        }
+
+        body.print {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards {
+            font-family: "Verdana", serif;
+            display: grid;
+            /*210 mm paper width - 10 mm border => 200 mm space / 3 => 66.6… mm*/
+            grid-template-columns: repeat(3, 66.666666666666666mm);
+            /*297 mm paper height - 17 mm border => 280 mm space / 5 => 56 mm*/
+            grid-auto-rows: 56mm;
+            width: 200mm;
+        }
+
+        .print .cards {
+            /*280 mm per page, double page print*/
+            height: 560mm;
+            overflow: hidden;
+        }
+
+        .card, .description-card {
+            box-sizing: border-box;
+            width: 65mm;
+            height: 55mm;
+            border: 2mm solid black;
+            padding: 2mm;
+        }
+
+        /*.print .description-card {
+            transform: translate(5mm, 1.75mm);
+        }*/
+
+        .at-higher-levels {
+            font-style: italic;
+        }
+
+        .card {
+            display: grid;
+            /*@formatter:off*/
+            grid-template:
+                "title   level  " auto /*spell stuff*/
+                "casting casting" auto /*casting stuff*/
+                "effects effects" 1fr  /*effects stuff*/
+               / 1fr 9mm;
+            /*@formatter:on*/
+            place-items: stretch;
+        }
+
+        .description-card {
+            text-overflow: ellipsis;
+            /*text-overflow-ellipsis: '...';*/
+        }
+
+        .level {
+            grid-area: level;
+            width: 9mm;
+            height: 9mm;
+            background-size: contain;
+            box-sizing: border-box;
+            padding: 50% 15% 5%;
+            display: grid;
+            place-items: center;
+        }
+
+        .level.known {
+            background-image: url('icons/empty padlock locked.svg');
+        }
+
+        .level.prepared {
+            background-image: url('icons/empty padlock unlocked.svg');
+        }
+
+        .cantrip-icon {
+            background-image: url('icons/magic wand black.png');
+            background-size: contain;
+            transform: scaleX(-1);
+            height: 3.5mm;
+            width: 3.5mm;
+        }
+
+        .level-icon {
+            font-family: sans-serif;
+            font-weight: bold;
+            line-height: 0.9;
+            align-self: start;
+        }
+
+        .title {
+            grid-area: title;
+        }
+
+        .casting {
+            margin-top: 4pt;
+            grid-area: casting;
+        }
+
+        .effects {
+            grid-area: effects;
+            display: grid;
+        }
+
+        .name {
+            display: block;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        .required-material {
+            font-size: 10pt;
+        }
+
+        .effect {
+            font-size: 10pt;
+            display: block;
+        }
+
+        .description {
+            font-size: 12pt;
+            text-align: justify;
+        }
+
+        .tag {
+            display: inline-flex;
+            line-height: 1;
+            gap: 2px;
+            place-items: center;
+            width: max-content;
+            border-radius: 5px;
+            padding: 1px 3px;
+        }
+
+        .tag-icon {
+            background-size: contain;
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+        }
+
+        .spell-tags {
+            font-size: 8pt;
+            display: flex;
+            gap: 4px;
+        }
+
+        .school {
+            background-color: hsl(30, 80%, 60%) !important;
+        }
+
+        .source {
+            background-color: hsl(30, 80%, 55%) !important;
+        }
+
+        .original-name {
+            background-color: hsl(30, 80%, 50%) !important;
+        }
+
+        .casting-tags {
+            font-size: 8pt;
+            display: flex;
+            gap: 4px;
+        }
+
+        .casting-time {
+            background-color: darkorange !important;
+        }
+
+        .component {
+            font-family: sans-serif;
+            font-weight: 1000;
+            color: white;
+        }
+
+        .verbal {
+            background-color: #508050 !important;
+        }
+
+        .somatic {
+            background-color: #235789 !important;
+        }
+
+        .material {
+            background-color: #C73E1D !important;
+        }
+
+        .effect-tags {
+            font-size: 8pt;
+            display: flex;
+            gap: 4px;
+        }
+
+        .range-icon {
+            background-image: url('icons/radius.png');
+        }
+
+        .duration-icon {
+            background-image: url('icons/clock.png');
+        }
+
+        .line-icon {
+            background-image: url("icons/aoe line.svg");
+        }
+
+        .cone-icon {
+            background-image: url("icons/aoe cone.svg");
+        }
+
+        .cube-icon {
+            background-image: url("icons/aoe cube.svg");
+        }
+
+        .sphere-icon {
+            background-image: url("icons/aoe sphere.svg");
+        }
+
+        .cylinder-icon {
+            background-image: url("icons/aoe cylinder.svg");
+        }
+
+        .range {
+            /*background: dodgerblue;*/
+            background: #70eef5;
+        }
+
+        .area-of-effect {
+            background: hotpink;
+        }
+
+        .duration {
+            background: orange;
+        }
+    </style>
+
+    <style>
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .control-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-auto-rows: 34px;
+            grid-gap: 10px;
+            user-select: none;
+        }
+
+        .label {
+            align-self: center;
+            font-size: 24px;
+        }
+
+        .page {
+            transition: .4s;
+        }
+
+        .page-input {
+            width: 77px;
+        }
+    </style>
+
+    <style>
+        .multiselect {
+            display: inline-block;
+        }
+
+        .multiselect .anchor {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px 50px 5px 10px;
+            border: 1px solid #ccc;
+        }
+
+        .multiselect .anchor:after {
+            position: absolute;
+            content: "";
+            border-left: 2px solid black;
+            border-top: 2px solid black;
+            padding: 5px;
+            right: 10px;
+            top: 20%;
+            -moz-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+
+        .multiselect .anchor:active:after {
+            right: 8px;
+            top: 21%;
+        }
+
+        .multiselect ul.items {
+            padding: 2px;
+            display: none;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .multiselect ul.items li {
+            list-style: none;
+        }
+
+        .multiselect.visible .anchor {
+            /*color: #0094ff;*/
+        }
+
+        .multiselect.visible .items {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="control-panel">
+    <span class="label">print</span>
+    <label class="switch">
+        <input type="checkbox" class="print">
+        <span class="slider"></span>
+    </label>
+    <span class="label page">page</span>
+    <input class="page-input page" type="number" step="1" value="0" min="0">
+    <span class="label">levels</span>
+    <div class="multiselect levels">
+        <span class="anchor">0-9</span>
+        <ul class="items">
+            <li>
+                <button class="invert-button">invert</button>
+            </li>
+            <li><input type="checkbox" value="0" checked/>0</li>
+            <li><input type="checkbox" value="1" checked/>1</li>
+            <li><input type="checkbox" value="2"/>2</li>
+            <li><input type="checkbox" value="3"/>3</li>
+            <li><input type="checkbox" value="4"/>4</li>
+            <li><input type="checkbox" value="5"/>5</li>
+            <li><input type="checkbox" value="6"/>6</li>
+            <li><input type="checkbox" value="7"/>7</li>
+            <li><input type="checkbox" value="8"/>8</li>
+            <li><input type="checkbox" value="9"/>9</li>
+        </ul>
+    </div>
+</div>
+<div class="cards"></div>
+<script>
+    const cards = document.getElementsByClassName('cards')[0];
+
+    for (const checklist of document.getElementsByClassName('multiselect')) {
+        for (const button of document.getElementsByClassName('invert-button')) {
+            button.onclick = () => {
+                for (const checkbox of checklist.getElementsByTagName('input')) {
+                    checkbox.checked = !checkbox.checked
+                    checkbox.onchange(new Event("", undefined))
+                }
+            }
+        }
+        checklist.getElementsByClassName('anchor')[0].onclick = () => {
+            if (checklist.classList.contains('visible'))
+                checklist.classList.remove('visible');
+            else
+                checklist.classList.add('visible');
+        }
+    }
+
+    let levelInputs = Array.from(document.querySelectorAll('.levels input'));
+    let levels = levelInputs.map(input => input.checked);
+
+    for (let level = 0; level < levelInputs.length; level++) {
+        levelInputs[level].onchange = () => {
+            levels[level] = !levels[level];
+            updateCards()
+        };
+    }
+
+    let printInput = document.getElementsByClassName('print')[0];
+    let print = printInput.checked;
+
+    function updatePage() {
+        if (print) {
+            for (const element of document.getElementsByClassName('page')) {
+                element.style.opacity = "100%"
+                element.style.pointerEvents = "all"
+            }
+        } else {
+            for (const element of document.getElementsByClassName('page')) {
+                element.style.opacity = "0%"
+                element.style.pointerEvents = "none"
+            }
+        }
+    }
+
+    if (print) {
+        document.body.classList.add('print')
+    }
+    updatePage()
+
+    printInput.addEventListener('change', () => {
+        print = !print;
+        if (print) {
+            document.body.classList.add('print')
+        } else {
+            document.body.classList.remove('print')
+        }
+        updatePage();
+        updateCards()
+    });
+
+    const pageInput = document.getElementsByClassName('page-input')[0]
+    pageInput.addEventListener('change', () => {
+        updateCards()
+    })
+
+    const controlPanel = document.getElementsByClassName('control-panel')[0]
+    onkeydown = e => {
+        if (e.key === 'h') {
+            controlPanel.style.display = controlPanel.style.display === 'none' ? 'grid' : 'none'
+        }
+    }
+</script>
+<script>
+    Object.defineProperty(Array.prototype, 'chunk', {
+        value: function (chunkSize) {
+            let R = [];
+            for (let i = 0; i < this.length; i += chunkSize)
+                R.push(this.slice(i, i + chunkSize));
+            return R;
+        }
+    })
+
+    Object.defineProperty(Array.prototype, 'swapPairs', {
+        value: function () {
+            let R = [];
+            for (let i = 0; i < this.length; i += 2) {
+                if (i + 1 < this.length) {
+                    R.push(this[i + 1]);
+                }
+                R.push(this[i]);
+            }
+            return R;
+        }
+    })
+
+    knownSpells = {
+        '0': ['Bless', 'Cure Wounds'],
+        '3': ['Lesser Restoration', 'Spiritual Weapon'],
+        '5': ['Beacon of Hope', 'Revivify'],
+        '7': ['Death Ward', 'Guardian of Faith'],
+        '9': ['Mass Cure Wounds', 'Raise Dead']
+    }
+
+    allKnownSpells = Object.values(knownSpells).flat()
+
+    let spellData;
+
+    fetch("data/effects.json").then(response => response.json()).then(json => {
+        spellData = Object
+            .entries(json)
+            .flatMap(([level, spells]) => spells.map(spell => [level, spell]))
+        updateCards()
+    });
+
+    function addCard(spell) {
+        let card = document.createElement('div')
+        card.classList.add('card')
+        cards.appendChild(card)
+        return card
+    }
+
+    function addDescriptionCard() {
+        let card = document.createElement('div')
+        card.classList.add('description-card')
+        cards.appendChild(card)
+        return card
+    }
+
+    function populateCard(card, level, spell) {
+        card.innerHTML = `
+<div class="level ${allKnownSpells.includes(spell['name']) ? 'known' : 'prepared'}">
+    ${(level === '0' ? '<span class="cantrip-icon"></span>' : `<span class="level-icon">${level}</span>`)}
+</div>
+<div class="title">
+    <span class="spell-tags">
+        <span class="tag school">
+            <span>${spell['school']}</span>
+        </span>
+        <span class="tag source">
+            ${spell['source'].split(/ /g).map(word => word[0]).filter(char => char.match(/[a-zA-Z]/)).join('')}
+        </span>
+        ${'original name' in spell ? `
+        <span class="tag original-name">${spell['original name']}</span>
+        ` : ''}
+    </span>
+    <span class="name">${spell['name']}</span>
+</div>
+<div class="casting">
+    <span class="casting-tags">
+        ${spell['casting time'] !== '1 action' ? `
+        <span class="tag casting-time">
+            <span class="tag-icon duration-icon"></span>
+            <span>${spell['casting time']}</span>
+            ${spell['ritual'] ? `
+            <span class="ritual-icon">(r)</span>
+            ` : ''}
+        </span>
+        ` : ''}
+        ${spell['verbal'] ? `
+        <span class="tag component verbal"><span class="verbal-icon">V</span></span>
+        ` : ''}
+        ${spell['somatic'] ? `
+        <span class="tag component somatic"><span class="somatic-icon">S</span></span>
+        ` : ''}
+        ${spell['material'] ? `
+        <span class="tag component material"><span class="material-icon">M</span></span>
+    </span>
+    <span class="required-material">${spell['required material']}</span>
+    ` : '</span>'}
+</div>
+<div class="effects">
+    <div>
+        ${spell['target'] ? `
+        <span class="attribute">Target:</span>
+        <span class="value target">${spell['target']}</span>
+        ` : ''}
+        ${spell['effects'].map(effect => `
+        <br>
+        <span class="effect-tags">
+            ${!['Touch', 'Self'].includes(effect['range']) ? `
+            <span class="tag range">
+                <span class="tag-icon range-icon"></span>
+                <span>${effect['range']}</span>
+            </span>
+            ` : ''}
+            ${effect['duration'] !== 'Instantaneous' ? `
+            <span class="tag duration">
+                <span class="tag-icon duration-icon"></span>
+                <span>${effect['duration']}</span>
+                ${effect['concentration'] ? `
+                <span class="concentration-icon">(c)</span>
+                ` : ''}
+            </span>
+            ` : ''}
+            ${'area of effect' in effect ? `
+            <span class="tag area-of-effect">
+                ${effect['area of effect']['shape'] === 'line' ? `
+                <span class="tag-icon line-icon"></span>
+                <span>${effect['area of effect']['length']}</span>
+                /
+                <span>${effect['area of effect']['width']}</span>
+                ` : effect['area of effect']['shape'] === 'cone' ? `
+                <span class="tag-icon cone-icon"></span>
+                <span>${effect['area of effect']['length']}</span>
+                ` : effect['area of effect']['shape'] === 'cube' ? `
+                <span class="tag-icon cube-icon"></span>
+                <span>${effect['area of effect']['side length']}</span>
+                ` : effect['area of effect']['shape'] === 'sphere' ? `
+                <span class="tag-icon sphere-icon"></span>
+                <span>${effect['area of effect']['radius']}</span>
+                ` : effect['area of effect']['shape'] === 'cylinder' ? `
+                <span class="tag-icon cylinder-icon"></span>
+                <span>${effect['area of effect']['height']}</span>
+                /
+                <span>${effect['area of effect']['radius']}</span>
+                ` : (() => {
+            throw new Error('unreachable')
+        })()}
+            </span>
+            ` : ''}
+        </span>
+        <span class="value effect">${1 ? effect['description'] : 'WIP'}</span>
+        `).join('\n')}
+    </div>
+</div>`
+    }
+
+    function populateDescriptionCard(card, spell) {
+        card.innerHTML = `
+<div class="description">
+${spell['description'].replace(/\n/g, '<br>')}
+${spell['at higher levels'] ? `
+<br>
+<br>
+<span class="at-higher-levels">At higher levels:</span>
+<span class="at-higher-levels-value">${spell['at higher levels']}</span>
+` : ''}
+${spell['at higher spell slot levels'] ? `
+<br>
+<br>
+<span class="at-higher-levels">At higher spell slot levels:</span>
+<span class="at-higher-levels-value">${spell['at higher spell slot levels']}</span>
+` : ''}
+</div>`
+    }
+
+    function adjustCard(card) {
+        const name = card.getElementsByClassName("name")[0];
+        for (let fontSize = 16; name.offsetHeight > 24 && fontSize > 12; fontSize--) {
+            name.style.fontSize = fontSize + "pt";
+        }
+        const originalNameCollection = card.getElementsByClassName("original-name");
+        if (originalNameCollection.length > 0) {
+            const tags = card.getElementsByClassName("spell-tags")[0];
+            const originalName = originalNameCollection[0];
+            for (let fontSize = 8; tags.offsetWidth > 183; fontSize--) {
+                originalName.style.fontSize = fontSize + "pt";
+            }
+        }
+        const materialCollection = card.getElementsByClassName("required-material");
+        if (materialCollection.length > 0) {
+            const material = materialCollection[0];
+            for (let fontSize = 9; material.offsetHeight > 15; fontSize--) {
+                material.style.fontSize = fontSize + "pt";
+            }
+        }
+    }
+
+    function adjustDescriptionCard(card) {
+        const description = card.getElementsByClassName("description")[0];
+        for (let fontSize = 11; card.scrollHeight > card.clientHeight/* && fontSize > 5*/; fontSize--) {
+            if (fontSize === 6) {
+                card.style.padding = "1mm";
+            }
+            description.style.fontSize = fontSize + "pt";
+        }
+        /*if (card.scrollHeight > card.clientHeight) {
+            // console.log('overflowing, smallering padding of', card)
+            if (card.scrollHeight > card.clientHeight) {
+                console.log('overflow!')
+                card.style.overflow = "hidden";
+            }
+        }*/
+    }
+
+    function updateCards() {
+        cards.innerHTML = '';
+
+        if (print) {
+            let page = parseInt(document.getElementsByClassName('page-input')[0].value)
+            let spells = spellData
+                .filter(([level, _]) => levels[level])
+                .slice(page * 15, page * 15 + 15);
+            let i = 0;
+            spells.forEach(([level, spell]) => {
+                const card = addCard()
+                setTimeout(
+                    () => populateCard(card, level, spell),
+                    (i++) * 5
+                )
+                setTimeout(
+                    () => adjustCard(card),
+                    (i++) * 5 + 2
+                )
+            })
+            for (let j = 0; j < 15 - spells.length; j++) {
+                let card = document.createElement('div')
+                card.classList.add('empty-card')
+                cards.appendChild(card)
+            }
+            spells.swapPairs().forEach(([_, spell]) => {
+                const card = addDescriptionCard()
+                setTimeout(
+                    () => populateDescriptionCard(card, spell),
+                    (i++) * 5
+                )
+                setTimeout(
+                    () => adjustDescriptionCard(card),
+                    (i++) * 5 + 2
+                )
+            })
+        } else {
+            let i = 0;
+            spellData
+                .filter(([level, _]) => levels[level])
+                .forEach(([level, spell]) => {
+                    const card = addCard()
+                    setTimeout(
+                        () => populateCard(card, level, spell),
+                        (i++) * 10
+                    )
+                    setTimeout(
+                        () => adjustCard(card),
+                        (i++) * 10 + 5
+                    )
+                    card.onclick = () => {
+                        if (card.classList.contains('card')) {
+                            card.classList.remove('card')
+                            card.classList.add('description-card')
+                            populateDescriptionCard(card, spell)
+                            adjustDescriptionCard(card)
+                        } else {
+                            card.classList.remove('description-card')
+                            card.classList.add('card')
+                            populateCard(card, level, spell)
+                            adjustCard(card)
+                        }
+                    }
+                })
+        }
+    }
+</script>
+</body>
+</html>

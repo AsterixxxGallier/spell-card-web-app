@@ -1,0 +1,3045 @@
+{
+  "0": [
+    {
+      "name": "Decompose",
+      "description": "You reach out and touch the corpse of a creature. Over the next minute, the corpse begins to rapidly decompose, sprouting fungus and moss as it begins to degrade into compost and mulch. An odd-colored flower or two may also spring from the corpse in this time. Applicable requirements for resurrection are unaffected by this decomposition.",
+      "source": "Critical Role (Twitter)",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "The corpse of a creature decomposes."
+        }
+      ]
+    },
+    {
+      "name": "Guidance",
+      "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "A creature can add a d4 to one ability check."
+        }
+      ]
+    },
+    {
+      "name": "Light",
+      "description": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.\n\nIf you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": true,
+      "required material": "a firefly or phosphorescent moss",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "area of effect": {
+            "shape": "sphere",
+            "radius": "20 ft"
+          },
+          "duration": "1 h",
+          "concentration": false,
+          "description": "An object sheds bright light."
+        },
+        {
+          "range": "Touch",
+          "area of effect": {
+            "shape": "sphere",
+            "radius": "40 ft"
+          },
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The object also sheds dim light."
+        }
+      ]
+    },
+    {
+      "name": "Mending",
+      "description": "This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.\n\nThis spell can physically repair a magic item or construct, but the spell can't restore magic to such an object.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "two lodestones",
+      "casting time": "1 min",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You repair a single break or tear in an object."
+        }
+      ]
+    },
+    {
+      "name": "Resistance",
+      "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after the saving throw. The spell then ends.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a miniature cloak",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "A creature can add a d4 to one saving throw."
+        }
+      ]
+    },
+    {
+      "name": "Sacred Flame",
+      "description": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.",
+      "at higher levels": "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature takes Ld8 radiant damage."
+        }
+      ]
+    },
+    {
+      "name": "Spare the Dying",
+      "description": "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A living creature that has 0 hit points becomes stable."
+        }
+      ]
+    },
+    {
+      "original name": "Thaumaturgy",
+      "name": "Booming Voice",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "Your voice booms up to three times as loud as normal."
+        }
+      ]
+    },
+    {
+      "original name":  "Thaumaturgy",
+      "name": "Manipulate Flames",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "You cause flames to flicker, brighten, dim, or change color."
+        }
+      ]
+    },
+    {
+      "original name":  "Thaumaturgy",
+      "name": "Harmless Tremors",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "You cause harmless tremors in the ground."
+        }
+      ]
+    },
+    {
+      "original name":  "Thaumaturgy",
+      "name": "Create Sound",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You create an instantaneous sound."
+        }
+      ]
+    },
+    {
+      "original name":  "Thaumaturgy",
+      "name": "Blast of Air",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You cause an unlocked door or window to fly open or slam shut."
+        }
+      ]
+    },
+    {
+      "original name":  "Thaumaturgy",
+      "name": "Manipulate Eyes",
+      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "You alter the appearance of your eyes."
+        }
+      ]
+    },
+    {
+      "name": "Toll the Dead",
+      "description": "You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.",
+      "at higher levels": "The spell's damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature takes Ld8 necrotic damage, or Ld12 if it is missing any of its hit points."
+        }
+      ]
+    },
+    {
+      "name": "Word of Radiance",
+      "description": "You utter a divine word, and burning radiance erupts from you. Each creature of your choice that you can see within range must succeed on a Constitution saving throw or take 1d6 radiant damage.",
+      "at higher levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": true,
+      "required material": "a holy symbol",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "5 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Any number of creatures take Ld6 radiant damage."
+        }
+      ]
+    }
+  ],
+  "1": [
+    {
+      "name": "Bane",
+      "description": "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a drop of blood",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Up to 3+S creatures must subtract a d4 from attack rolls and saving throws."
+        }
+      ]
+    },
+    {
+      "name": "Bless",
+      "description": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a sprinkling of holy water",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Up to 3+S creatures can add a d4 to attack rolls and saving throws."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Atonement",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nAtonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You restore a creature whose alignment has changed to its original alignment."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Bless Water",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nBless Water. You touch one vial of water and cause it to become holy water.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You cause a vial of water to become holy water."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Coming of Age",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "24 h",
+          "concentration": false,
+          "description": "A humanoid who is a young adult can add a d4 to ability checks."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Dedication",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "24 h",
+          "concentration": false,
+          "description": "A humanoid who wishes to be dedicated to your god's service can add a d4 to saving throws."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Funeral Rite",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "7 d",
+          "concentration": false,
+          "description": "You prevent a corpse from becoming undead."
+        }
+      ]
+    },
+    {
+      "original name":  "Ceremony",
+      "name": "Wedding",
+      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "25 gp worth of powdered silver, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "7 d",
+          "concentration": false,
+          "description": "Any number of adult humanoids gain a +2 bonus to AC while within 30 feet of each other."
+        }
+      ]
+    },
+    {
+      "name": "Command",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nThe DM determines how the target behaves. If the target can't follow your command, the spell ends.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other follow a one-word command on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Command",
+      "name": "Approach",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nApproach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other move toward you by the shortest route on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Command",
+      "name": "Drop",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nDrop. The target drops whatever it is holding and then ends its turn.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other drop whatever they are holding on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Command",
+      "name": "Flee",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nFlee. The target spends its turn moving away from you by the fastest available means.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other move away from you by the fastest available means on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Command",
+      "name": "Grovel",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nGrovel. The target falls prone and then ends its turn.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other fall prone on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Command",
+      "name": "Halt",
+      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nHalt. The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "1+S creatures that are within 30 feet of each other do not move and take no actions on their next turn."
+        }
+      ]
+    },
+    {
+      "original name":  "Create or Destroy Water",
+      "name": "Create Water",
+      "description": "You create up to 10 gallons of clean water within range in an open container.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you create 10 additional gallons of water, for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a drop of water",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You create up to 10+10*S gallons of clean water in an open container."
+        }
+      ]
+    },
+    {
+      "original name":  "Create or Destroy Water",
+      "name": "Create Rain",
+      "description": "You create water that falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a drop of water",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "area of effect": {
+            "shape": "cube",
+            "side length": "30+5*S ft"
+          },
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You create rain."
+        }
+      ]
+    },
+    {
+      "original name":  "Create or Destroy Water",
+      "name": "Destroy Water",
+      "description": "You destroy up to 10 gallons of water in an open container within range.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you destroy 10 additional gallons of water, for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a few grains of sand",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You destroy up to 10+10*S gallons of water in an open container."
+        }
+      ]
+    },
+    {
+      "original name":  "Create or Destroy Water",
+      "name": "Destroy Fog",
+      "description": "You destroy fog in a 30-foot cube within range.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a few grains of sand",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "area of effect": {
+            "shape": "cube",
+            "side length": "30+5*S ft"
+          },
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You destroy fog."
+        }
+      ]
+    },
+    {
+      "name": "Cure Wounds",
+      "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature regains (1+S)d8 + (spellcasting ability modifier) hit points."
+        }
+      ]
+    },
+    {
+      "name": "Detect Evil and Good",
+      "description": "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.\n\nThe spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "You sense the presence and location of an aberration, celestial, elemental, fey, fiend or undead."
+        },
+        {
+          "range": "30 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "You sense the presence of a place or object that has been magically consecrated or desecrated."
+        }
+      ]
+    },
+    {
+      "name": "Detect Magic",
+      "description": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.\n\nThe spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "You sense the presence of magic."
+        },
+        {
+          "range": "30 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "You can use your action to see an aura around any creature or object that bears magic and learn its school of magic, if any."
+        }
+      ]
+    },
+    {
+      "name": "Detect Poison and Disease",
+      "description": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case.\n\nThe spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a yew leaf",
+      "casting time": "1 action",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "You sense the presence, location and kind of poisons, poisonous creatures, and diseases."
+        }
+      ]
+    },
+    {
+      "name": "Guiding Bolt",
+      "description": "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "120 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature takes (4+S)d6 radiant damage."
+        },
+        {
+          "range": "120 ft",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "The next attack roll made against the creature has advantage."
+        }
+      ]
+    },
+    {
+      "name": "Healing Word",
+      "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature regains (1+S)d4 + (spellcasting ability modifier) hit points."
+        }
+      ]
+    },
+    {
+      "name": "Inflict Wounds",
+      "description": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "A creature takes (3+S)d10 necrotic damage."
+        }
+      ]
+    },
+    {
+      "name": "Protection from Evil and Good",
+      "description": "Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.\n\nThe protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "holy water or powdered silver and iron, which the spell consumes",
+      "casting time": "1 action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "A creature is protected against aberrations, celestials, elementals, fey, fiends, and undead."
+        }
+      ]
+    },
+    {
+      "name": "Purify Food and Drink",
+      "description": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": true,
+      "effects": [
+        {
+          "range": "10 ft",
+          "area of effect": {
+            "shape": "sphere",
+            "radius": "5 ft"
+          },
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You purify nonmagical food and drink and render it free of poison and disease."
+        }
+      ]
+    },
+    {
+      "name": "Sanctuary",
+      "description": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball.\n\nIf the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a small silver mirror",
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "A creature can only be attacked after the attacker succeeds on a Wisdom saving throw."
+        }
+      ]
+    },
+    {
+      "name": "Shield of Faith",
+      "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a small parchment with a bit of holy text written on it",
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "A creature gains a +2 bonus to AC."
+        }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "name": "Aid",
+      "description": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a tiny strip of white cloth",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Up to three creatures within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "8 h",
+          "concentration": false,
+          "description": "Each target gains 5 to their hit point maximum and to their current hit points."
+        }
+      ]
+    },
+    {
+      "name": "Augury",
+      "description": "By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens.\n\n• Weal, for good results\n\n• Woe, for bad results\n\n• Weal and woe, for both good and bad results\n\n• Nothing, for results that aren't especially good or bad\n\nThe spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.\n\nIf you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "specially marked sticks, bones, or similar tokens worth at least 25 gp",
+      "casting time": "1 min",
+      "ritual": true,
+      "target": "See text",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You receive an omen about the results of a specific course of action."
+        }
+      ]
+    },
+    {
+      "name": "Blindness / Deafness",
+      "description": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature that you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "The target is blinded or deafened."
+        }
+      ]
+    },
+    {
+      "name": "Borrowed Knowledge",
+      "description": "You draw on knowledge from spirits of the past. Choose one skill in which you lack proficiency. For the spell's duration, you have proficiency in the chosen skill. The spell ends early if you cast it again.",
+      "source": "Strixhaven: A Curriculum of Chaos",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a book worth at least 25 gp",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target gains proficiency in a skill."
+        }
+      ]
+    },
+    {
+      "name": "Calm Emotions",
+      "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following two effects.\n\nYou can suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime.\n\nAlternatively, you can make a target indifferent about creatures of your choice that it is hostile toward. This indifference ends if the target is attacked or harmed by a spell or if it witnesses any of its friends being harmed. When the spell ends, the creature becomes hostile again, unless the DM rules otherwise.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Each humanoid in a 20-foot-radius sphere centered on a point you choose within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Each target is deprived of certain strong emotions."
+        }
+      ]
+    },
+    {
+      "name": "Continual Flame",
+      "description": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "ruby dust worth 50 gp, which the spell consumes",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "An object that you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Until dispelled",
+          "concentration": false,
+          "description": "The target creates a flame."
+        }
+      ]
+    },
+    {
+      "name": "Enhance Ability",
+      "description": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains the effect until the spell ends.\n\nBear's Endurance: The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.\n\nBull's Strength: The target has advantage on Strength checks, and his or her carrying capacity doubles.\n\nCat's Grace: The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated.\n\nEagle's Splendor: The target has advantage on Charisma checks.\n\nFox's Cunning: The target has advantage on Intelligence checks.\n\nOwl's Wisdom: The target has advantage on Wisdom checks.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "fur or a feather from a beast",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target gains a magical enhancement."
+        }
+      ]
+    },
+    {
+      "name": "Find Traps",
+      "description": "You sense the presence of any trap within range that is within line of sight.\nA trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the alarm spell, a glyph of warding, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a hidden sinkhole.\n\nThis spell merely reveals that a trap is present. You don't learn the location of each trap, but you do learn the general nature of the danger posed by a trap you sense.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Any trap within range that is within line of sight",
+      "effects": [
+        {
+          "range": "120 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target senses traps."
+        }
+      ]
+    },
+    {
+      "name": "Gentle Repose",
+      "description": "You touch a corpse or other remains. For the duration, the target is protected from decay and can't become undead.\n\nThe spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as raise dead.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration",
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "A corpse or other remains",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "10 d",
+          "concentration": false,
+          "description": "The target can't become undead."
+        }
+      ]
+    },
+    {
+      "name": "Hold Person",
+      "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a small, straight piece of iron",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A humanoid that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target is paralyzed."
+        }
+      ]
+    },
+    {
+      "name": "Lesser Restoration",
+      "description": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is healed from one disease or condition."
+        }
+      ]
+    },
+    {
+      "name": "Locate Object",
+      "description": "Describe or name an object that is familiar to you. You sense the direction to the object's location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.\n\nThe spell can locate a specific object known to you, as long as you have seen it up close \u2013 within 30 feet \u2013 at least once. Alternatively, the spell can locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.\n\nThis spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a forked twig",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target senses a specific object's location."
+        }
+      ]
+    },
+    {
+      "name": "Prayer of Healing",
+      "description": "Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "Up to six creatures of your choice that you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target regains (2+S)d8 + (spellcasting ability modifier) hit points."
+        }
+      ]
+    },
+    {
+      "name": "Protection from Poison",
+      "description": "You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random.\n\nFor the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target is healed from one poison and gains poison resistance."
+        }
+      ]
+    },
+    {
+      "name": "Silence",
+      "description": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
+      "source": "Player's Handbook",
+      "school": "Illusion",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "20-foot-radius sphere centered on a point you choose within range",
+      "effects": [
+        {
+          "range": "120 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target silences all sounds."
+        }
+      ]
+    },
+    {
+      "name": "Spiritual Weapon",
+      "description": "You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again.\n\nWhen you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier.\n\nAs a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it.\n\nThe weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell's effect resemble that weapon.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for every two slot levels above the 2nd.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "target": "See text",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Warding Bond",
+      "description": "This spell wards a willing creature you touch and creates a mystic connection between you and the target until the spell ends.\n\nWhile the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.\n\nThe spell ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the spell is cast again on either of the connected creatures. You can also dismiss the spell as an action.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a pair of platinum rings worth at least 50 gp each, which you and target must wear for the duration",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A willing creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target is warded and connected with you."
+        }
+      ]
+    },
+    {
+      "name": "Zone of Truth",
+      "description": "You create a magical zone that guards against deception in a 15-foot-radius sphere centered on a point of your choice within range. Until the spell ends, a creature that enters the spell's area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can't speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw.\n\nAn affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such creatures can be evasive in its answers as long as it remains within the boundaries of the truth.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A 15-foot-radius sphere centered on a point of your choice within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "10 min",
+          "concentration": false,
+          "description": "The target guards against deception."
+        }
+      ]
+    }
+  ],
+  "3": [
+    {
+      "name": "Animate Dead",
+      "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics).\n\nOn each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\nThe creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain the control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a drop of blood, a piece of flesh, and a pinch of bone dust",
+      "casting time": "1 min",
+      "ritual": false,
+      "target": "A pile of bones or a corpse of a Medium or Small humanoid within range",
+      "effects": [
+        {
+          "range": "10 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is raised as an undead creature."
+        }
+      ]
+    },
+    {
+      "name": "Aura of Vitality",
+      "description": "Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature in the aura (including you)",
+      "effects": [
+        {
+          "range": "Self (30-foot radius)",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target regains 2d6 hit points."
+        }
+      ]
+    },
+    {
+      "name": "Beacon of Hope",
+      "description": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Any number of creatures within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Each target has advantage on wisdom and death saving throws and is healed maximally."
+        }
+      ]
+    },
+    {
+      "name": "Bestow Curse",
+      "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options.\n\n\u2022 Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score.\n\n\u2022 While cursed, the target has disadvantage on attack rolls against you.\n\n\u2022 While cursed, the target must make a Wisdom saving throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing.\n\n\u2022 While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target.\n\nA remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
+      "at higher spell slot levels": "If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target becomes cursed."
+        }
+      ]
+    },
+    {
+      "name": "Clairvoyance",
+      "description": "You create an invisible sensor within range in a location familiar to you (a place you have visited or seen before) or in an obvious location that is unfamiliar to you (such as behind a door, around a corner, or in a grove of trees). The sensor remains in place for the duration, and it can't be attacked or otherwise interacted with.\n\nWhen you cast the spell, you choose seeing or hearing. You can use the chosen sense through the sensor as if you were in its space. As your action, you can switch between seeing and hearing. A creature that can see the sensor (such as a creature benefitting from see invisibility or truesight) sees a luminous, intangible orb about the size of your fist.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing",
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "A point in range in a location familiar to you or in an obvious location that is unfamiliar to you",
+      "effects": [
+        {
+          "range": "1 mile ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target is observed by an invisible sensor."
+        }
+      ]
+    },
+    {
+      "name": "Create Food and Water",
+      "description": "You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn't go bad.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "The ground or containers within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is filled with food and water."
+        }
+      ]
+    },
+    {
+      "name": "Daylight",
+      "description": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.\n\nIf you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object with and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.\n\nIf any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A point you choose within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target spreads bright light."
+        }
+      ]
+    },
+    {
+      "name": "Dispel Magic",
+      "description": "Choose any creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of 4th level or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the spell ends.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature, object, or magical effect within range",
+      "effects": [
+        {
+          "range": "120 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is protected from spells of level (3+S) or lower."
+        }
+      ]
+    },
+    {
+      "name": "Fast Friends",
+      "description": "When you cast this spell, choose one humanoid within range that can see and hear you, and that can understand you. The creature must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed in this way, it undertakes to perform any services or activities you ask of it in a friendly manner, to the best of its ability.\n\nYou can set the creature new tasks when a previous task is completed, or if you decide to end its current task. If the service or activity might cause harm to the creature, or if it conflicts with the creature's normal activities and desires, the creature can make another Wisdom saving throw to try to end the effect. This save is made with advantage if you or your companions are fighting the creature. If the activity would result in certain death for the creature, the spell ends.\n\nWhen the spell ends, the creature knows it was charmed by you.\n\nAt Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.",
+      "source": "Acquisitions Inc.",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One humanoid within range that can see and hear you",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target is charmed."
+        }
+      ]
+    },
+    {
+      "name": "Feign Death",
+      "description": "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death.\n\nFor the spell's duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target's status. The target is blinded and incapacitated, and its speed drops to 0. The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell's effect, the disease and poison have no effect until the spell ends.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a pinch of graveyard dirt",
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "A willing creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target is put into a state indistinguishable from death."
+        }
+      ]
+    },
+    {
+      "name": "Glyph of Warding",
+      "description": "When you cast this spell, you inscribe a glyph that creates a magical effect triggered by other creatures, either upon a surface (such as a table or a section of floor or wall) or within an object that can be closed (such as a book, a scroll, or a treasure chest) to conceal the glyph. The glyph can cover an area no larger than 10 feet in diameter. If the surface or object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.\n\nThe glyph is nearly invisible and requires a successful Intelligence (Investigation) check against your spell save DC to be found.\n\nYou decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or standing on the glyph, removing another object covering the glyph, approaching within a certain distance of the glyph, or manipulating the object on which the glyph is inscribed. For glyphs inscribed within an object, the most common triggers include opening that object, approaching within a certain distance of the object, or seeing or reading the glyph. Once a glyph is triggered, this spell ends.\n\nYou can further refine the trigger so the spell activates only under certain circumstances or according to physical characteristics (such as height or weight), creature kind (for example, the ward could be set to affect aberrations or drow), or alignment. You can also set conditions for creatures that don't trigger the glyph, such as those who say a certain password.\n\nWhen you inscribe the glyph, choose explosive runes or a spell glyph.\n\nExplosive Runes. When triggered, the glyph erupts with magical energy in a 20-foot-radius sphere centered on the glyph. The sphere spreads around corners. Each creature in the area must make a Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or thunder damage on a failed saving throw (your choice when you create the glyph), or half as much damage on a successful one.\n\nSpell Glyph. You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, the damage of an explosive runes glyph increases by 1d8 for each slot level above 3rd. If you create a spell glyph, you can store any spell of up to the same level as the slot you use for the glyph of warding.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "incense and powdered diamond worth at least 200 gp, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "Either a surface or within an object that can be closed",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Until dispelled or triggered",
+          "concentration": false,
+          "description": "The target is inscribed with a magical glyph."
+        }
+      ]
+    },
+    {
+      "name": "Incite Greed",
+      "description": "When you cast this spell, you present the gem used as the material component and choose any number of creatures within range that can see you. Each target must succeed on a Wisdom saving throw or be charmed by you until the spell ends, or until you or your companions do anything harmful to it. While charmed in this way, a creature can do nothing but use its movement to approach you in a safe manner. While an affected creature is within 5 feel of you, it cannot move, but simply stares greedily at the gem you present.\n\nAt the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.",
+      "source": "Acquisitions Inc.",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a gem worth at least 50 gp",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Any number of creatures within range that can see you",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Each target is charmed."
+        }
+      ]
+    },
+    {
+      "name": "Life Transference",
+      "description": "You sacrifice some of your health to mend another creature's injuries. You take 4d8 necrotic damage, which can't be reduced in any way, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take.\n\nAt Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature of your choice that you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target gains twice the damage you take ((4+S)d8 necrotic)."
+        }
+      ]
+    },
+    {
+      "name": "Magic Circle",
+      "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface.\n\nChoose one or more of the following types of creatures - celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways.\n\n\u2022 The creature can't willingly enter the cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw.\n\n\u2022 The creature has disadvantage on attack rolls against targets within the cylinder.\n\n\u2022 Targets within the cylinder can't be charmed, frightened, or possessed by the creature.\n\nWhen you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "holy water or powdered silver and iron worth at least 100 gp, which the spell consumes",
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "A 10-foot-radius, 20-foot-tall cylinder centered on a point on the ground that you can see within range",
+      "effects": [
+        {
+          "range": "10 ft",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target affects certain creatures in certain ways."
+        }
+      ]
+    },
+    {
+      "name": "Mass Healing Word",
+      "description": "As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, the healing increases by 1d4 for each slot level above 3rd.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "target": "Up to six creatures of your choice that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target regains (1+S)d4 + (spellcasting ability modifier) hit points."
+        }
+      ]
+    },
+    {
+      "name": "Meld into Stone",
+      "description": "You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses.\n\nWhile merged with the stone, you can't see what occurs outside it, and any Wisdom (Perception) checks you make to hear sounds outside it are made with disadvantage. You remain aware of the passage of time and can cast spells on yourself while merged in the stone. You can use your movement to leave the stone where you entered it, which ends the spell. You otherwise can't move.\n\nMinor physical damage to the stone doesn't harm you, but its partial destruction or a change in its shape (to the extent that you no longer fit within it) expels you and deals 6d6 bludgeoning damage to you. The stone's complete destruction (or transmutation into a different substance) expels you and deals 50 bludgeoning damage to you. If expelled, you fall prone in an unoccupied space closest to where you first entered.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "A stone object or surface large enough to fully contain your body",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "8 h",
+          "concentration": false,
+          "description": "The target hides you."
+        }
+      ]
+    },
+    {
+      "name": "Motivational Speech",
+      "description": "Choose up to five creatures within range that can hear you. For the duration, each affected creature gains 5 temporary hit points and has advantage on Wisdom saving throws. If an affected creature is hit by an attack, it has advantage on the next attack roll it makes. Once an affected creature loses the temporary hit points granted by this spell, the spell ends for that creature.\n\nAt Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the temporary hit points increase by 5 for each slot level above 3rd.",
+      "source": "Acquisitions Inc.",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "Up to five creatures within range that can hear you",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "Each target gains 5+5*s temporary hit points and has certain advantages."
+        }
+      ]
+    },
+    {
+      "name": "Protection from Energy",
+      "description": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "The willing creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target has resistance to one damage type."
+        }
+      ]
+    },
+    {
+      "name": "Remove Curse",
+      "description": "At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's attunement to the object so it can be removed or discarded.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature or object",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is freed from all curses."
+        }
+      ]
+    },
+    {
+      "name": "Revivify",
+      "description": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "diamonds worth 300 gp, which the spell consumes",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature that has died within the last minute",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target returns to life with 1 hit point."
+        }
+      ]
+    },
+    {
+      "name": "Sending",
+      "description": "You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message.\n\nYou can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a short piece of fine copper wire",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature with which you are familiar",
+      "effects": [
+        {
+          "range": "Unlimited",
+          "duration": "1 round",
+          "concentration": false,
+          "description": "The target receives a short message."
+        }
+      ]
+    },
+    {
+      "name": "Speak with Dead",
+      "description": "You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days.\n\nUntil the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "burning incense",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A corpse of your choice within range",
+      "effects": [
+        {
+          "range": "10 ft",
+          "duration": "10 min",
+          "concentration": false,
+          "description": "The target may answer question about its life."
+        }
+      ]
+    },
+    {
+      "name": "Spirit Guardians",
+      "description": "You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.\n\nWhen you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a holy symbol",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self (15-foot-radius)",
+      "effects": [
+        {
+          "range": "Self (15-foot-radius)",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Spirit Shroud",
+      "description": "You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable.\n\nUntil the spell ends, any attack you make deals 1d8 extra damage when you hit a creature within 10 feet of you. This damage is radiant, necrotic, or cold (your choice when you cast the spell). Any creature that takes this damage can't regain hit points until the start of your next turn.\n\nIn addition, any creature of your choice that you can see that starts its turn within 10 feet of you has its speed reduced by 10 feet until the start of your next turn.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for every two slot levels above 3rd.",
+      "source": "Tasha's Cauldron of Everything",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target deals 1+(s/2)d8 radiant, necrotic or cold extra damage when attacking."
+        }
+      ]
+    },
+    {
+      "name": "Tongues",
+      "description": "This spell grants the creature you touch the ability to understand any spoken language it hears. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": false,
+      "material": true,
+      "required material": "a small clay model of a ziggurat",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "The creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target understands others and is understood regardless of language."
+        }
+      ]
+    },
+    {
+      "name": "Water Walk",
+      "description": "This spell grants the ability to move across any liquid surface \u2013 such as water, acid, mud, snow, quicksand, or lava \u2013 as if it were harmless solid ground (creatures crossing molten lava can still take damage from the heat). Up to ten willing creatures you can see within range gain this ability for the duration.\n\nIf you target a creature submerged in a liquid, the spell carries the target to the surface of the liquid at a rate of 60 feet per round.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a piece of cork",
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "Up to ten willing creatures you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "Each target gains the ability to move accross any liquid surface."
+        }
+      ]
+    }
+  ],
+  "4": [
+    {
+      "name": "Aura of Life",
+      "description": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Each non-hostile creature in the aura (including you)",
+      "effects": [
+        {
+          "range": "Self (30-foot radius)",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "Each target has resistance to necrotic damage."
+        }
+      ]
+    },
+    {
+      "name": "Aura of Purity",
+      "description": "Purifying energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Each non-hostile creature in the aura (including you)",
+      "effects": [
+        {
+          "range": "Self (30-foot radius)",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "Each target can't become diseased and has resistance to poison damage."
+        }
+      ]
+    },
+    {
+      "name": "Banishment",
+      "description": "You attempt to send one creature that you can see within range to another place of existence. The target must succeed on a Charisma saving throw or be banished.\n\nIf the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.\n\nIf the target is native to a different plane of existence that the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "an item distasteful to the target",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "One creature that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target is banished to another plane of existence."
+        }
+      ]
+    },
+    {
+      "name": "Control Water",
+      "description": "Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one.\n\nFlood. You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land. If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave's path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing. The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts.\n\nPart Water. You cause water in the area to move apart and create a trench. The trench extends across the spell's area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored.\n\nRedirect Flow. You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell's area, it resumes its flow based on the terrain conditions. The water continues to move in the direction you chose until the spell ends or you choose a different effect.\n\nWhirlpool. This effect requires a body of water at least 50 feet square and 25 feet deep. You cause a whirlpool to form in the center of the area. The whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature or object in the water and within 25 feet of the vortex is pulled 10 feet toward it. A creature can swim away from the vortex by making a Strength (Athletics) check against your spell save DC.\n\nWhen a creature enters the vortex for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends. On a successful save, the creature takes half damage, and isn't caught in the vortex. A creature caught in the vortex can use its action to try to swim away from the vortex as described above, but has disadvantage on the Strength (Athletics) check to do so.\n\nThe first time each turn that an object enters the vortex, the object takes 2d8 bludgeoning damage, this damage occurs each round it remains in the vortex.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a drop of water and a pinch of dust",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Any freestanding water inside an area you choose that is a cube up to 100 feet on a side",
+      "effects": [
+        {
+          "range": "300 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target is controlled by you."
+        }
+      ]
+    },
+    {
+      "name": "Death Ward",
+      "description": "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends. If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spells ends.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "8 h",
+          "concentration": false,
+          "description": "The target is protected from death once."
+        }
+      ]
+    },
+    {
+      "name": "Divination",
+      "description": "Your magic and an offering put you in contact with a god or a god's servants. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.\n\nThe spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.\n\nIf you cast this spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes",
+      "casting time": "1 action",
+      "ritual": true,
+      "target": "A god or a god's servants",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target truthfully answers a question."
+        }
+      ]
+    },
+    {
+      "name": "Freedom of Movement",
+      "description": "You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be paralyzed or restrained.\n\nThe target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled. Finally, being underwater imposes no penalties on the target's movement or attacks.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a leather strap, bound around the arm or a similar appendage",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A willing creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target can move freely independent from terrain or magic."
+        }
+      ]
+    },
+    {
+      "name": "Guardian of Faith",
+      "description": "A Large spectral guardian appears and hovers for the duration in an unoccupied space of your choice that you can see within range. The guardian occupies that space and is indistinct except for a gleaming sword and shield emblazoned with the symbol of your deity.\n\nAny creature hostile to you that moves to a space within 10 feet of the guardian for the first time on a turn must succeed on a Dexterity saving throw. The creature takes 20 radiant damage on a failed save, or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "An unoccupied space of your choice that you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "8 h",
+          "concentration": false,
+          "description": "The target is occupied by a spectral guardian."
+        }
+      ]
+    },
+    {
+      "name": "Locate Creature",
+      "description": "Describe or name a creature that is familiar to you. You sense the direction to the creature's location, as long as that creature is within 1,000 feet of you. If the creature is moving, you know the direction of its movement.\n\nThe spell can locate a specific creature known to you, or the nearest creature of a specific kind (such as a human or a unicorn), so long as you have seen such a creature up close \u2013 within 30 feet \u2013 at least once. If the creature you described or named is in a different form, such as being under the effects of a polymorph spell, this spell doesn't locate the creature.\n\nThis spell can't locate a creature if running water at least 10 feet wide blocks a direct path between you and the creature.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a bit of fur from a bloodhound",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target senses the direction to a creature's location and the direction of its movement."
+        }
+      ]
+    },
+    {
+      "name": "Stone Shape",
+      "description": "You touch a stone object of Medium size or smaller or a section of stone no more than 5 feet in any dimension and form it into any shape that suits your purpose. So, for example, you could shape a large rock into a weapon, idol, or coffer, or make a small passage through a wall, as long as the wall is less than 5 feet thick. You could also shape a stone door or its frame to seal the door shut. The object you create can have up to two hinges and a latch, but finer mechanical detail isn't possible.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "soft clay, which must be worked into roughly the desired shape of the stone object",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A stone object of Medium size or smaller or a section of stone no more than 5 feet in any dimension",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is roughly shaped."
+        }
+      ]
+    }
+  ],
+  "5": [
+    {
+      "name": "Commune",
+      "description": "You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question.\n\nDivine beings aren't necessarily omniscient, so you might receive \u201cunclear\u201d as an answer if a question pertains to information that lies beyond the deity's knowledge. In a case where a one-word answer could be misleading or contrary to the deity's interests, the DM might offer a short phrase as an answer instead.\n\nIf you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer. The DM makes this roll in secret.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "incense and a vial of holy or unholy water",
+      "casting time": "1 minute",
+      "ritual": true,
+      "target": "Your deity or a divine proxy",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": false,
+          "description": "The target answers up to three questions with a yes or no."
+        }
+      ]
+    },
+    {
+      "name": "Contagion",
+      "description": "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.\n\nAt the end of each of the poisoned target's turns, the target must make a Constitution saving throw. If the target succeeds on three of these saves, it is no longer poisoned, and the spell ends. If the target fails three of these saves, the target is no longer poisoned, but choose one of the diseases below. The target is subjected to the chosen disease for the spell's duration.\n\nSince this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease's effects apply to it.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature within your reach",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "7 d",
+          "concentration": false,
+          "description": "The target is poisoned."
+        }
+      ]
+    },
+    {
+      "name": "Dawn",
+      "description": "The light of dawn shines down on a location you specify within range. Until the spell ends, a 30-foot-radius, 40-foot-high cylinder of bright light glimmers there. This light is sunlight. When the cylinder appears, each creature in it must make a Constitution saving throw, taking 4d10 radiant damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw whenever it ends its turn in the cylinder. If you're within 60 feet of the cylinder, you can move it up to 60 feet as a bonus action on your turn.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a sunburst pendant worth at least 100 gp",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "See text",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Dispel Evil and Good",
+      "description": "Shimmering energy surrounds and protects you from fey, undead, and creatures originating from beyond the Material Plane. For the duration, celestials, elementals, fey, fiends, and undead have disadvantage on attack rolls against you. You can end the spell early by using either of the following special functions.\n\nBreak Enchantment: As your action, you touch a creature you can reach that is charmed, frightened, or possessed by a celestial, an elemental, a fey, a fiend, or an undead. The creature you touch is no longer charmed, frightened, or possessed by such creatures.\n\nDismissal: As your action, make a melee spell attack against a celestial, an elemental, a fey, a fiend, or an undead you can reach. On a hit, you attempt to drive the creature back to its home plane. The creature must succeed on a Charisma saving throw or be sent back to its home plane (if it isn't there already). If they aren't on their home plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "holy water or powdered silver and iron",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target is protected from certain creatures."
+        }
+      ]
+    },
+    {
+      "name": "Flame Strike",
+      "description": "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "pinch of sulfur",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "10-foot radius, 40-foot-high cylinder centered on a point within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target inflicts (4+S)d6 radiant and 4d6 fire (or vice versa) damage on all creatures within it."
+        }
+      ]
+    },
+    {
+      "name": "Geas",
+      "description": "You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide.\n\nIf the creature can understand you, it must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed by you, it takes 5d10 psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each day. A creature that can't understand you is unaffected by the spell.\n\nYou can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends. You can end the spell early by using an action to dismiss it. A Remove Curse, Greater Restoration, or Wish spell also ends it.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the spells mentioned above.",
+      "source": "Player's Handbook",
+      "school": "Enchantment",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "A creature that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "30 d",
+          "concentration": false,
+          "description": "The target is charmed."
+        }
+      ]
+    },
+    {
+      "name": "Greater Restoration",
+      "description": "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's exhaustion level by one, or end one of the following effects on the target:\n\n\u2022 One effect that charmed or petrified the target\n\n\u2022 One curse, including the target's attunement to a cursed magic item\n\n\u2022 Any reduction to one of the target's ability scores\n\n\u2022 One effect reducing the target's hit point maximum",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "diamond dust worth at least 100 gp, which the spell consumes",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Hallow",
+      "description": "You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects.\n\nFirst, celestials, elementals, fey, fiends, and undead can't enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature charmed, frightened, or possessed by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect.\n\nSecond, you can bind an extra effect to the area. Choose the effect from the following list, or choose an effect offered by the DM. Some of these effects apply to creatures in the area; you can designate whether the effect applies to all creatures, creatures that follow a specific deity or leader, or creatures of a specific sort, such as ores or trolls. When a creature that would be affected enters the spell's area for the first time on a turn or starts its turn there, it can make a Charisma saving throw. On a success, the creature ignores the extra effect until it leaves the area.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes",
+      "casting time": "24 hours",
+      "ritual": false,
+      "target": "A touched point",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Until dispelled",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Holy Weapon",
+      "description": "You imbue a weapon you touch with holy power. Until the spell ends, the weapon emits bright light in a 30-foot radius and dim light for an additional 30 feet. In addition, weapon attacks made with it deal an extra 2d8 radiant damage on a hit. If the weapon isn't already a magic weapon, it becomes one for the duration. As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance. Each creature of your choice that you can see within 30 feet of the weapon must make a Constitution saving throw. On a failed save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a successful save, a creature takes half as much damage and isn't blinded. At the end of each of its turns, a blinded creature can make a Constitution saving throw, ending the effect on itself on a success.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "target": "A weapon you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target is imbued with holy power."
+        }
+      ]
+    },
+    {
+      "name": "Insect Plague",
+      "description": "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain.\n\nWhen the area appears, each creature in it must make a Constitution saving throw. A creature takes 4d10 piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a few grains of sugar, some kernels of grain, and a smear of fat",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A 20-foot-radius sphere centered on a point you choose within range",
+      "effects": [
+        {
+          "range": "300 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target inflicts (4+S)d10 piercing damage."
+        }
+      ]
+    },
+    {
+      "name": "Legend Lore",
+      "description": "Name or describe a person, place, or object. The spell brings to your mind a brief summary of the significant lore about the thing you named. The lore might consist of current tales, forgotten stories, or even secret lore that has never been widely known. If the thing you named isn't of legendary importance, you gain no information. The more information you already have about the thing, the more precise and detailed the information you receive is.\n\nThe information you learn is accurate but might be couched in figurative language. For example, if you have a mysterious magic axe on hand, the spell might yield this information: Woe to the evildoer whose hand touches the axe, for even the haft slices the hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin, may awaken the true powers of the axe, and only with the sacred word Rudnogg on the lips.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each",
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "See text",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Mass Cure Wounds",
+      "description": "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A point of your choice within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target heals up to six creatures by (3+S)d8 + (spellcasting ability modifier) hit points."
+        }
+      ]
+    },
+    {
+      "name": "Planar Binding",
+      "description": "With this spell, you attempt to bind a celestial, an elemental, a fey, or a fiend to your service. The creature must be within range for the entire casting of the spell. (Typically, the creature is first summoned into the center of an inverted Magic Circle in order to keep it trapped while this spell is cast.) At the completion of the casting, the target must make a Charisma saving throw. On a failed save, it is bound to serve you for the duration. If the creature was summoned or created by another spell, that spell's duration is extended to match the duration of this spell.\n\nA bound creature must follow your instructions to the best of its ability. You might command the creature to accompany you on an adventure, to guard a location, or to deliver a message. The creature obeys the letter of your instructions, but if the creature is hostile to you, it strives to twist your words to achieve its own objectives. If the creature carries out your instructions completely before the spell ends, it travels to you to report this fact if you are on the same plane of existence. If you are on a different plane of existence, it returns to the place where you bound it and remains there until the spell ends.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of a higher level, the duration increases to 10 days with a 6th-level slot, to 30 days with a 7th-level slot, to 180 days with an 8th-level slot, and to a year and a day with a 9th-level spell slot.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a jewel worth at least 1,000 gp, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "A celestial, elemental, fey or fiend",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "24 h",
+          "concentration": false,
+          "description": "The target is bound to your service."
+        }
+      ]
+    },
+    {
+      "name": "Raise Dead",
+      "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point.\n\nThis spell also neutralizes any poison and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life. The spell can't return an undead creature to life.\n\nThis spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival \u2013 its head, for instance \u2013 the spell automatically fails.\n\nComing back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a diamond worth at least 500 gp, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "A dead creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is returned to life."
+        }
+      ]
+    },
+    {
+      "name": "Scrying",
+      "description": "You can see and hear a particular creature you choose that is on the same plane of existence as you. The target must make a Wisdom saving throw, which is modified by how well you know the target and the sort of physical connection you have to it. If a target knows you're casting this spell, it can fail the saving throw voluntarily if it wants to be observed.\n\nOn a successful save, the target isn't affected, and you can't use this spell against it again for 24 hours.\n\nOn a failed save, the spell creates an invisible sensor within 10 feet of the target. You can see and hear through the sensor as if you were there. The sensor moves with the target, remaining within 10 feet of it for the duration. A creature that can see invisible objects sees the sensor as a luminous orb about the size of your fist.\n\nInstead of targeting a creature, you can choose a location you have seen before as the target of this spell. When you do, the sensor appears at that location and doesn't move.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water",
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "A particular creature you choose that is on the same place of existence as you",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "The target is observed by an invisible sensor."
+        }
+      ]
+    },
+    {
+      "name": "Summon Celestial",
+      "description": "You call forth a celestial spirit. It manifests in an angelic form in an unoccupied space that you can see within range. This corporeal form uses the Celestial Spirit stat block. When you cast the spell, choose Avenger or Defender. Your choice determines the creature's attack in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.\n\nThe creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 6th level or higher, use the higher level whenever the spell's level appears in the stat block.",
+      "source": "Tasha's Cauldron of Everything",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a golden reliquary worth at least 500 gp",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "An unoccupied space that you can see within range",
+      "effects": [
+        {
+          "range": "90 ft",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target is occupied by a celestial spirit."
+        }
+      ]
+    }
+  ],
+  "6": [
+    {
+      "name": "Blade Barrier",
+      "description": "You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain.\n\nWhen a creature enters the wall's area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes 6d10 slashing damage. On a successful save, the creature takes half as much damage.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "An area within range",
+      "effects": [
+        {
+          "range": "90 ft",
+          "duration": "10 min",
+          "concentration": true,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Create Undead",
+      "description": "You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control. The DM has game statistics for these creatures.\n\nAs a bonus action on each of your turns, you can mentally command any creature you animated with this spell if the creature is within 120 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\nThe creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to three creatures you have animated with this spell, rather than animating new ones.",
+      "at higher spell slot levels": "When you cast this spell using a 7th-level spell slot, you can animate or reassert control over four ghouls. When you cast this spell using an 8th-level spell slot, you can animate or reassert control over five ghouls or two ghasts or wights. When you cast this spell using a 9th-level spell slot, you can animate or reassert control over six ghouls, three ghasts or wights, or two mummies.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse",
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "Up to three corpses of Medium or Small humanoids within range",
+      "effects": [
+        {
+          "range": "10 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target becomes a ghoul under your control."
+        }
+      ]
+    },
+    {
+      "name": "Find the Path",
+      "description": "This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plan of existence, a destination that moves (such as a mobile fortress), or a destination that isn't specific (such as \"a green dragon's lair\u201d), the spell fails.\n\nFor the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a set of divinatory tools \u2013 such as bones, ivory sticks, cards, teeth, or carved runes \u2013 worth 100 gp, and an object from the location you wish to find",
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "A specific fixed location that you are familiar with on the same plane of existence",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 d",
+          "concentration": true,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Forbiddance",
+      "description": "You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can't teleport into the area or use portals, such as those created by the gate spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the plane shift spell.\n\nIn addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: celestials, elementals, fey, fiends, and undead. When a chosen creature enters the spell's area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this spell).\n\nWhen you cast this spell, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the spell.\n\nThis spell's area can't overlap with the area of another forbiddance spell. If you cast forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the material components are consumed on the last casting.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp",
+      "casting time": "10 min",
+      "ritual": true,
+      "target": "See text",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 d",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Harm",
+      "description": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target takes 14d6 necrotic damage."
+        }
+      ]
+    },
+    {
+      "name": "Heal",
+      "description": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. The spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target regains 70+10*s hit points."
+        }
+      ]
+    },
+    {
+      "name": "Heroes' Feast",
+      "description": "You bring forth a great feast, including magnificent food and drink. The feast takes 1 hour to consume and disappears at the end of that time, and the beneficial effects don't set in until this hour is over. Up to twelve creatures can partake of the feast.\n\nA creature that partakes of the feast gains several benefits. The creature is cured of all diseases and poison, becomes immune to poison and being frightened, and makes all Wisdom saving throws with advantage. Its hit point maximum also increases by 2d10, and it gains the same number of hit points. These benefits last for 24 hours.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes",
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "Each creature that partakes of the feast",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target gains several benefits."
+        }
+      ]
+    },
+    {
+      "name": "Planar Ally",
+      "description": "You beseech an otherworldly entity for aid. The being must be known to you: a god, a primordial, a demon prince, or some other being of cosmic power. That entity sends a celestial, an elemental, or a fiend loyal to it to aid you, making the creature appear in an unoccupied space within range. If you know a specific creature's name, you can speak that name when you cast this spell to request that creature, though you might get a different creature anyway (DM's choice).\n\nWhen the creature appears, it is under no compulsion to behave in any particular way. You can ask the creature to perform a service in exchange for payment, but it isn't obliged to do so. The requested task could range from simple (fly us across the chasm, or help us fight a battle) to complex (spy on our enemies, or protect us during our foray into the dungeon). You must be able to communicate with the creature to bargain for its services.\n\nPayment can take a variety of forms. A celestial might require a sizable donation of gold or magic items to an allied temple, while a fiend might demand a living sacrifice or a gift of treasure. Some creatures might exchange their service for a quest undertaken by you.\n\nAs a rule of thumb, a task that can be measured in minutes requires a payment worth 100 gp per minute. A task measured in hours requires 1,000 gp per hour. And a task measured in days (up to 10 days) requires 10,000 gp per day. The DM can adjust these payments based on the circumstances under which you cast the spell. If the task is aligned with the creature's ethos, the payment might be halved or even waived. Nonhazardous tasks typically require only half the suggested payment, while especially dangerous tasks might require a greater gift. Creatures rarely accept tasks that seem suicidal.\n\nAfter the creature completes the task, or when the agreed-upon duration of service expires, the creature returns to its home plane after reporting back to you, if appropriate to the task and if possible. If you are unable to agree on a price for the creature's service, the creature immediately returns to its home plane.\n\nA creature enlisted to join your group counts as a member of it, receiving a full share of experience points awarded.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "An unoccupied space within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is occupied by a celestial, elemental or fiend."
+        }
+      ]
+    },
+    {
+      "name": "Sunbeam",
+      "description": "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.\n\nYou can create a new line of radiance as your action on any turn until the spell ends.\n\nFor the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. The light is sunlight.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a magnifying glass",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Each creature in a 5-foot-wide, 60-foot-long line",
+      "effects": [
+        {
+          "range": "Self (60-foot line)",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "Each target takes 6d8 radiant damage and is blinded."
+        }
+      ]
+    },
+    {
+      "name": "True Seeing",
+      "description": "This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.",
+      "source": "Player's Handbook",
+      "school": "Divination",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "The willing creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target can see things as they actually are."
+        }
+      ]
+    },
+    {
+      "name": "Word of Recall",
+      "description": "You and up to five willing creatures within 5 feet of you instantly teleport to a previously designated sanctuary. You and any creatures that teleport with you appear in the nearest unoccupied space to the spot you designated when you prepared your sanctuary (see below). If you cast this spell without first preparing a sanctuary, the spell has no effect.\n\nYou must designate a sanctuary by casting this spell within a location, such as a temple, dedicated to or strongly linked to your deity. If you attempt to cast the spell in this manner in an area that isn't dedicated to your deity, the spell has no effect.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "You and up to five willing creatures within 5 feet of you",
+      "effects": [
+        {
+          "range": "5 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target is teleported to a previously designated sanctuary."
+        }
+      ]
+    }
+  ],
+  "7": [
+    {
+      "name": "Conjure Celestial",
+      "description": "You summon a celestial of challenge rating 4 or lower, which appears in an unoccupied space that you can see within range. The celestial disappears when it drops to 0 hit points or when the spell ends.\n\nThe celestial is friendly to you and your companions for the duration. Roll initiative for the celestial, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don't violate its alignment. If you don't issue any commands to the celestial, it defends itself from hostile creatures but otherwise takes no actions. The DM has the celestial's statistics.",
+      "at higher spell slot levels": "When you cast this spell using a 9th-level spell slot, you summon a celestial of challenge rating 5 or lower.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "An unoccupied space that you can see within range",
+      "effects": [
+        {
+          "range": "90 ft",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target is occupied by a celestial of challenge rating (4+S) or lower."
+        }
+      ]
+    },
+    {
+      "name": "Divine Word",
+      "description": "You utter a divine word, imbued with the power that shaped the world at the dawn of creation. Choose any number of creatures you can see within range. Each creature that can hear you must make a Charisma saving throw. On a failed save, a creature suffers an effect based on its current hit points.\n\n\u2022 50 hit points or fewer - deafened for 1 minute\n\n\u2022 40 hit points or fewer - deafened and blinded for 10 minutes\n\n\u2022 30 hit points or fewer - blinded, deafened, and stunned for 1 hour\n\n\u2022 20 hit points or fewer - killed instantly\n\nRegardless of its current hit points, a celestial, an elemental, a fey, or a fiend that fails its save is forced back to its plane of origin (if it isn't there already) and can't return to your current plane for 24 hours by any means short of a wish spell.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": false,
+      "material": false,
+      "casting time": "1 bonus action",
+      "ritual": false,
+      "target": "Any number of creatures you can see within range",
+      "effects": [
+        {
+          "range": "30 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Etherealness",
+      "description": "You step into the border regions of the Ethereal Plane, in the area where it overlaps with your current plane. You remain in the Border Ethereal for the duration or until you use your action to dismiss the spell. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can see and hear the plane you originated from, but everything there looks gray, and you can't see anything more than 60 feet away.\n\nWhile on the Ethereal Plane, you can only affect and be affected by other creatures on that plane. Creatures that aren't on the Ethereal Plane can't perceive you and can't interact with you, unless a special ability or magic has given them the ability to do so.\n\nYou ignore all objects and effects that aren't on the Ethereal Plane, allowing you to move through objects you perceive on the plane you originated from. When the spell ends, you immediately return to the plane you originated from in the spot you currently occupy. If you occupy the same spot as a solid object or creature when this happens, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are moved.\n\nThis spell has no effect if you cast it while you are on the Ethereal Plane or a plane that doesn't border it, such as one of the Outer Planes.",
+      "at higher spell slot levels": "When you cast this spell using a spell slot of 8th level or higher, you can target up to three willing creatures (including you) for each slot level above 7th. The creatures must be within 10 feet of you when you cast the spell.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "Up to 8 hours",
+          "concentration": false,
+          "description": "The target steps into the border regions of the ethereal plane."
+        }
+      ]
+    },
+    {
+      "name": "Fire Storm",
+      "description": "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A location you choose within range",
+      "effects": [
+        {
+          "range": "150 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "See text"
+        }
+      ]
+    },
+    {
+      "name": "Plane Shift",
+      "description": "You and up to eight willing creatures who link hands in a circle are transported to a different plane of existence. You can specify a target destination in general terms, such as the City of Brass on the Elemental Plane of Fire or the palace of Dispater on the second level of the Nine Hells, and you appear in or near that destination. If you are trying to reach the City of Brass, for example, you might arrive in its Street of Steel, before its Gate of Ashes, or looking at the city from across the Sea of Fire, at the DM's discretion.\n\nAlternatively, if you know the sigil sequence of a teleportation circle on another plane of existence, this spell can take you to that circle. If the teleportation circle is too small to hold all the creatures you transported, they appear in the closest unoccupied spaces next to the circle.\n\nYou can use this spell to banish an unwilling creature to another plane. Choose a creature within your reach and make a melee spell attack against it. On a hit, the creature must make a Charisma saving throw. If the creature fails the save, it is transported to a random location on the plane of existence you specify. A creature so transported must find its own way back to your current plane of existence.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "You and up to eight willing creatures who link hands in a circle",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target is transported to a different plane of existence."
+        }
+      ]
+    },
+    {
+      "name": "Regenerate",
+      "description": "You touch a creature and stimulate its natural healing ability. The target regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1 hit point at the start of each of its turns (10 hit points each minute).\n\nThe target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump.",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a prayer wheel and holy water",
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "A creature",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "1 h",
+          "concentration": false,
+          "description": "The target regains 4d8 + 15 hit points."
+        }
+      ]
+    },
+    {
+      "name": "Resurrection",
+      "description": "You touch a dead creature that has been dead for no more than a century, that didn't die of old age, and that isn't undead. If its soul is free and willing, the target returns to life with all its hit points.\n\nThis spell neutralizes any poisons and cures normal diseases afflicting the creature when it died. It doesn't, however, remove magical diseases, curses, and the like; if such affects aren't removed prior to casting the spell, they afflict the target on its return to life.\n\nThis spell closes all mortal wounds and restores any missing body parts.\n\nComing back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.\n\nCasting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a diamond worth at least 1,000 gp, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "A dead creature that has been dead for no more than a century, that didn't die of old age, and that isn't undead",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target returns to life."
+        }
+      ]
+    },
+    {
+      "name": "Symbol",
+      "description": "When you cast this spell, you inscribe a harmful glyph either on a surface (such as a section of floor, a wall, or a table) or within an object that can be closed to conceal the glyph (such as a book, a scroll, or a treasure chest). If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place, if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.\n\nThe glyph is nearly invisible, requiring an Intelligence (Investigation) check against your spell save DC to find it.\n\nYou decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or stepping on the glyph, removing another object covering it, approaching within a certain distance of it, or manipulating the object that holds it. For glyphs inscribed within an object, the most common triggers are opening the object, approaching within a certain distance of it, or seeing or reading the glyph.\n\nYou can further refine the trigger so the spell is activated only under certain circumstances or according to a creature's physical characteristics (such as height or weight), or physical kind (for example, the ward could be set to affect hags or shapechangers). You can also specify creatures that don't trigger the glyph, such as those who say a certain password.\n\nWhen you inscribe the glyph, choose one of the options below for its effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with dim light for 10 minutes, after which time the spell ends. Each creature in the sphere when the glyph activates is targeted by its effect, as is a creature that enters the sphere for the first time on a turn or ends its turn there.\n\nDeath: Each target must make a Constitution saving throw, taking 10d10 necrotic damage on a failed save, or half as much damage on a successful save.\n\nDiscord: Each target must make a Constitution saving throw. On a failed save, a target bickers and argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has disadvantage on attack rolls and ability checks.\n\nFear: Each target must make a Wisdom saving throw and becomes frightened for 1 minute on a failed save. While frightened, the target drops whatever it is holding and must move at least 30 feet away from the glyph on each of its turns, if able.\n\nHopelessness: Each target must make a Charisma saving throw. On a failed save, the target is overwhelmed with despair for 1 minute. During this time, it can't attack or target any creature with harmful abilities, spells, or other magical effects.\n\nInsanity: Each target must make an Intelligence saving throw. On a failed save, the target is driven insane for 1 minute. An insane creature can't take actions, can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic.\n\nPain: Each target must make a Constitution saving throw and becomes incapacitated with excruciating pain for 1 minute on a failed save.\n\nSleep: Each target must make a Wisdom saving throw and falls unconscious for 10 minutes on a failed save. A creature awakens if it takes damage or if someone uses an action to shake or slap it awake.\n\nStunning: Each target must make a Wisdom saving throw and becomes stunned for 1 minute on a failed save.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes",
+      "casting time": "1 minute",
+      "ritual": false,
+      "target": "Either a surface or within on object that can be closed to conceal the glyph",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Until dispelled or triggered",
+          "concentration": false,
+          "description": "The target is inscribed with a magical glyph."
+        }
+      ]
+    },
+    {
+      "name": "Temple of the Gods",
+      "description": "You cause a temple to shimmer into existence on ground you can see within range. The temple must fit within an unoccupied cube of space, up to 120 feet on each side. The temple remains until the spell ends. It is dedicated to whatever god, pantheon, or philosophy is represented by the holy symbol used in the casting.\n\nYou make all decisions about the temple's appearance. The interior is enclosed by a floor, walls, and a roof, with one door granting access to the interior and as many windows as you wish. Only you and any creatures you designate when you cast the spell can open or close the door.\n\nThe temple's interior is an open space with an idol or altar at one end. You decide whether the temple is illuminated and whether that illumination is bright light or dim light. The smell of burning incense fills the air within, and the temperature is mild.\n\nThe temple opposes types of creatures you choose when you cast this spell. Choose one or more of the following: celestials, elementals, fey, fiends, or undead. If a creature of the chosen type attempts to enter the temple, that creature must make a Charisma saving throw. On a failed save, it can't enter the temple for 24 hours. Even if the creature can enter the temple, the magic there hinders it; whenever it makes an attack roll, an ability check, or a saving throw inside the temple, it must roll a d4 and subtract the number rolled from the d20 roll.\n\nIn addition, the sensors created by divination spells can't appear inside the temple, and creatures within can't be targeted by divination spells.\n\nFinally, whenever any creature in the temple regains hit points from a spell of 1st level or higher, the creature regains additional hit points equal to your Wisdom modifier (minimum 1 hit point).\n\nThe temple is made from opaque magical force that extends into the Ethereal Plane, thus blocking ethereal travel into the temple's interior. Nothing can physically pass through the temple's exterior. It can't be dispelled by dispel magic, and antimagic field has no effect on it. A disintegrate spell destroys the temple instantly.\nCasting this spell on the same spot every day for a year makes this effect permanent.",
+      "source": "Xanathar's Guide to Everything",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a holy symbol worth at least 5 gp",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "Ground you can see within range",
+      "effects": [
+        {
+          "range": "120 ft",
+          "duration": "24 h",
+          "concentration": false,
+          "description": "The target is occupied by a magical temple."
+        }
+      ]
+    }
+  ],
+  "8": [
+    {
+      "name": "Antimagic Field",
+      "description": "A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can't be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.\n\nSpells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and can't protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a pinch of powdered iron or iron filings",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self (10-foot-radius sphere)",
+      "effects": [
+        {
+          "range": "Self (10-foot-radius sphere)",
+          "duration": "1 h",
+          "concentration": true,
+          "description": "The target deactivates magic."
+        }
+      ]
+    },
+    {
+      "name": "Control Weather",
+      "description": "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.\n\nWhen you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.\n\nWhen you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.\n\nPrecipitation:\nStage 1 - Clear\nStage 2 - Light clouds\nStage 3 - Overcast or ground fog\nStage 4 - Rain, hail or snow\nStage 5 - Torrential rain, driving hail or blizzard\n\nTemperature:\nStage 1 - Unbearable heat\nStage 2 - Hot\nStage 3 - Warm\nStage 4 - Cool\nStage 5 - Cold\nStage 6 - Arctic cold\n\nWind:\nStage 1 - Calm\nStage 2 - Moderate wind\nStage 3 - Strong wind\nStage 4 - Gale\nStage 5 - Storm",
+      "source": "Player's Handbook",
+      "school": "Transmutation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "burning incense and bits of earth and wood mixed in water",
+      "casting time": "10 min",
+      "ritual": false,
+      "target": "The weather within 5 miles of you",
+      "effects": [
+        {
+          "range": "Self (5-mile radius)",
+          "duration": "Concentration, Up to 8 hours",
+          "concentration": false,
+          "description": "The target is controlled by you."
+        }
+      ]
+    },
+    {
+      "name": "Earthquake",
+      "description": "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.\n\nThe ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.\n\nWhen you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone.\n\nThis spell can have additional effects depending on the terrain in the area, as determined by the DM.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a pinch of dirt, a piece of rock, and a lump of clay",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A point on the ground that you can see within range",
+      "effects": [
+        {
+          "range": "500 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target emits an intense tremor."
+        }
+      ]
+    },
+    {
+      "name": "Holy Aura",
+      "description": "Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all saving throws, and other creatures have disadvantage on attack rolls against them until the spell ends. In addition, when a fiend or an undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be blinded until the spell ends.",
+      "source": "Player's Handbook",
+      "school": "Abjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Self",
+      "effects": [
+        {
+          "range": "Self",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target creates a protective aura."
+        }
+      ]
+    },
+    {
+      "name": "Sunburst",
+      "description": "Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.\n\nA creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.\n\nThis spell dispels any darkness in its area that was created by a spell.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "fire and a piece of sunstone",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A 60-foot radius centered on a point you choose within range",
+      "effects": [
+        {
+          "range": "150 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target inflicts 12d6 radiant damage and blindness upon all creatures in it."
+        }
+      ]
+    }
+  ],
+  "9": [
+    {
+      "name": "Astral Projection",
+      "description": "You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell fails and the casting is wasted if you are already on that plane). The material body you leave behind is unconscious and in a state of suspended animation; it doesn't need food or air and doesn't age.\n\nYour astral body resembles your mortal form in almost every way, replicating your game statistics and possessions. The principal difference is the addition of a silvery cord that extends from between your shoulder blades and trails behind you, fading to invisibility after 1 foot. This cord is your tether to your material body. As long as the tether remains intact, you can find your way home. If the cord is cut \u2013 something that can happen only when an effect specifically states that it does \u2013 your soul and body are separated, killing you instantly.\n\nYour astral form can freely travel through the Astral Plane and can pass through portals there leading to any other plane. If you enter a new plane or return to the plane you were on when casting this spell, your body and possessions are transported along the silver cord, allowing you to re-enter your body as you enter the new plane. Your astral form is a separate incarnation. Any damage or other effects that apply to it have no effect on your physical body, nor do they persist when you return to it. The spell ends for you and your companions when you use your action to dismiss it. When the spell ends, the affected creature returns to its physical body, and it awakens.\n\nThe spell might also end early for you or one of your companions. A successful Dispel Magic spell used against an astral or physical body ends the spell for that creature. If a creature's original body or its astral form drops to 0 hit points, the spell ends for that creature. If the spell ends and the silver cord is intact, the cord pulls the creature's astral form back to its body, ending its state of suspended animation. If you are returned to your body prematurely, your companions remain in their astral forms and must find their own way back to their bodies, usually by dropping to 0 hit points.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "You and up to eight willing creatures within range",
+      "effects": [
+        {
+          "range": "10 ft",
+          "duration": "Special",
+          "concentration": false,
+          "description": "Each target projects its astral body into the astral plane."
+        }
+      ]
+    },
+    {
+      "name": "Gate",
+      "description": "You conjure a portal linking an unoccupied space you can see within range to a precise location on a different plane of existence. The portal is a circular opening, which you can make 5 to 20 feet in diameter. You can orient the portal in any direction you choose. The portal lasts for the duration.\n\nThe portal has a front and a back on each plane where it appears. Travel through the portal is possible only by moving through its front. Anything that does so is instantly transported to the other plane, appearing in the unoccupied space nearest to the portal.\n\nDeities and other planar rulers can prevent portals created by this spell from opening in their presence or anywhere within their domains.\n\nWhen you cast this spell, you can speak the name of a specific creature (a pseudonym, title, or nickname doesn't work). If that creature is on a plane other than the one you are on, the portal opens in the named creature's immediate vicinity and draws the creature through it to the nearest unoccupied space on your side of the portal. You gain no special power over the creature, and it is free to act as the DM deems appropriate. It might leave, attack you, or help you.",
+      "source": "Player's Handbook",
+      "school": "Conjuration",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a diamond worth at least 5,000 gp",
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "An unoccupied space you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "1 min",
+          "concentration": true,
+          "description": "The target is occupied by a portal."
+        }
+      ]
+    },
+    {
+      "name": "Mass Heal",
+      "description": "A flood of healing energy flows from you into injured creatures around you. You restore up to 700 hit points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell are also cured of all diseases and any effect making them blinded or deafened. This spell has no effect on undead or constructs.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "Any number of creatures that you can see within range",
+      "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "Each target is healed and cured of all diseases."
+        }
+      ]
+    },
+    {
+      "name": "Power Word: Heal",
+      "description": "A wave of healing energy washes over a creature you touch. The target regains all its hit points. If the creature is charmed, frightened, paralyzed, or stunned, the condition ends. If the creature is prone, it can use its reaction to stand up. This spell has no effect on undead or constructs.",
+      "source": "Player's Handbook",
+      "school": "Evocation",
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "casting time": "1 action",
+      "ritual": false,
+      "target": "A creature you touch",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target regains all its hit points and freed of certain conditions."
+        }
+      ]
+    },
+    {
+      "name": "True Resurrection",
+      "description": "You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. If the creature's soul is free and willing, the creature is restored to life with all its hit points.\n\nThis spell closes all wounds, neutralizes any poison, cures all diseases, and lifts any curses affecting the creature when it died. The spell replaces damaged or missing organs or limbs. If the creature was undead, it is restored to its non-undead form.\n\nThe spell can even provide a new body if the original no longer exists, in which case you must speak the creature's name. The creature then appears in an unoccupied space you choose within 10 feet of you.",
+      "source": "Player's Handbook",
+      "school": "Necromancy",
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "required material": "a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes",
+      "casting time": "1 h",
+      "ritual": false,
+      "target": "A creature that has been dead for no longer than 200 years and that died for any reason except old age",
+      "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "The target is restored to life with all its hit points."
+        }
+      ]
+    }
+  ]
+}
