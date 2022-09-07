@@ -54,7 +54,7 @@
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.5px;
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.9);
 }
 .spell-card-list .spell-card .spell .name {
   grid-area: name;
@@ -95,6 +95,7 @@
 }
 .spell-card-list .spell-card .casting {
   margin-top: 0.8em;
+  color: rgba(0, 0, 0, 0.85);
 }
 .spell-card-list .spell-card .casting .casting-tags {
   display: flex;
@@ -119,6 +120,10 @@
 }
 .spell-card-list .spell-card .casting .required-material {
   margin-top: 0.5em;
+}
+.spell-card-list .spell-card .casting .required-material .material {
+  font-weight: 480;
+  letter-spacing: 0.2px;
 }
 .spell-card-list .spell-card .effects {
   display: flex;
@@ -148,14 +153,19 @@
 .spell-card-list .spell-card .effects .effect-description {
   margin-top: 0.5em;
 }
+.spell-card-list .spell-card.selected .expansion {
+  margin-bottom: 0;
+}
 .spell-card-list .spell-card .expansion {
   height: 0;
   margin-bottom: -1em;
   transition-property: height, margin-bottom;
   transition-timing-function: ease;
 }
-.spell-card-list .spell-card.selected .expansion {
-  margin-bottom: 0;
+.spell-card-list .spell-card .expansion .at-higher-levels {
+  font-weight: 600;
+  font-variation-settings: "slnt" -8;
+  letter-spacing: 0.2px;
 }
 
 @font-face {
