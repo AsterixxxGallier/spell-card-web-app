@@ -33,17 +33,17 @@ function toggleCardSelection(card) {
 
 // endregion
 
-let spellData
+let allSpellCards
 
 fetch("../data/effects.json").then(response => response.json()).then(json => {
     console.log(json)
-    spellData = Object
+    allSpellCards = Object
         .entries(json)
         .flatMap(([level, spells]) => spells.map(spell => ({
             ...spell,
             'level': level
         })))
-    showAll()
+    loadAll()
 });
 
 function schoolTag(spell) {
@@ -302,20 +302,48 @@ function card(spell) {
     return element
 }
 
-function showAll() {
-    for (const spell of spellData) {
-        const scaffold = cardList.querySelector('.spell-card-scaffold')
-        if (scaffold) {
-            scaffold.insertAdjacentElement('beforebegin', card(spell))
-            scaffold.remove()
-        } else {
-            cardList.appendChild(card(spell))
+function load(cards) {
+    let scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
+    if (scaffolds.length > cards.length) {
+        for (const scaffold of [].slice.call(scaffolds, cards.length)) {
+            scaffold.remove();
+        }
+    } else {
+        for (let i = cards.length; i < scaffolds.length; i++) {
+            cardList.appendChild(scaffold())
         }
     }
-    const scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
-    for (const scaffold of scaffolds) {
-        scaffold.remove()
+    scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
+    for (let i = 0; i < cards.length; i++) {
+        const spellCard = cards[i];
+        const scaffold = scaffolds[i];
+        setTimeout(() => {
+            if (scaffold) {
+                scaffold.insertAdjacentElement('beforebegin', card(spellCard))
+                scaffold.remove()
+            }
+        }, i % 15)
     }
+}
+
+function loadAll() {
+    load(allSpellCards)
+}
+
+function showAll() {
+    cardList.innerHTML = ''
+    showScaffold(150)
+    loadAll()
+}
+
+function loadPrepared() {
+    load(allSpellCards.slice(5, 15))
+}
+
+function showPrepared() {
+    cardList.innerHTML = ''
+    showScaffold(10)
+    loadPrepared()
 }
 
 function scaffold() {
@@ -331,3 +359,25 @@ function showScaffold(cards) {
 }
 
 showScaffold(150)
+
+const preparedButton = document.getElementById('prepared')
+const allButton = document.getElementById('all')
+let preparedOnly = false
+
+function switchToAll() {
+    if (preparedOnly) {
+        preparedButton.classList.remove('bottom-nav__destination--active')
+        allButton.classList.add('bottom-nav__destination--active')
+        showAll()
+        preparedOnly = false
+    }
+}
+
+function switchToPrepared() {
+    if (!preparedOnly) {
+        allButton.classList.remove('bottom-nav__destination--active')
+        preparedButton.classList.add('bottom-nav__destination--active')
+        showPrepared()
+        preparedOnly = true
+    }
+}
