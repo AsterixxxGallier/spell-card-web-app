@@ -263,7 +263,7 @@ function effectTags(effect) {
 function effectDescription(effect) {
     const element = document.createElement('div')
     element.classList.add('effect-description')
-    element.appendChild(document.createTextNode(effect['description']))
+    element.innerHTML = effect['description'].replace(/\n/g, '<br>')
     return element
 }
 
@@ -291,16 +291,20 @@ function expansion(spell) {
     wrapper.classList.add('height-measuring-wrapper')
     const description = document.createElement('section')
     description.classList.add('spell-description')
-    description.appendChild(document.createTextNode(spell['description']))
+    description.innerHTML = spell['description'].replace(/\n/g, '<br>')
     if ('at higher levels' in spell) {
         const atHigherLevels = document.createElement('span')
         atHigherLevels.classList.add('at-higher-levels')
         atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
+        description.appendChild(document.createElement('br'))
+        description.appendChild(document.createElement('br'))
         description.appendChild(atHigherLevels)
         description.appendChild(document.createTextNode(spell['at higher levels']))
     }
     if ('at higher spell slot levels' in spell) {
         const atHigherLevels = document.createElement('span')
+        description.appendChild(document.createElement('br'))
+        description.appendChild(document.createElement('br'))
         atHigherLevels.classList.add('at-higher-levels')
         atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
         description.appendChild(atHigherLevels)
