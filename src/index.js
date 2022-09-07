@@ -99,38 +99,7 @@ function name(spell) {
 function level(spell) {
     const element = document.createElement('div')
     element.classList.add('level')
-    let level = parseInt(spell['level']);
-    switch (level) {
-        case 0:
-            // element.classList.add('outline-0')
-            break
-        case 1:
-        case 2:
-            element.classList.add('outline-1')
-            break
-        case 3:
-        case 4:
-            element.classList.add('outline-2')
-            break
-        case 5:
-        case 6:
-        case 7:
-            element.classList.add('outline-3')
-            break
-        case 8:
-        case 9:
-            element.classList.add('outline-4')
-            break
-    }
-    if (level === 0) {
-        const img = document.createElement('img')
-        img.src = '../icons/clean.png'
-        element.appendChild(img)
-    } else {
-        const div = document.createElement('div')
-        div.appendChild(document.createTextNode(spell['level']))
-        element.appendChild(div)
-    }
+    element.classList.add('level-' + spell['level'])
     return element
 }
 

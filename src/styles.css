@@ -70,28 +70,77 @@
   display: grid;
   place-content: center;
 }
-.spell-card-list .spell-card .spell .level div {
+.spell-card-list .spell-card .spell .level:before {
+  content: "";
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  opacity: 0.75;
+}
+.spell-card-list .spell-card .spell .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
 }
-.spell-card-list .spell-card .spell .level img {
+.spell-card-list .spell-card .spell .level-0:after {
+  content: "";
+  background-image: url("../icons/clean.png");
+  background-size: cover;
   width: 32px;
   height: 32px;
 }
-.spell-card-list .spell-card .spell .level.outline-0 {
-  background-image: url("../icons/level outline 0.svg");
-}
-.spell-card-list .spell-card .spell .level.outline-1 {
+.spell-card-list .spell-card .spell .level-1:before {
   background-image: url("../icons/level outline 1.svg");
 }
-.spell-card-list .spell-card .spell .level.outline-2 {
+.spell-card-list .spell-card .spell .level-1:after {
+  content: "1";
+}
+.spell-card-list .spell-card .spell .level-2:before {
+  background-image: url("../icons/level outline 1.svg");
+}
+.spell-card-list .spell-card .spell .level-2:after {
+  content: "2";
+}
+.spell-card-list .spell-card .spell .level-3:before {
   background-image: url("../icons/level outline 2.svg");
 }
-.spell-card-list .spell-card .spell .level.outline-3 {
+.spell-card-list .spell-card .spell .level-3:after {
+  content: "3";
+}
+.spell-card-list .spell-card .spell .level-4:before {
+  background-image: url("../icons/level outline 2.svg");
+}
+.spell-card-list .spell-card .spell .level-4:after {
+  content: "4";
+}
+.spell-card-list .spell-card .spell .level-5:before {
   background-image: url("../icons/level outline 3.svg");
 }
-.spell-card-list .spell-card .spell .level.outline-4 {
+.spell-card-list .spell-card .spell .level-5:after {
+  content: "5";
+}
+.spell-card-list .spell-card .spell .level-6:before {
+  background-image: url("../icons/level outline 3.svg");
+}
+.spell-card-list .spell-card .spell .level-6:after {
+  content: "6";
+}
+.spell-card-list .spell-card .spell .level-7:before {
+  background-image: url("../icons/level outline 3.svg");
+}
+.spell-card-list .spell-card .spell .level-7:after {
+  content: "7";
+}
+.spell-card-list .spell-card .spell .level-8:before {
   background-image: url("../icons/level outline 4.svg");
+}
+.spell-card-list .spell-card .spell .level-8:after {
+  content: "8";
+}
+.spell-card-list .spell-card .spell .level-9:before {
+  background-image: url("../icons/level outline 4.svg");
+}
+.spell-card-list .spell-card .spell .level-9:after {
+  content: "9";
 }
 .spell-card-list .spell-card .casting {
   margin-top: 0.8em;
