@@ -5,33 +5,32 @@ let selectedCard = null
 let resizeObserver = new ResizeObserver(entries => {
     const expansion = selectedCard.querySelector('.expansion')
     const wrapper = expansion.querySelector('.height-measuring-wrapper')
+    expansion.style.setProperty('transition-duration', `${wrapper.clientHeight * 0.001}s`)
     expansion.style.setProperty('height', `${wrapper.clientHeight}px`)
 })
 
 function toggleCardSelection(card) {
-    if (selectedCard === card) {
-        selectedCard.classList.remove('selected')
+    const oldCard = selectedCard
+    const newCard = selectedCard === card ? null : card
+    if (oldCard) {
+        oldCard.classList.remove('selected')
         resizeObserver.disconnect()
-        const expansion = selectedCard.querySelector('.expansion')
+        const expansion = oldCard.querySelector('.expansion')
         expansion.style.removeProperty('height')
-        selectedCard = null
-    } else {
-        if (selectedCard === null) {
-            selectedCard = card
-        } else {
-            selectedCard.classList.remove('selected')
-            resizeObserver.disconnect()
-            const expansion = selectedCard.querySelector('.expansion')
-            expansion.style.removeProperty('height')
-            selectedCard = card
-        }
-        selectedCard.classList.add('selected')
-        const expansion = selectedCard.querySelector('.expansion')
+        setTimeout(() => expansion.style.removeProperty('transition-duration'),
+            parseFloat(expansion.style.transitionDuration.slice(0, -1)) * 1000)
+    }
+    if (newCard) {
+        newCard.classList.add('selected')
+        const expansion = newCard.querySelector('.expansion')
         const wrapper = expansion.querySelector('.height-measuring-wrapper')
+        expansion.style.setProperty('transition-duration', `${wrapper.clientHeight * 0.001}s`)
         expansion.style.setProperty('height', `${wrapper.clientHeight}px`)
         resizeObserver.observe(wrapper)
     }
+    selectedCard = newCard
 }
+
 // endregion
 
 let spellData

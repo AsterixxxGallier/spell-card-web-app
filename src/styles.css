@@ -1,17 +1,240 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 2 | @use '@material/card'
- *   | ^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   styles.sass 2:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @use '@material/card'\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   styles.sass 2:1  root stylesheet";
+.spell-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
 }
+.spell-card-list .spell-card {
+  overflow: hidden;
+}
+.spell-card-list .spell-card, .spell-card-list .spell-card-scaffold {
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding: 16px;
+}
+.spell-card-list .spell-card-scaffold {
+  height: 233px;
+  box-sizing: border-box;
+}
+.spell-card-list .spell-card hr {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.spell-card-list .spell-card hr.light {
+  margin-block-start: 0.8em;
+  margin-block-end: 0.8em;
+  height: 2px;
+  width: 75%;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
+}
+.spell-card-list .spell-card .spell {
+  display: grid;
+  grid-template-areas: "spell-tags level" "name level";
+  grid-template-columns: 1fr auto;
+}
+.spell-card-list .spell-card .spell .spell-tags {
+  grid-area: spell-tags;
+  display: flex;
+  gap: 5.2px;
+}
+.spell-card-list .spell-card .spell .spell-tags div {
+  display: inline-flex;
+  align-items: center;
+  height: 20.8px;
+  padding-left: 7.8px;
+  padding-right: 7.8px;
+  border-radius: 10.4px;
+  background-color: rgba(224, 224, 224, 0.5);
+}
+.spell-card-list .spell-card .spell .spell-tags div span {
+  font-size: 9.1px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: rgb(0, 0, 0);
+}
+.spell-card-list .spell-card .spell .name {
+  grid-area: name;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 0.2em;
+  letter-spacing: 0.5px;
+}
+.spell-card-list .spell-card .spell .level {
+  grid-area: level;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-content: center;
+}
+.spell-card-list .spell-card .spell .level div {
+  font-family: "Abril Fatface", serif;
+  font-size: 32px;
+}
+.spell-card-list .spell-card .spell .level img {
+  width: 32px;
+  height: 32px;
+}
+.spell-card-list .spell-card .spell .level.outline-0 {
+  background-image: url("../icons/level outline 0.svg");
+}
+.spell-card-list .spell-card .spell .level.outline-1 {
+  background-image: url("../icons/level outline 1.svg");
+}
+.spell-card-list .spell-card .spell .level.outline-2 {
+  background-image: url("../icons/level outline 2.svg");
+}
+.spell-card-list .spell-card .spell .level.outline-3 {
+  background-image: url("../icons/level outline 3.svg");
+}
+.spell-card-list .spell-card .spell .level.outline-4 {
+  background-image: url("../icons/level outline 4.svg");
+}
+.spell-card-list .spell-card .casting {
+  margin-top: 0.8em;
+}
+.spell-card-list .spell-card .casting .casting-tags {
+  display: flex;
+  gap: 6.4px;
+}
+.spell-card-list .spell-card .casting .casting-tags div {
+  display: inline-flex;
+  align-items: center;
+  height: 25.6px;
+  padding-left: 9.6px;
+  padding-right: 9.6px;
+  border-radius: 12.8px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.spell-card-list .spell-card .casting .casting-tags div span {
+  font-size: 11.2px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  color: rgb(0, 0, 0);
+}
+.spell-card-list .spell-card .casting .required-material {
+  margin-top: 0.5em;
+}
+.spell-card-list .spell-card .effects {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.spell-card-list .spell-card .effects .effect-tags {
+  display: flex;
+  gap: 6.4px;
+}
+.spell-card-list .spell-card .effects .effect-tags div {
+  display: inline-flex;
+  align-items: center;
+  height: 25.6px;
+  padding-left: 9.6px;
+  padding-right: 9.6px;
+  border-radius: 12.8px;
+  background-color: rgb(224, 224, 224);
+}
+.spell-card-list .spell-card .effects .effect-tags div span {
+  font-size: 11.2px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  color: rgb(0, 0, 0);
+}
+.spell-card-list .spell-card .effects .effect-description {
+  margin-top: 0.5em;
+}
+.spell-card-list .spell-card .expansion {
+  height: 0;
+  margin-bottom: -1em;
+  transition-property: height, margin-bottom;
+  transition-timing-function: ease;
+}
+.spell-card-list .spell-card.selected .expansion {
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  border-top: 1px solid hsl(0deg, 0%, 88%);
+  background-color: #f44236;
+  z-index: 1000;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+.bottom-nav *,
+.bottom-nav *:before,
+.bottom-nav *:after {
+  box-sizing: inherit;
+}
+.bottom-nav__destination {
+  flex: 1 1 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 12px;
+  padding-left: 12px;
+  color: white;
+  text-decoration: none;
+}
+.bottom-nav__destination:focus {
+  outline: 0;
+}
+.bottom-nav__destination--active .bottom-nav__icon {
+  font-size: 36px;
+}
+.bottom-nav__icon {
+  flex: 0 0 auto;
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+.bottom-nav__destination {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-width: 80px;
+  max-width: 160px;
+}
+.bottom-nav__destination--active {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-width: 80px;
+  max-width: 160px;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,4 @@
 @use 'material-bottom-nav/bottom-nav'
-@use '@material/card'
-
-@include card.core-styles
 
 $primary: #f44236
 $secondary: #f4a136
@@ -140,7 +137,8 @@ $secondary: #f4a136
     .expansion
       height: 0
       margin-bottom: -1em
-      transition: height .3s ease-out, margin-bottom .3s ease-out
+      transition-property: height, margin-bottom
+      transition-timing-function: ease
 
     &.selected
       .expansion
