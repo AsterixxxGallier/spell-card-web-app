@@ -16,6 +16,30 @@
   height: 233px;
   box-sizing: border-box;
 }
+.spell-card-list .spell-card.favorite {
+  box-shadow: 0 2px 1px -1px rgba(244, 161, 54, 0.4), 0 1px 1px 0 rgba(244, 161, 54, 0.28), 0 1px 3px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2);
+}
+.spell-card-list .spell-card.favorite .favorite-button:before {
+  background-image: url("../icons/favorite star filled.svg") !important;
+}
+.spell-card-list .spell-card.chosen .card-tags:before {
+  content: "Chosen";
+}
+.spell-card-list .spell-card.chosen .chosen-segment {
+  background: rgba(73, 69, 79, 0.08) !important;
+}
+.spell-card-list .spell-card.known .card-tags:before {
+  content: "Known";
+}
+.spell-card-list .spell-card.known .known-segment {
+  background: rgba(73, 69, 79, 0.08) !important;
+}
+.spell-card-list .spell-card.prepared .card-tags:before {
+  content: "Prepared";
+}
+.spell-card-list .spell-card.prepared .prepared-segment {
+  background: rgba(73, 69, 79, 0.08) !important;
+}
 .spell-card-list .spell-card hr {
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -30,17 +54,17 @@
   width: 75%;
   background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
 }
-.spell-card-list .spell-card .spell {
+.spell-card-list .spell-card .card {
   display: grid;
-  grid-template-areas: "spell-tags level" "name level";
+  grid-template-areas: "card-tags level" "name level";
   grid-template-columns: 1fr auto;
 }
-.spell-card-list .spell-card .spell .spell-tags {
-  grid-area: spell-tags;
+.spell-card-list .spell-card .card .card-tags {
+  grid-area: card-tags;
   display: flex;
   gap: 5.2px;
 }
-.spell-card-list .spell-card .spell .spell-tags div {
+.spell-card-list .spell-card .card .card-tags *, .spell-card-list .spell-card .card .card-tags:before {
   display: inline-flex;
   align-items: center;
   height: 20.8px;
@@ -48,98 +72,96 @@
   padding-right: 7.8px;
   border-radius: 10.4px;
   background-color: rgba(224, 224, 224, 0.5);
-}
-.spell-card-list .spell-card .spell .spell-tags div span {
   font-size: 9.1px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.9);
 }
-.spell-card-list .spell-card .spell .name {
+.spell-card-list .spell-card .card .name {
   grid-area: name;
   font-size: 32px;
   font-weight: 500;
   margin-top: 0.2em;
   letter-spacing: 0.5px;
 }
-.spell-card-list .spell-card .spell .level {
+.spell-card-list .spell-card .card .level {
   grid-area: level;
   width: 64px;
   height: 64px;
   display: grid;
   place-content: center;
 }
-.spell-card-list .spell-card .spell .level:before {
+.spell-card-list .spell-card .card .level:before {
   content: "";
   position: absolute;
   width: 64px;
   height: 64px;
   opacity: 0.75;
 }
-.spell-card-list .spell-card .spell .level:after {
+.spell-card-list .spell-card .card .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
 }
-.spell-card-list .spell-card .spell .level-0:after {
+.spell-card-list .spell-card .card .level-0:after {
   content: "";
   background-image: url("../icons/clean.png");
   background-size: cover;
   width: 32px;
   height: 32px;
 }
-.spell-card-list .spell-card .spell .level-1:before {
+.spell-card-list .spell-card .card .level-1:before {
   background-image: url("../icons/level outline 1.svg");
 }
-.spell-card-list .spell-card .spell .level-1:after {
+.spell-card-list .spell-card .card .level-1:after {
   content: "1";
 }
-.spell-card-list .spell-card .spell .level-2:before {
+.spell-card-list .spell-card .card .level-2:before {
   background-image: url("../icons/level outline 1.svg");
 }
-.spell-card-list .spell-card .spell .level-2:after {
+.spell-card-list .spell-card .card .level-2:after {
   content: "2";
 }
-.spell-card-list .spell-card .spell .level-3:before {
+.spell-card-list .spell-card .card .level-3:before {
   background-image: url("../icons/level outline 2.svg");
 }
-.spell-card-list .spell-card .spell .level-3:after {
+.spell-card-list .spell-card .card .level-3:after {
   content: "3";
 }
-.spell-card-list .spell-card .spell .level-4:before {
+.spell-card-list .spell-card .card .level-4:before {
   background-image: url("../icons/level outline 2.svg");
 }
-.spell-card-list .spell-card .spell .level-4:after {
+.spell-card-list .spell-card .card .level-4:after {
   content: "4";
 }
-.spell-card-list .spell-card .spell .level-5:before {
+.spell-card-list .spell-card .card .level-5:before {
   background-image: url("../icons/level outline 3.svg");
 }
-.spell-card-list .spell-card .spell .level-5:after {
+.spell-card-list .spell-card .card .level-5:after {
   content: "5";
 }
-.spell-card-list .spell-card .spell .level-6:before {
+.spell-card-list .spell-card .card .level-6:before {
   background-image: url("../icons/level outline 3.svg");
 }
-.spell-card-list .spell-card .spell .level-6:after {
+.spell-card-list .spell-card .card .level-6:after {
   content: "6";
 }
-.spell-card-list .spell-card .spell .level-7:before {
+.spell-card-list .spell-card .card .level-7:before {
   background-image: url("../icons/level outline 3.svg");
 }
-.spell-card-list .spell-card .spell .level-7:after {
+.spell-card-list .spell-card .card .level-7:after {
   content: "7";
 }
-.spell-card-list .spell-card .spell .level-8:before {
+.spell-card-list .spell-card .card .level-8:before {
   background-image: url("../icons/level outline 4.svg");
 }
-.spell-card-list .spell-card .spell .level-8:after {
+.spell-card-list .spell-card .card .level-8:after {
   content: "8";
 }
-.spell-card-list .spell-card .spell .level-9:before {
+.spell-card-list .spell-card .card .level-9:before {
   background-image: url("../icons/level outline 4.svg");
 }
-.spell-card-list .spell-card .spell .level-9:after {
+.spell-card-list .spell-card .card .level-9:after {
   content: "9";
 }
 .spell-card-list .spell-card .casting {
@@ -150,7 +172,7 @@
   display: flex;
   gap: 6.4px;
 }
-.spell-card-list .spell-card .casting .casting-tags div {
+.spell-card-list .spell-card .casting .casting-tags *, .spell-card-list .spell-card .casting .casting-tags:before {
   display: inline-flex;
   align-items: center;
   height: 25.6px;
@@ -159,8 +181,6 @@
   border-radius: 12.8px;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.3);
-}
-.spell-card-list .spell-card .casting .casting-tags div span {
   font-size: 11.2px;
   font-weight: 400;
   line-height: 1.5;
@@ -183,7 +203,7 @@
   display: flex;
   gap: 6.4px;
 }
-.spell-card-list .spell-card .effects .effect-tags div {
+.spell-card-list .spell-card .effects .effect-tags *, .spell-card-list .spell-card .effects .effect-tags:before {
   display: inline-flex;
   align-items: center;
   height: 25.6px;
@@ -191,8 +211,6 @@
   padding-right: 9.6px;
   border-radius: 12.8px;
   background-color: rgb(224, 224, 224);
-}
-.spell-card-list .spell-card .effects .effect-tags div span {
   font-size: 11.2px;
   font-weight: 400;
   line-height: 1.5;
@@ -211,10 +229,72 @@
   transition-property: height, margin-bottom;
   transition-timing-function: ease;
 }
+.spell-card-list .spell-card .expansion .card-description {
+  text-align: justify;
+  text-justify: inter-character;
+  font-size: 14px;
+}
 .spell-card-list .spell-card .expansion .at-higher-levels {
   font-weight: 600;
   font-variation-settings: "slnt" -8;
   letter-spacing: 0.2px;
+}
+.spell-card-list .spell-card .expansion .buttons {
+  display: flex;
+  gap: 16px;
+}
+.spell-card-list .spell-card .expansion .buttons .favorite-button {
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid #79747E;
+  display: grid;
+  place-content: center;
+}
+.spell-card-list .spell-card .expansion .buttons .favorite-button:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.spell-card-list .spell-card .expansion .buttons .favorite-button:active {
+  background-color: rgba(73, 69, 79, 0.12);
+}
+.spell-card-list .spell-card .expansion .buttons .favorite-button:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brightness(100%) contrast(92%);
+  background-image: url("../icons/favorite star outline.svg");
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: stretch;
+  border: 1px solid #79747E;
+  border-radius: 20px;
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button .button-segment {
+  border: none;
+  border-left: 1px solid #79747E;
+  background: transparent;
+  padding: 0 8px;
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button .button-segment:nth-child(1) {
+  border: none;
+  padding-left: 12px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button .button-segment:last-child {
+  padding-right: 12px;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button .button-segment:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.spell-card-list .spell-card .expansion .buttons .segmented-button .button-segment:active {
+  background-color: rgba(73, 69, 79, 0.12);
 }
 
 @font-face {

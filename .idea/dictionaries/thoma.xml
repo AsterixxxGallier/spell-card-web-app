@@ -2,6 +2,8 @@
   <dictionary name="thoma">
     <words>
       <w>cantrips</w>
+      <w>castability</w>
+      <w>thaumaturgy</w>
     </words>
   </dictionary>
 </component>

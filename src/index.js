@@ -33,7 +33,25 @@ function toggleCardSelection(card) {
 
 // endregion
 
+function arrayObject() {
+    return new Proxy({}, {
+        get: function (object, property) {
+            return object.hasOwnProperty(property) ? object[property] : (object[property] = []);
+        }
+    });
+}
+
 let allSpellCards
+
+// TODO store these in a mutable json
+let mode = 'all'
+let chosenCantrips = new Set(['Toll the Dead', 'Sacred Flame', 'Thaumaturgy'])
+let knownSpells = new Set(['Bless', 'Cure Wounds'])
+let preparedSpells = new Set(['Guiding Bolt', 'Inflict Wounds', 'Healing Word'])
+let favoriteCards = new Set(['Flee', 'Guiding Bolt', 'Healing Word', 'Warding Bond', 'Spiritual Weapon'])
+
+let cardsBySpellName = arrayObject()
+let cardsByCardName = arrayObject()
 
 fetch("../data/effects.json").then(response => response.json()).then(json => {
     console.log(json)
@@ -46,17 +64,87 @@ fetch("../data/effects.json").then(response => response.json()).then(json => {
     loadAll()
 });
 
-function schoolTag(spell) {
+function spellNameOf(card) {
+    return card['spell name' in card ? 'spell name' : 'name'];
+}
+
+function isCastable(card) {
+    let spellName = spellNameOf(card)
+    return chosenCantrips.has(spellName) || knownSpells.has(spellName) || preparedSpells.has(spellName)
+}
+
+function toggleChosen(card) {
+    const spellName = spellNameOf(card)
+    if (chosenCantrips.has(spellName)) {
+        chosenCantrips.delete(spellName)
+        if (mode === 'castable')
+            cardsBySpellName[spellName].forEach(card => card.remove())
+        else
+            cardsBySpellName[spellName].forEach(card => card.classList.remove('chosen'))
+    } else {
+        chosenCantrips.add(spellName)
+        cardsBySpellName[spellName].forEach(card => card.classList.add('chosen'))
+    }
+}
+
+function toggleKnown(card) {
+    const spellName = spellNameOf(card)
+    if (knownSpells.has(spellName)) {
+        knownSpells.delete(spellName)
+        if (mode === 'castable')
+            cardsBySpellName[spellName].forEach(card => card.remove())
+        else
+            cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
+    } else {
+        if (preparedSpells.has(spellName)) {
+            preparedSpells.delete(spellName)
+            cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
+        }
+        knownSpells.add(spellName)
+        cardsBySpellName[spellName].forEach(card => card.classList.add('known'))
+    }
+}
+
+function togglePrepared(card) {
+    const spellName = spellNameOf(card)
+    if (preparedSpells.has(spellName)) {
+        preparedSpells.delete(spellName)
+        if (mode === 'castable')
+            cardsBySpellName[spellName].forEach(card => card.remove())
+        else
+            cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
+    } else {
+        if (knownSpells.has(spellName)) {
+            knownSpells.delete(spellName)
+            cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
+        }
+        preparedSpells.add(spellName)
+        cardsBySpellName[spellName].forEach(card => card.classList.add('prepared'))
+    }
+}
+
+function toggleFavorite(card) {
+    const cardName = card['name']
+    if (favoriteCards.has(cardName)) {
+        favoriteCards.delete(cardName)
+        cardsByCardName[cardName].classList.remove('favorite')
+    } else {
+        favoriteCards.add(cardName)
+        cardsByCardName[cardName].classList.add('favorite')
+    }
+}
+
+function tag(text) {
     const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode(spell['school']))
-    element.appendChild(span)
+    element.appendChild(document.createTextNode(text))
     return element
 }
 
-function sourceTag(spell) {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
+function schoolTag(card) {
+    return tag(card['school']);
+}
+
+function sourceTag(card) {
     const abbreviations = {
         "Critical Role (Twitter)": 'CR',
         "Player's Handbook": 'PHB',
@@ -65,152 +153,114 @@ function sourceTag(spell) {
         "Acquisitions Inc.": 'AI',
         "Tasha's Cauldron of Everything": 'TCoE'
     }
-    span.appendChild(document.createTextNode(abbreviations[spell['source']]))
-    element.appendChild(span)
-    return element
+    return tag(abbreviations[card['source']])
 }
 
-function originalNameTag(spell) {
+function spellNameTag(card) {
+    return tag(card['spell name'])
+}
+
+function cardTags(card) {
     const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode(spell['original name']))
-    element.appendChild(span)
+    element.classList.add('card-tags')
+    element.appendChild(schoolTag(card))
+    if (card['source'] !== "Player's Handbook")
+        element.appendChild(sourceTag(card))
+    if ('spell name' in card)
+        element.appendChild(spellNameTag(card))
     return element
 }
 
-function spellTags(spell) {
-    const element = document.createElement('div')
-    element.classList.add('spell-tags')
-    element.appendChild(schoolTag(spell))
-    if (spell['source'] !== "Player's Handbook")
-        element.appendChild(sourceTag(spell))
-    if ('original name' in spell)
-        element.appendChild(originalNameTag(spell))
-    return element
-}
-
-function name(spell) {
+function name(card) {
     const element = document.createElement('div')
     element.classList.add('name')
-    element.appendChild(document.createTextNode(spell['name']))
+    element.appendChild(document.createTextNode(card['name']))
     return element
 }
 
-function level(spell) {
+function level(card) {
     const element = document.createElement('div')
     element.classList.add('level')
-    element.classList.add('level-' + spell['level'])
+    element.classList.add('level-' + card['level'])
     return element
 }
 
-function castingTimeTag(spell) {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode(spell['casting time']))
-    element.appendChild(span)
-    return element
+function castingTimeTag(card) {
+    return tag(card['casting time'])
 }
 
 function ritualTag() {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode('Ritual'))
-    element.appendChild(span)
-    return element
+    return tag('Ritual')
 }
 
 function verbalTag() {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode('V'))
-    element.appendChild(span)
-    return element
+    return tag('V')
 }
 
 function somaticTag() {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode('S'))
-    element.appendChild(span)
-    return element
+    return tag('S')
 }
 
 function materialTag() {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode('M'))
-    element.appendChild(span)
-    return element
+    return tag('M')
 }
 
-function spellSection(spell) {
+function cardSection(card) {
     const element = document.createElement('section')
-    element.classList.add('spell')
-    element.appendChild(spellTags(spell))
-    element.appendChild(name(spell))
-    element.appendChild(level(spell))
+    element.classList.add('card')
+    element.appendChild(cardTags(card))
+    element.appendChild(name(card))
+    element.appendChild(level(card))
     return element
 }
 
-function castingTags(spell) {
+function castingTags(card) {
     const element = document.createElement('div')
     element.classList.add('casting-tags')
-    if (spell['casting time'] !== '1 action')
-        element.appendChild(castingTimeTag(spell))
-    if (spell['ritual'])
+    if (card['casting time'] !== '1 action')
+        element.appendChild(castingTimeTag(card))
+    if (card['ritual'])
         element.appendChild(ritualTag())
-    if (spell['verbal'])
+    if (card['verbal'])
         element.appendChild(verbalTag())
-    if (spell['somatic'])
+    if (card['somatic'])
         element.appendChild(somaticTag())
-    if (spell['material'])
+    if (card['material'])
         element.appendChild(materialTag())
     return element
 }
 
-function requiredMaterial(spell) {
+function requiredMaterial(card) {
     const element = document.createElement('div')
     element.classList.add('required-material')
     const requiredMaterial = document.createElement('span')
     requiredMaterial.classList.add('material')
     requiredMaterial.appendChild(document.createTextNode('Material: '))
     element.appendChild(requiredMaterial)
-    element.appendChild(document.createTextNode(spell['required material']))
+    element.appendChild(document.createTextNode(card['required material']))
     return element
 }
 
-function casting(spell) {
+function castingSection(card) {
     const element = document.createElement('section')
     element.classList.add('casting')
-    element.appendChild(castingTags(spell))
-    if ('required material' in spell) {
-        element.appendChild(requiredMaterial(spell))
+    element.appendChild(castingTags(card))
+    if ('required material' in card) {
+        element.appendChild(requiredMaterial(card))
     }
     return element
 }
 
-function rangeTag(spell) {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode(spell['range']))
-    element.appendChild(span)
-    return element
+function rangeTag(effect) {
+    return tag(effect['range'])
 }
 
-function durationTag(spell) {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode(spell['duration']))
-    element.appendChild(span)
-    return element
+function durationTag(effect) {
+    return tag(effect['duration'])
 }
 
-function concentrationTag(spell) {
-    const element = document.createElement('div')
-    const span = document.createElement('span')
-    span.appendChild(document.createTextNode('Concentration'))
-    element.appendChild(span)
-    return element
+function concentrationTag() {
+    return tag('Concentration')
 }
 
 function effectTags(effect) {
@@ -222,7 +272,7 @@ function effectTags(effect) {
     if (effect['duration'] !== 'Instantaneous')
         element.appendChild(durationTag(effect))
     if (effect['concentration'])
-        element.appendChild(concentrationTag(effect))
+        element.appendChild(concentrationTag())
     // TODO
     // if ('area of effect' in effect)
     //     element.appendChild(areaOfEffectTag(effect))
@@ -241,64 +291,148 @@ function effect(effect) {
     element.appendChild(effectTags(effect))
     element.appendChild(effectDescription(effect))
     return element
-
 }
 
-function effects(spell) {
+function effectsSection(card) {
     const element = document.createElement('section')
     element.classList.add('effects')
-    spell['effects'].forEach(data => {
+    card['effects'].forEach(data => {
         element.appendChild(effect(data))
     })
     return element
 }
 
-function expansion(spell) {
+function cardDescriptionSection(card) {
+    const element = document.createElement('section')
+    element.classList.add('card-description')
+    element.innerHTML = card['description'].replace(/\n/g, '<br>')
+    if ('at higher levels' in card) {
+        const atHigherLevels = document.createElement('span')
+        atHigherLevels.classList.add('at-higher-levels')
+        atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
+        element.appendChild(document.createElement('br'))
+        element.appendChild(document.createElement('br'))
+        element.appendChild(atHigherLevels)
+        element.appendChild(document.createTextNode(card['at higher levels']))
+    }
+    if ('at higher spell slot levels' in card) {
+        const atHigherLevels = document.createElement('span')
+        element.appendChild(document.createElement('br'))
+        element.appendChild(document.createElement('br'))
+        atHigherLevels.classList.add('at-higher-levels')
+        atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
+        element.appendChild(atHigherLevels)
+        element.appendChild(document.createTextNode(card['at higher spell slot levels']))
+    }
+    return element;
+}
+
+function chosenSegment(card) {
+    const element = document.createElement('button')
+    element.classList.add('button-segment', 'chosen-segment')
+    element.appendChild(document.createTextNode('Chosen'))
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        toggleChosen(card)
+    }
+    return element
+}
+
+function knownSegment(card) {
+    const element = document.createElement('button')
+    element.classList.add('button-segment', 'known-segment')
+    element.appendChild(document.createTextNode('Known'))
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        toggleKnown(card)
+    }
+    return element
+}
+
+function preparedSegment(card) {
+    const element = document.createElement('button')
+    element.classList.add('button-segment', 'prepared-segment')
+    element.appendChild(document.createTextNode('Prepared'))
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        togglePrepared(card)
+    }
+    return element
+}
+
+function castabilityButton(card) {
+    const element = document.createElement('div')
+    element.classList.add('segmented-button')
+    if (card['level'] === '0')
+        element.appendChild(chosenSegment(card))
+    else {
+        element.appendChild(knownSegment(card))
+        element.appendChild(preparedSegment(card))
+    }
+    return element
+}
+
+function favoriteButton(card) {
+    const element = document.createElement('button')
+    element.classList.add('button', 'favorite-button')
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        toggleFavorite(card)
+    }
+    return element
+}
+
+function buttonsSection(card) {
+    const element = document.createElement('section')
+    element.classList.add('buttons')
+    element.appendChild(favoriteButton(card))
+    element.appendChild(castabilityButton(card))
+    return element
+}
+
+function expansion(card, toggleFavorite) {
     const element = document.createElement('div')
     element.classList.add('expansion')
     const wrapper = document.createElement('div')
     wrapper.classList.add('height-measuring-wrapper')
-    const description = document.createElement('section')
-    description.classList.add('spell-description')
-    description.innerHTML = spell['description'].replace(/\n/g, '<br>')
-    if ('at higher levels' in spell) {
-        const atHigherLevels = document.createElement('span')
-        atHigherLevels.classList.add('at-higher-levels')
-        atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
-        description.appendChild(document.createElement('br'))
-        description.appendChild(document.createElement('br'))
-        description.appendChild(atHigherLevels)
-        description.appendChild(document.createTextNode(spell['at higher levels']))
-    }
-    if ('at higher spell slot levels' in spell) {
-        const atHigherLevels = document.createElement('span')
-        description.appendChild(document.createElement('br'))
-        description.appendChild(document.createElement('br'))
-        atHigherLevels.classList.add('at-higher-levels')
-        atHigherLevels.appendChild(document.createTextNode('At higher levels: '))
-        description.appendChild(atHigherLevels)
-        description.appendChild(document.createTextNode(spell['at higher spell slot levels']))
-    }
     wrapper.appendChild(document.createElement('hr'))
-    wrapper.appendChild(description)
+    wrapper.appendChild(cardDescriptionSection(card))
+    wrapper.appendChild(document.createElement('hr'))
+    wrapper.appendChild(buttonsSection(card, toggleFavorite))
     element.appendChild(wrapper)
     return element
 }
 
-function card(spell) {
+function card(card) {
     const element = document.createElement('div')
     element.classList.add('spell-card')
+
+    const cardName = card['name'];
+    const spellName = spellNameOf(card);
+
+    cardsBySpellName[spellName].push(element)
+    cardsByCardName[cardName] = element
+
+    if (chosenCantrips.has(spellName))
+        element.classList.add('chosen')
+    if (knownSpells.has(spellName))
+        element.classList.add('known')
+    if (preparedSpells.has(spellName))
+        element.classList.add('prepared')
+    if (favoriteCards.has(cardName))
+        element.classList.add('favorite')
+
     element.onclick = () => toggleCardSelection(element)
-    element.appendChild(spellSection(spell))
-    if ('required material' in spell) {
+    element.appendChild(cardSection(card))
+    if ('required material' in card) {
         let hr = document.createElement('hr')
         hr.classList.add('light')
         element.appendChild(hr)
     }
-    element.appendChild(casting(spell))
+    element.appendChild(castingSection(card))
     element.appendChild(document.createElement('hr'))
-    element.appendChild(effects(spell))
-    element.appendChild(expansion(spell))
+    element.appendChild(effectsSection(card))
+    element.appendChild(expansion(card, () => toggleFavorite(card, element)))
     return element
 }
 
@@ -309,7 +443,7 @@ function load(cards) {
             scaffold.remove();
         }
     } else {
-        for (let i = cards.length; i < scaffolds.length; i++) {
+        for (let i = scaffolds.length; i < cards.length; i++) {
             cardList.appendChild(scaffold())
         }
     }
@@ -336,14 +470,14 @@ function showAll() {
     loadAll()
 }
 
-function loadPrepared() {
-    load(allSpellCards.slice(5, 15))
+function loadCastable() {
+    load(allSpellCards.filter(isCastable))
 }
 
-function showPrepared() {
+function showCastable() {
     cardList.innerHTML = ''
     showScaffold(10)
-    loadPrepared()
+    loadCastable()
 }
 
 function scaffold() {
@@ -360,24 +494,23 @@ function showScaffold(cards) {
 
 showScaffold(150)
 
-const preparedButton = document.getElementById('prepared')
+const castableButton = document.getElementById('castable')
 const allButton = document.getElementById('all')
-let preparedOnly = false
 
 function switchToAll() {
-    if (preparedOnly) {
-        preparedButton.classList.remove('bottom-nav__destination--active')
+    if (mode === 'castable') {
+        castableButton.classList.remove('bottom-nav__destination--active')
         allButton.classList.add('bottom-nav__destination--active')
         showAll()
-        preparedOnly = false
+        mode = 'all'
     }
 }
 
-function switchToPrepared() {
-    if (!preparedOnly) {
+function switchToCastable() {
+    if (mode === 'all') {
         allButton.classList.remove('bottom-nav__destination--active')
-        preparedButton.classList.add('bottom-nav__destination--active')
-        showPrepared()
-        preparedOnly = true
+        castableButton.classList.add('bottom-nav__destination--active')
+        showCastable()
+        mode = 'castable'
     }
 }

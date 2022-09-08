@@ -152,7 +152,7 @@
       ]
     },
     {
-      "original name": "Thaumaturgy",
+      "spell name": "Thaumaturgy",
       "name": "Booming Voice",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "original name":  "Thaumaturgy",
+      "spell name":  "Thaumaturgy",
       "name": "Manipulate Flames",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -192,7 +192,7 @@
       ]
     },
     {
-      "original name":  "Thaumaturgy",
+      "spell name":  "Thaumaturgy",
       "name": "Harmless Tremors",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "original name":  "Thaumaturgy",
+      "spell name":  "Thaumaturgy",
       "name": "Create Sound",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "original name":  "Thaumaturgy",
+      "spell name":  "Thaumaturgy",
       "name": "Blast of Air",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -252,7 +252,7 @@
       ]
     },
     {
-      "original name":  "Thaumaturgy",
+      "spell name":  "Thaumaturgy",
       "name": "Manipulate Eyes",
       "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
       "source": "Player's Handbook",
@@ -357,7 +357,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Atonement",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nAtonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.",
       "source": "Xanathar's Guide to Everything",
@@ -378,7 +378,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Bless Water",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nBless Water. You touch one vial of water and cause it to become holy water.",
       "source": "Xanathar's Guide to Everything",
@@ -399,7 +399,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Coming of Age",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
       "source": "Xanathar's Guide to Everything",
@@ -420,7 +420,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Dedication",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
       "source": "Xanathar's Guide to Everything",
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Funeral Rite",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
       "source": "Xanathar's Guide to Everything",
@@ -462,7 +462,7 @@
       ]
     },
     {
-      "original name":  "Ceremony",
+      "spell name":  "Ceremony",
       "name": "Wedding",
       "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
       "source": "Xanathar's Guide to Everything",
@@ -503,7 +503,7 @@
       ]
     },
     {
-      "original name":  "Command",
+      "spell name":  "Command",
       "name": "Approach",
       "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nApproach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -524,7 +524,7 @@
       ]
     },
     {
-      "original name":  "Command",
+      "spell name":  "Command",
       "name": "Drop",
       "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nDrop. The target drops whatever it is holding and then ends its turn.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -545,7 +545,7 @@
       ]
     },
     {
-      "original name":  "Command",
+      "spell name":  "Command",
       "name": "Flee",
       "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nFlee. The target spends its turn moving away from you by the fastest available means.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -566,7 +566,7 @@
       ]
     },
     {
-      "original name":  "Command",
+      "spell name":  "Command",
       "name": "Grovel",
       "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nGrovel. The target falls prone and then ends its turn.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -587,7 +587,7 @@
       ]
     },
     {
-      "original name":  "Command",
+      "spell name":  "Command",
       "name": "Halt",
       "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nHalt. The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -608,7 +608,7 @@
       ]
     },
     {
-      "original name":  "Create or Destroy Water",
+      "spell name":  "Create or Destroy Water",
       "name": "Create Water",
       "description": "You create up to 10 gallons of clean water within range in an open container.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you create 10 additional gallons of water, for each slot level above 1st.",
@@ -630,7 +630,7 @@
       ]
     },
     {
-      "original name":  "Create or Destroy Water",
+      "spell name":  "Create or Destroy Water",
       "name": "Create Rain",
       "description": "You create water that falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
@@ -656,7 +656,7 @@
       ]
     },
     {
-      "original name":  "Create or Destroy Water",
+      "spell name":  "Create or Destroy Water",
       "name": "Destroy Water",
       "description": "You destroy up to 10 gallons of water in an open container within range.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you destroy 10 additional gallons of water, for each slot level above 1st.",
@@ -678,7 +678,7 @@
       ]
     },
     {
-      "original name":  "Create or Destroy Water",
+      "spell name":  "Create or Destroy Water",
       "name": "Destroy Fog",
       "description": "You destroy fog in a 30-foot cube within range.",
       "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
