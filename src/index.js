@@ -482,6 +482,12 @@ function card(card) {
     return element
 }
 
+function spellGroup() {
+    const element = document.createElement('div')
+    element.classList.add('spell-group')
+    return element
+}
+
 function load(cards) {
     let scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
     if (scaffolds.length > cards.length) {
@@ -494,14 +500,22 @@ function load(cards) {
         }
     }
     scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
+    let group = null
     for (let i = 0; i < cards.length; i++) {
         const spellCard = cards[i];
         const scaffold = scaffolds[i];
+        if (group === null && 'spell name' in spellCard) {
+            group = scaffold.insertAdjacentElement('beforebegin', spellGroup())
+        } else if (group !== null && !('spell name' in spellCard)) {
+            group = null
+        }
+        if (group !== null) {
+            // noinspection JSUnresolvedFunction
+            group.appendChild(scaffold)
+        }
         setTimeout(() => {
-            if (scaffold) {
-                scaffold.insertAdjacentElement('beforebegin', card(spellCard))
-                scaffold.remove()
-            }
+            scaffold.insertAdjacentElement('beforebegin', card(spellCard))
+            scaffold.remove()
         }, i % 15)
     }
 }
