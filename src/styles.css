@@ -231,7 +231,6 @@
 }
 .spell-card-list .spell-card .expansion .card-description {
   text-align: justify;
-  text-justify: inter-character;
   font-size: 14px;
 }
 .spell-card-list .spell-card .expansion .at-higher-levels {
