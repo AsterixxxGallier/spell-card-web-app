@@ -71,6 +71,13 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
   &:active
     background-color: change_color(#49454F, $alpha: 0.12)
 
+@function elevation-shadow-1($color: black, $opacity: 1.0)
+  @return 0 2px 1px -1px change_color($color, $alpha: 0.20 * $opacity), 0 1px 1px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 3px 0 change_color($color, $alpha: 0.12 * $opacity)
+
+@function elevation-shadow-2($color: black, $opacity: 1.0)
+  // 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)
+  @return 0 3px 1px -2px change_color($color, $alpha: 0.20 * $opacity), 0 2px 2px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 5px 0 change_color($color, $alpha: 0.12 * $opacity)
+
 body
   height: 100vh
   margin: 0
@@ -92,13 +99,13 @@ body
     box-sizing: content-box
     padding: 10px
     border-radius: 8px
-    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 20%), 0 1px 1px 0 rgba(0, 0, 0, 14%), 0 1px 3px 0 rgba(0, 0, 0, 12%)
+    box-shadow: elevation-shadow-1()
     background-color: rgba(0, 0, 0, 4%)
 
   .spell-card
     &, &-scaffold
       border-radius: 4px
-      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 20%), 0 1px 1px 0 rgba(0, 0, 0, 14%), 0 1px 3px 0 rgba(0, 0, 0, 12%)
+      box-shadow: elevation-shadow-2()
       padding: 16px
       flex-shrink: 0
       overflow: hidden
@@ -110,21 +117,7 @@ body
       box-sizing: border-box
 
     &.favorite
-      // alternative: highlight name with background: alpha($secondary, 50%), border-radius: .5em, padding: 0 0.25em
-      // 2.5 times more alpha because $secondary is much lighter than black
-      //box-shadow: 0 2px 1px -1px change_color($secondary, $alpha: 0.50), 0 1px 1px 0 change_color($secondary, $alpha: 0.35), 0 1px 3px 0 change_color($secondary, $alpha: 0.30)
-      box-shadow: 0 2px 1px -1px change_color($secondary, $alpha: 0.40), 0 1px 1px 0 change_color($secondary, $alpha: 0.28), 0 1px 3px 0 change_color($secondary, $alpha: 0.24), 0 0 2em inset change_color($secondary, $alpha: 0.20)
-      //background-color: change_color($secondary, $alpha: 0.25)
-
-      //.name:after
-        content: ''
-        display: inline-block
-        margin-left: .5em
-        width: 1em
-        height: 1em
-        background-image: url('../icons/favorite star filled.svg')
-        background-size: contain
-        filter: $secondary-filter
+      box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
 
       .favorite-button
         background-color: change_color(#49454F, $alpha: 0.08) !important
