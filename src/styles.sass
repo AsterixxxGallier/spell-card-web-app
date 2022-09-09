@@ -113,8 +113,11 @@ body
         background-size: contain
         filter: $secondary-filter
 
-      .favorite-button:before
-        background-image: url("../icons/favorite star filled.svg") !important
+      .favorite-button
+        background-color: change_color(#49454F, $alpha: 0.08) !important
+
+        &:before
+          background-image: url("../icons/favorite star filled.svg") !important
 
     &.chosen
       .card-tags:before

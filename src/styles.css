@@ -40,6 +40,9 @@ body {
 .spell-card-list .spell-card.favorite {
   box-shadow: 0 2px 1px -1px rgba(244, 161, 54, 0.4), 0 1px 1px 0 rgba(244, 161, 54, 0.28), 0 1px 3px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2);
 }
+.spell-card-list .spell-card.favorite .favorite-button {
+  background-color: rgba(73, 69, 79, 0.08) !important;
+}
 .spell-card-list .spell-card.favorite .favorite-button:before {
   background-image: url("../icons/favorite star filled.svg") !important;
 }
