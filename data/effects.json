@@ -2659,7 +2659,7 @@
           "range": "90 ft",
           "duration": "1 h",
           "concentration": true,
-          "description": "The target is occupied by a celestial of challenge rating (4+S) or lower."
+          "description": "The target is occupied by a celestial of challenge rating (4+S/2) or lower."
         }
       ]
     },
