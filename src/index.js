@@ -43,26 +43,74 @@ function arrayObject() {
 
 let allSpellCards
 
-// TODO store these in a mutable json
-let mode = 'all'
-let chosenCantrips = new Set(['Toll the Dead', 'Sacred Flame', 'Thaumaturgy'])
-let knownSpells = new Set(['Bless', 'Cure Wounds'])
-let preparedSpells = new Set(['Guiding Bolt', 'Inflict Wounds', 'Healing Word'])
-let favoriteCards = new Set(['Flee', 'Guiding Bolt', 'Healing Word', 'Warding Bond', 'Spiritual Weapon'])
-
-let cardsBySpellName = arrayObject()
-let cardsByCardName = arrayObject()
-
 fetch("../data/effects.json").then(response => response.json()).then(json => {
-    console.log(json)
     allSpellCards = Object
         .entries(json)
         .flatMap(([level, spells]) => spells.map(spell => ({
             ...spell,
             'level': level
         })))
-    loadAll()
+    if (currentMode() === 'castable')
+        showCastable()
+    else if (currentMode() === 'all')
+        showAll()
 });
+
+function currentMode() {
+    let mode = localStorage.getItem('mode')
+    if (mode === null) {
+        mode = 'all'
+        setMode(mode)
+    }
+    return mode
+}
+
+function setMode(mode) {
+    localStorage.setItem('mode', mode)
+}
+
+function markChosen(spellName) {
+    localStorage.setItem(spellName + ' castability', 'chosen')
+}
+
+function markKnown(spellName) {
+    localStorage.setItem(spellName + ' castability', 'known')
+}
+
+function markPrepared(spellName) {
+    localStorage.setItem(spellName + ' castability', 'prepared')
+}
+
+function unmarkCastable(spellName) {
+    localStorage.removeItem(spellName + ' castability')
+}
+
+function markFavorite(cardName) {
+    localStorage.setItem(cardName + ' favorite', 'true')
+}
+
+function unmarkFavorite(cardName) {
+    localStorage.removeItem(cardName + ' favorite')
+}
+
+function isChosen(spellName) {
+    return localStorage.getItem(spellName + ' castability') === 'chosen'
+}
+
+function isKnown(spellName) {
+    return localStorage.getItem(spellName + ' castability') === 'known'
+}
+
+function isPrepared(spellName) {
+    return localStorage.getItem(spellName + ' castability') === 'prepared'
+}
+
+function isFavorite(cardName) {
+    return localStorage.getItem(cardName + ' favorite') === 'true'
+}
+
+let cardsBySpellName = arrayObject()
+let cardsByCardName = arrayObject()
 
 function spellNameOf(card) {
     return card['spell name' in card ? 'spell name' : 'name'];
@@ -70,66 +118,64 @@ function spellNameOf(card) {
 
 function isCastable(card) {
     let spellName = spellNameOf(card)
-    return chosenCantrips.has(spellName) || knownSpells.has(spellName) || preparedSpells.has(spellName)
+    return isChosen(spellName) || isKnown(spellName) || isPrepared(spellName)
 }
 
 function toggleChosen(card) {
     const spellName = spellNameOf(card)
-    if (chosenCantrips.has(spellName)) {
-        chosenCantrips.delete(spellName)
-        if (mode === 'castable')
+    if (isChosen(spellName)) {
+        unmarkCastable(spellName)
+        if (currentMode() === 'castable')
             cardsBySpellName[spellName].forEach(card => card.remove())
         else
             cardsBySpellName[spellName].forEach(card => card.classList.remove('chosen'))
     } else {
-        chosenCantrips.add(spellName)
+        markChosen(spellName)
         cardsBySpellName[spellName].forEach(card => card.classList.add('chosen'))
     }
 }
 
 function toggleKnown(card) {
     const spellName = spellNameOf(card)
-    if (knownSpells.has(spellName)) {
-        knownSpells.delete(spellName)
-        if (mode === 'castable')
+    if (isKnown(spellName)) {
+        unmarkCastable(spellName)
+        if (currentMode() === 'castable')
             cardsBySpellName[spellName].forEach(card => card.remove())
         else
             cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
     } else {
-        if (preparedSpells.has(spellName)) {
-            preparedSpells.delete(spellName)
+        if (isPrepared(spellName)) {
             cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
         }
-        knownSpells.add(spellName)
+        markKnown(spellName)
         cardsBySpellName[spellName].forEach(card => card.classList.add('known'))
     }
 }
 
 function togglePrepared(card) {
     const spellName = spellNameOf(card)
-    if (preparedSpells.has(spellName)) {
-        preparedSpells.delete(spellName)
-        if (mode === 'castable')
+    if (isPrepared(spellName)) {
+        unmarkCastable(spellName)
+        if (currentMode() === 'castable')
             cardsBySpellName[spellName].forEach(card => card.remove())
         else
             cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
     } else {
-        if (knownSpells.has(spellName)) {
-            knownSpells.delete(spellName)
+        if (isKnown(spellName)) {
             cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
         }
-        preparedSpells.add(spellName)
+        markPrepared(spellName)
         cardsBySpellName[spellName].forEach(card => card.classList.add('prepared'))
     }
 }
 
 function toggleFavorite(card) {
     const cardName = card['name']
-    if (favoriteCards.has(cardName)) {
-        favoriteCards.delete(cardName)
+    if (isFavorite(cardName)) {
+        unmarkFavorite(cardName)
         cardsByCardName[cardName].classList.remove('favorite')
     } else {
-        favoriteCards.add(cardName)
+        markFavorite(cardName)
         cardsByCardName[cardName].classList.add('favorite')
     }
 }
@@ -413,13 +459,13 @@ function card(card) {
     cardsBySpellName[spellName].push(element)
     cardsByCardName[cardName] = element
 
-    if (chosenCantrips.has(spellName))
+    if (isChosen(spellName))
         element.classList.add('chosen')
-    if (knownSpells.has(spellName))
+    if (isKnown(spellName))
         element.classList.add('known')
-    if (preparedSpells.has(spellName))
+    if (isPrepared(spellName))
         element.classList.add('prepared')
-    if (favoriteCards.has(cardName))
+    if (isFavorite(cardName))
         element.classList.add('favorite')
 
     element.onclick = () => toggleCardSelection(element)
@@ -492,25 +538,28 @@ function showScaffold(cards) {
     }
 }
 
-showScaffold(150)
-
 const castableButton = document.getElementById('castable')
 const allButton = document.getElementById('all')
 
 function switchToAll() {
-    if (mode === 'castable') {
+    if (currentMode() === 'castable') {
         castableButton.classList.remove('bottom-nav__destination--active')
         allButton.classList.add('bottom-nav__destination--active')
         showAll()
-        mode = 'all'
+        setMode('all')
     }
 }
 
 function switchToCastable() {
-    if (mode === 'all') {
+    if (currentMode() === 'all') {
         allButton.classList.remove('bottom-nav__destination--active')
         castableButton.classList.add('bottom-nav__destination--active')
         showCastable()
-        mode = 'castable'
+        setMode('castable')
     }
 }
+
+if (currentMode() === 'all')
+    allButton.classList.add('bottom-nav__destination--active')
+else if (currentMode() === 'castable')
+    castableButton.classList.add('bottom-nav__destination--active')
