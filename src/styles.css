@@ -22,7 +22,7 @@ body {
 
 .spell-card-list {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
