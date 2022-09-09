@@ -245,6 +245,7 @@
 }
 .spell-card-list .spell-card .expansion .buttons .favorite-button {
   box-sizing: border-box;
+  min-width: 40px;
   height: 40px;
   border-radius: 20px;
   background-color: transparent;
