@@ -501,14 +501,16 @@ function load(cards) {
     }
     scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
     let group = null
+    let lastSpellName = undefined
     for (let i = 0; i < cards.length; i++) {
         const spellCard = cards[i];
         const scaffold = scaffolds[i];
-        if (group === null && 'spell name' in spellCard) {
-            group = scaffold.insertAdjacentElement('beforebegin', spellGroup())
-        } else if (group !== null && !('spell name' in spellCard)) {
+        if (!('spell name' in spellCard)) {
             group = null
+        } else if (lastSpellName !== spellCard['spell name']) {
+            group = scaffold.insertAdjacentElement('beforebegin', spellGroup())
         }
+        lastSpellName = spellCard['spell name']
         if (group !== null) {
             // noinspection JSUnresolvedFunction
             group.appendChild(scaffold)
