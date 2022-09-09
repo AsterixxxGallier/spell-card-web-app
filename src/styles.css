@@ -33,6 +33,7 @@ body {
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   padding: 16px;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .spell-card-list .spell-card-scaffold {
   height: 233px;
@@ -246,14 +247,14 @@ body {
 .spell-card-list .spell-card .effects .effect-description {
   margin-top: 0.5em;
 }
+.spell-card-list .spell-card.selected .expansion {
+  margin-bottom: 0;
+}
 .spell-card-list .spell-card .expansion {
   height: 0;
-  overflow: hidden;
-  transition-property: height;
+  margin-bottom: -1em;
+  transition-property: height, margin-bottom;
   transition-timing-function: ease;
-}
-.spell-card-list .spell-card .expansion .height-measuring-wrapper {
-  padding-bottom: 17px;
 }
 .spell-card-list .spell-card .expansion .card-description {
   text-align: justify;

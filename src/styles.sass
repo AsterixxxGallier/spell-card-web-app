@@ -91,6 +91,7 @@ body
       box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 20%), 0 1px 1px 0 rgba(0, 0, 0, 14%), 0 1px 3px 0 rgba(0, 0, 0, 12%)
       padding: 16px
       flex-shrink: 0
+      overflow: hidden
 
     &-scaffold
       // works for my phone, approximate value (desktop: 210)
@@ -287,14 +288,16 @@ body
       .effect-description
         margin-top: .5em
 
+
+    &.selected
+      .expansion
+        margin-bottom: 0
+
     .expansion
       height: 0
-      overflow: hidden
-      transition-property: height
+      margin-bottom: -1em
+      transition-property: height, margin-bottom
       transition-timing-function: ease
-
-      .height-measuring-wrapper
-        padding-bottom: 17px
 
       .card-description
         text-align: justify
