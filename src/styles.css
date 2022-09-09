@@ -1,11 +1,31 @@
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+* {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .spell-card-list {
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 16px;
-}
-.spell-card-list .spell-card {
-  overflow: hidden;
 }
 .spell-card-list .spell-card, .spell-card-list .spell-card-scaffold {
   border-radius: 4px;
@@ -86,6 +106,7 @@
   letter-spacing: 0.5px;
 }
 .spell-card-list .spell-card .card .level {
+  position: relative;
   grid-area: level;
   width: 64px;
   height: 64px;
@@ -220,14 +241,14 @@
 .spell-card-list .spell-card .effects .effect-description {
   margin-top: 0.5em;
 }
-.spell-card-list .spell-card.selected .expansion {
-  margin-bottom: 0;
-}
 .spell-card-list .spell-card .expansion {
   height: 0;
-  margin-bottom: -1em;
-  transition-property: height, margin-bottom;
+  overflow: hidden;
+  transition-property: height;
   transition-timing-function: ease;
+}
+.spell-card-list .spell-card .expansion .height-measuring-wrapper {
+  padding-bottom: 17px;
 }
 .spell-card-list .spell-card .expansion .card-description {
   text-align: justify;
@@ -297,30 +318,10 @@
   background-color: rgba(73, 69, 79, 0.12);
 }
 
-@font-face {
-  font-family: "Roboto Flex";
-  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations");
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
-}
-@font-face {
-  font-family: "Abril Fatface";
-  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-body {
-  margin: 0 0 53px;
-}
-
-* {
-  font-family: "Roboto Flex", sans-serif;
-}
-
 .bottom-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;

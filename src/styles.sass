@@ -5,6 +5,20 @@ $secondary: #f4a136
 // these filters change black to $secondary
 $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brightness(100%) contrast(92%)
 
+@font-face
+  font-family: "Roboto Flex"
+  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations")
+  font-weight: 100 1000
+  font-stretch: 25% 151%
+
+@font-face
+  font-family: "Abril Fatface"
+  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype")
+  font-weight: 400
+
+*
+  font-family: "Roboto Flex", sans-serif
+
 @mixin chips($scale: 1.0, $weight: 400, $background-alpha: 1.0, $color-alpha: 1.0, $letter-spacing: 0.25px, $outline: false)
   display: flex
   gap: 8px * $scale
@@ -57,7 +71,14 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
   &:active
     background-color: change_color(#49454F, $alpha: 0.12)
 
+body
+  height: 100vh
+  margin: 0
+  display: flex
+  flex-direction: column
+
 .spell-card-list
+  overflow: scroll
   display: flex
   flex-direction: column
   gap: 16px
@@ -115,8 +136,6 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
       .prepared-segment
         background: change_color(#49454F, $alpha: 0.08) !important
 
-    overflow: hidden
-
     hr
       margin-block-start: 1em
       margin-block-end: 1em
@@ -149,6 +168,7 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
         letter-spacing: 0.5px
 
       .level
+        position: relative
         grid-area: level
         width: 64px
         height: 64px
@@ -262,15 +282,14 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
       .effect-description
         margin-top: .5em
 
-    &.selected
-      .expansion
-        margin-bottom: 0
-
     .expansion
       height: 0
-      margin-bottom: -1em
-      transition-property: height, margin-bottom
+      overflow: hidden
+      transition-property: height
       transition-timing-function: ease
+
+      .height-measuring-wrapper
+        padding-bottom: 17px
 
       .card-description
         text-align: justify
@@ -328,30 +347,12 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
             &:active
               background-color: change_color(#49454F, $alpha: 0.12)
 
-@font-face
-  font-family: "Roboto Flex"
-  src: url("../fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype-variations")
-  font-weight: 100 1000
-  font-stretch: 25% 151%
-
-@font-face
-  font-family: "Abril Fatface"
-  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype")
-  font-weight: 400
-
-body
-  // bottom nav height
-  margin: 0 0 53px
-
-*
-  font-family: "Roboto Flex", sans-serif
 
 .bottom-nav
   display: flex
   align-items: center
   justify-content: center
 
-  position: fixed
   bottom: 0
   left: 0
   right: 0
