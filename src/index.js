@@ -1,3 +1,5 @@
+// TODO implement card drag-and-dropping
+
 const cardList = document.querySelector('.spell-card-list');
 
 // region card selection
