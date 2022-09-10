@@ -152,122 +152,111 @@
       ]
     },
     {
-      "spell name": "Thaumaturgy",
-      "name": "Booming Voice",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+      "name": "Thaumaturgy",
       "source": "Player's Handbook",
       "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+      "options": [
         {
-          "range": "Self",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "Your voice booms up to three times as loud as normal."
-        }
-      ]
-    },
-    {
-      "spell name": "Thaumaturgy",
-      "name": "Manipulate Flames",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Booming Voice",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYour voice booms up to three times as loud as normal for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Self",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "Your voice booms up to three times as loud as normal."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "You cause flames to flicker, brighten, dim, or change color."
-        }
-      ]
-    },
-    {
-      "spell name": "Thaumaturgy",
-      "name": "Harmless Tremors",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Manipulate Flames",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause flames to flicker, brighten, dim, or change color for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "You cause flames to flicker, brighten, dim, or change color."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "You cause harmless tremors in the ground."
-        }
-      ]
-    },
-    {
-      "spell name": "Thaumaturgy",
-      "name": "Create Sound",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Harmless Tremors",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou cause harmless tremors in the ground for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "You cause harmless tremors in the ground."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You create an instantaneous sound."
-        }
-      ]
-    },
-    {
-      "spell name": "Thaumaturgy",
-      "name": "Blast of Air",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Create Sound",
+          "school": "Transmutation",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You create an instantaneous sound."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You cause an unlocked door or window to fly open or slam shut."
-        }
-      ]
-    },
-    {
-      "spell name": "Thaumaturgy",
-      "name": "Manipulate Eyes",
-      "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Blast of Air",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You cause an unlocked door or window to fly open or slam shut."
+            }
+          ]
+        },
         {
-          "range": "Self",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "You alter the appearance of your eyes."
+          "name": "Manipulate Eyes",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range.\n\nYou alter the appearance of your eyes for 1 minute.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Self",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "You alter the appearance of your eyes."
+            }
+          ]
         }
       ]
     },
@@ -357,350 +346,323 @@
       ]
     },
     {
-      "spell name": "Ceremony",
-      "name": "Atonement",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting.\n\nAtonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.",
+      "name": "Ceremony",
       "source": "Xanathar's Guide to Everything",
       "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
+      "options": [
         {
-          "range": "Touch",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You restore a creature whose alignment has changed to its original alignment."
+          "name": "Atonement",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nAtonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You restore a creature whose alignment has changed to its original alignment."
+            }
+          ]
+        },
+        {
+          "name": "Bless Water",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nBless Water. You touch one vial of water and cause it to become holy water.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You cause a vial of water to become holy water."
+            }
+          ]
+        },
+        {
+          "name": "Coming of Age",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "24 h",
+              "concentration": false,
+              "description": "A humanoid who is a young adult can add a d4 to ability checks."
+            }
+          ]
+        },
+        {
+          "name": "Dedication",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "24 h",
+              "concentration": false,
+              "description": "A humanoid who wishes to be dedicated to your god's service can add a d4 to saving throws."
+            }
+          ]
+        },
+        {
+          "name": "Funeral Rite",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "7 d",
+              "concentration": false,
+              "description": "You prevent a corpse from becoming undead."
+            }
+          ]
+        },
+        {
+          "name": "Wedding",
+          "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "25 gp worth of powdered silver, which the spell consumes",
+          "casting time": "1 h",
+          "ritual": true,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "7 d",
+              "concentration": false,
+              "description": "Any number of adult humanoids gain a +2 bonus to AC while within 30 feet of each other."
+            }
+          ]
         }
       ]
     },
     {
-      "spell name": "Ceremony",
-      "name": "Bless Water",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nBless Water. You touch one vial of water and cause it to become holy water.",
-      "source": "Xanathar's Guide to Everything",
-      "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You cause a vial of water to become holy water."
-        }
-      ]
-    },
-    {
-      "spell name": "Ceremony",
-      "name": "Coming of Age",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nComing of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
-      "source": "Xanathar's Guide to Everything",
-      "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "24 h",
-          "concentration": false,
-          "description": "A humanoid who is a young adult can add a d4 to ability checks."
-        }
-      ]
-    },
-    {
-      "spell name": "Ceremony",
-      "name": "Dedication",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nDedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
-      "source": "Xanathar's Guide to Everything",
-      "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "24 h",
-          "concentration": false,
-          "description": "A humanoid who wishes to be dedicated to your god's service can add a d4 to saving throws."
-        }
-      ]
-    },
-    {
-      "spell name": "Ceremony",
-      "name": "Funeral Rite",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nFuneral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a Wish spell.",
-      "source": "Xanathar's Guide to Everything",
-      "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "7 d",
-          "concentration": false,
-          "description": "You prevent a corpse from becoming undead."
-        }
-      ]
-    },
-    {
-      "spell name": "Ceremony",
-      "name": "Wedding",
-      "description": "You perform a religious ceremony, the target of which must be within 10 feet of you throughout the casting:\n\nWedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
-      "source": "Xanathar's Guide to Everything",
-      "school": "Evocation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "25 gp worth of powdered silver, which the spell consumes",
-      "casting time": "1 h",
-      "ritual": true,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "7 d",
-          "concentration": false,
-          "description": "Any number of adult humanoids gain a +2 bonus to AC while within 30 feet of each other."
-        }
-      ]
-    },
-    {
-      "spell name": "Command",
       "name": "Command",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nThe DM determines how the target behaves. If the target can't follow your command, the spell ends.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
       "source": "Player's Handbook",
       "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+      "options": [
         {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other follow a one-word command on their next turn."
+          "name": "Command",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nThe DM determines how the target behaves. If the target can't follow your command, the spell ends.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other follow a one-word command on their next turn."
+            }
+          ]
+        },
+        {
+          "name": "Approach",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nApproach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other move toward you by the shortest route on their next turn."
+            }
+          ]
+        },
+        {
+          "name": "Drop",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nDrop. The target drops whatever it is holding and then ends its turn.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other drop whatever they are holding on their next turn."
+            }
+          ]
+        },
+        {
+          "name": "Flee",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nFlee. The target spends its turn moving away from you by the fastest available means.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other move away from you by the fastest available means on their next turn."
+            }
+          ]
+        },
+        {
+          "name": "Grovel",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nGrovel. The target falls prone and then ends its turn.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other fall prone on their next turn."
+            }
+          ]
+        },
+        {
+          "name": "Halt",
+          "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nHalt. The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 round",
+              "concentration": false,
+              "description": "1+S creatures that are within 30 feet of each other do not move and take no actions on their next turn."
+            }
+          ]
         }
       ]
     },
     {
-      "spell name": "Command",
-      "name": "Approach",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nApproach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other move toward you by the shortest route on their next turn."
-        }
-      ]
-    },
-    {
-      "spell name": "Command",
-      "name": "Drop",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nDrop. The target drops whatever it is holding and then ends its turn.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other drop whatever they are holding on their next turn."
-        }
-      ]
-    },
-    {
-      "spell name": "Command",
-      "name": "Flee",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nFlee. The target spends its turn moving away from you by the fastest available means.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other move away from you by the fastest available means on their next turn."
-        }
-      ]
-    },
-    {
-      "spell name": "Command",
-      "name": "Grovel",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nGrovel. The target falls prone and then ends its turn.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other fall prone on their next turn."
-        }
-      ]
-    },
-    {
-      "spell name": "Command",
-      "name": "Halt",
-      "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.\n\nIf the target can't follow your command, the spell ends.\n\nHalt. The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "60 ft",
-          "duration": "1 round",
-          "concentration": false,
-          "description": "1+S creatures that are within 30 feet of each other do not move and take no actions on their next turn."
-        }
-      ]
-    },
-    {
-      "spell name": "Create or Destroy Water",
-      "name": "Create Water",
-      "description": "You create up to 10 gallons of clean water within range in an open container.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you create 10 additional gallons of water, for each slot level above 1st.",
+      "name": "Create or Destroy Water",
       "source": "Player's Handbook",
       "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "a drop of water",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+      "options": [
         {
-          "range": "30 ft",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You create up to 10+10*S gallons of clean water in an open container."
-        }
-      ]
-    },
-    {
-      "spell name": "Create or Destroy Water",
-      "name": "Create Rain",
-      "description": "You create water that falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "a drop of water",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Create Water",
+          "description": "You create up to 10 gallons of clean water within range in an open container.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you create 10 additional gallons of water, for each slot level above 1st.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a drop of water",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You create up to 10+10*S gallons of clean water in an open container."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "area of effect": {
-            "shape": "cube",
-            "side length": "30+5*S ft"
-          },
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You create rain."
-        }
-      ]
-    },
-    {
-      "spell name": "Create or Destroy Water",
-      "name": "Destroy Water",
-      "description": "You destroy up to 10 gallons of water in an open container within range.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you destroy 10 additional gallons of water, for each slot level above 1st.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "a few grains of sand",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Create Rain",
+          "description": "You create water that falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a drop of water",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "area of effect": {
+                "shape": "cube",
+                "side length": "30+5*S ft"
+              },
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You create rain."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You destroy up to 10+10*S gallons of water in an open container."
-        }
-      ]
-    },
-    {
-      "spell name": "Create or Destroy Water",
-      "name": "Destroy Fog",
-      "description": "You destroy fog in a 30-foot cube within range.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "a few grains of sand",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Destroy Water",
+          "description": "You destroy up to 10 gallons of water in an open container within range.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, you destroy 10 additional gallons of water, for each slot level above 1st.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a few grains of sand",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You destroy up to 10+10*S gallons of water in an open container."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "area of effect": {
-            "shape": "cube",
-            "side length": "30+5*S ft"
-          },
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "You destroy fog."
+          "name": "Destroy Fog",
+          "description": "You destroy fog in a 30-foot cube within range.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 2nd level or higher, the size of the cube increases by 5 feet, for each slot level above 1st.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a few grains of sand",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "area of effect": {
+                "shape": "cube",
+                "side length": "30+5*S ft"
+              },
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You destroy fog."
+            }
+          ]
         }
       ]
     },
@@ -987,44 +949,45 @@
       ]
     },
     {
-      "spell name": "Blindness/Deafness",
-      "name": "Blindness",
-      "description": "You can blind a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is blinded for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+      "name": "Blindness/Deafness",
       "source": "Player's Handbook",
       "school": "Necromancy",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+      "options": [
         {
-          "range": "30 ft",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "1+S creatures are blinded."
-        }
-      ]
-    },
-    {
-      "spell name": "Blindness/Deafness",
-      "name": "Deafness",
-      "description": "You can deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is deafened for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Necromancy",
-      "verbal": true,
-      "somatic": false,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Blindness",
+          "description": "You can blind a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is blinded for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "1+S creatures are blinded."
+            }
+          ]
+        },
         {
-          "range": "30 ft",
-          "duration": "1 min",
-          "concentration": false,
-          "description": "1+S creatures are deafened."
+          "name": "Deafness",
+          "description": "You can deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is deafened for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": false,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "30 ft",
+              "duration": "1 min",
+              "concentration": false,
+              "description": "1+S creatures are deafened."
+            }
+          ]
         }
       ]
     },
@@ -1049,43 +1012,44 @@
       ]
     },
     {
-      "spell name": "Calm Emotions",
-      "name": "Embolden",
-      "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, it is affected by the following effect:\n\nYou suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime.",
+      "name": "Calm Emotions",
       "source": "Player's Handbook",
       "school": "Enchantment",
-      "verbal": true,
-      "somatic": true,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "target": "Each humanoid in a 20-foot-radius sphere centered on a point you choose within range",
-      "effects": [
+      "options": [
         {
-          "range": "60 ft",
-          "duration": "1 min",
-          "concentration": true,
-          "description": "You suppress any effect causing humanoids to be charmed or frightened."
-        }
-      ]
-    },
-    {
-      "spell name": "Calm Emotions",
-      "name": "Calm Hostility",
-      "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, it is affected by the following effect:\n\nYou make a target indifferent about creatures of your choice that it is hostile toward. This indifference ends if the target is attacked or harmed by a spell or if it witnesses any of its friends being harmed. When the spell ends, the creature becomes hostile again, unless the DM rules otherwise.",
-      "source": "Player's Handbook",
-      "school": "Enchantment",
-      "verbal": true,
-      "somatic": true,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Embolden",
+          "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, it is affected by the following effect:\n\nYou suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "target": "Each humanoid in a 20-foot-radius sphere centered on a point you choose within range",
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 min",
+              "concentration": true,
+              "description": "You suppress any effect causing humanoids to be charmed or frightened."
+            }
+          ]
+        },
         {
-          "range": "60 ft",
-          "duration": "1 min",
-          "concentration": true,
-          "description": "You make humanoids indifferent to creatures they are hostile toward."
+          "name": "Calm Hostility",
+          "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, it is affected by the following effect:\n\nYou make a target indifferent about creatures of your choice that it is hostile toward. This indifference ends if the target is attacked or harmed by a spell or if it witnesses any of its friends being harmed. When the spell ends, the creature becomes hostile again, unless the DM rules otherwise.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "60 ft",
+              "duration": "1 min",
+              "concentration": true,
+              "description": "You make humanoids indifferent to creatures they are hostile toward."
+            }
+          ]
         }
       ]
     },
@@ -1110,152 +1074,141 @@
       ]
     },
     {
-      "spell name": "Enhance Ability",
-      "name": "Bear's Endurance",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nBear's Endurance. The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+      "name": "Enhance Ability",
       "source": "Player's Handbook",
       "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+      "options": [
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Constitution checks."
+          "name": "Bear's Endurance",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nBear's Endurance. The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.",
+          "school": "Transmutation",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Constitution checks."
+            },
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "They also gain 2d6 temporary hit points."
+            }
+          ]
         },
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "They also gain 2d6 temporary hit points."
-        }
-      ]
-    },
-    {
-      "spell name": "Enhance Ability",
-      "name": "Bull's Strength",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nBull's Strength. The target has advantage on Strength checks, and his or her carrying capacity doubles.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Strength checks."
+          "name": "Bull's Strength",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nBull's Strength. The target has advantage on Strength checks, and his or her carrying capacity doubles.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Strength checks."
+            },
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "Their carrying capacities also double."
+            }
+          ]
         },
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "Their carrying capacities also double."
-        }
-      ]
-    },
-    {
-      "spell name": "Enhance Ability",
-      "name": "Cat's Grace",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nCat's Grace. The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Dexterity checks."
+          "name": "Cat's Grace",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nCat's Grace. The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated.",
+          "school": "Transmutation",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Dexterity checks."
+            },
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "They also don't take damage from falling 20 feet or less if they aren't incapacitated."
+            }
+          ]
         },
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "They also don't take damage from falling 20 feet or less if they aren't incapacitated."
-        }
-      ]
-    },
-    {
-      "spell name": "Enhance Ability",
-      "name": "Eagle's Splendor",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nEagle's Splendor. The target has advantage on Charisma checks.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Eagle's Splendor",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nEagle's Splendor. The target has advantage on Charisma checks.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Charisma checks."
+            }
+          ]
+        },
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Charisma checks."
-        }
-      ]
-    },
-    {
-      "spell name": "Enhance Ability",
-      "name": "Fox's Cunning",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nFox's Cunning. The target has advantage on Intelligence checks.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
+          "name": "Fox's Cunning",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nFox's Cunning. The target has advantage on Intelligence checks.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Intelligence checks."
+            }
+          ]
+        },
         {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Intelligence checks."
-        }
-      ]
-    },
-    {
-      "spell name": "Enhance Ability",
-      "name": "Owl's Wisdom",
-      "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nOwl's Wisdom. The target has advantage on Wisdom checks.",
-      "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-      "source": "Player's Handbook",
-      "school": "Transmutation",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "fur or a feather from a beast",
-      "casting time": "1 action",
-      "ritual": false,
-      "effects": [
-        {
-          "range": "Touch",
-          "duration": "1 h",
-          "concentration": true,
-          "description": "1+S creatures have advantage on Wisdom checks."
+          "name": "Owl's Wisdom",
+          "description": "You touch a creature and bestow upon it a magical enhancement. The target gains the following effect until the spell ends:\n\nOwl's Wisdom. The target has advantage on Wisdom checks.",
+          "at higher spell slot levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "fur or a feather from a beast",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "1 h",
+              "concentration": true,
+              "description": "1+S creatures have advantage on Wisdom checks."
+            }
+          ]
         }
       ]
     },
