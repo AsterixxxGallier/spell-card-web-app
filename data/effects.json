@@ -209,7 +209,7 @@
         },
         {
           "name": "Create Sound",
-          "school": "Transmutation",
+          "description": "You manifest a minor wonder, a sign of supernatural power, within range:\n\nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
           "verbal": true,
           "somatic": false,
           "material": false,
