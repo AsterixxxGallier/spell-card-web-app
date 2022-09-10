@@ -33,14 +33,6 @@ function toggleCardSelection(card) {
 
 // endregion
 
-function arrayObject() {
-    return new Proxy({}, {
-        get: function (object, property) {
-            return object.hasOwnProperty(property) ? object[property] : (object[property] = []);
-        }
-    });
-}
-
 let allSpellCards
 
 console.timeStamp("starting fetching")
@@ -91,6 +83,14 @@ function unmarkCastable(spellName) {
     localStorage.removeItem(spellName + ' castability')
 }
 
+function markFavoriteSpell(spellName) {
+    localStorage.setItem(spellName + ' favorite spell', 'true')
+}
+
+function unmarkFavoriteSpell(spellName) {
+    localStorage.removeItem(spellName + ' favorite spell')
+}
+
 function markFavorite(cardName) {
     localStorage.setItem(cardName + ' favorite', 'true')
 }
@@ -111,15 +111,19 @@ function isPrepared(spellName) {
     return localStorage.getItem(spellName + ' castability') === 'prepared'
 }
 
+function isFavoriteSpell(spellName) {
+    return localStorage.getItem(spellName + ' favorite spell') === 'true'
+}
+
 function isFavorite(cardName) {
     return localStorage.getItem(cardName + ' favorite') === 'true'
 }
 
-let cardsBySpellName = arrayObject()
-let cardsByCardName = arrayObject()
+let cardsBySpellName = {}
+let cardsByCardName = {}
 
 function spellNameOf(card) {
-    return card['spell name' in card ? 'spell name' : 'name'];
+    return card['name'];
 }
 
 function isCastable(card) {
@@ -132,12 +136,12 @@ function toggleChosen(card) {
     if (isChosen(spellName)) {
         unmarkCastable(spellName)
         if (currentMode() === 'castable')
-            cardsBySpellName[spellName].forEach(card => card.remove())
+            cardsBySpellName[spellName].remove()
         else
-            cardsBySpellName[spellName].forEach(card => card.classList.remove('chosen'))
+            cardsBySpellName[spellName].classList.remove('chosen')
     } else {
         markChosen(spellName)
-        cardsBySpellName[spellName].forEach(card => card.classList.add('chosen'))
+        cardsBySpellName[spellName].classList.add('chosen')
     }
 }
 
@@ -146,15 +150,15 @@ function toggleKnown(card) {
     if (isKnown(spellName)) {
         unmarkCastable(spellName)
         if (currentMode() === 'castable')
-            cardsBySpellName[spellName].forEach(card => card.remove())
+            cardsBySpellName[spellName].remove()
         else
-            cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
+            cardsBySpellName[spellName].classList.remove('known')
     } else {
         if (isPrepared(spellName)) {
-            cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
+            cardsBySpellName[spellName].classList.remove('prepared')
         }
         markKnown(spellName)
-        cardsBySpellName[spellName].forEach(card => card.classList.add('known'))
+        cardsBySpellName[spellName].classList.add('known')
     }
 }
 
@@ -163,15 +167,26 @@ function togglePrepared(card) {
     if (isPrepared(spellName)) {
         unmarkCastable(spellName)
         if (currentMode() === 'castable')
-            cardsBySpellName[spellName].forEach(card => card.remove())
+            cardsBySpellName[spellName].remove()
         else
-            cardsBySpellName[spellName].forEach(card => card.classList.remove('prepared'))
+            cardsBySpellName[spellName].classList.remove('prepared')
     } else {
         if (isKnown(spellName)) {
-            cardsBySpellName[spellName].forEach(card => card.classList.remove('known'))
+            cardsBySpellName[spellName].classList.remove('known')
         }
         markPrepared(spellName)
-        cardsBySpellName[spellName].forEach(card => card.classList.add('prepared'))
+        cardsBySpellName[spellName].classList.add('prepared')
+    }
+}
+
+function toggleFavoriteSpell(card) {
+    const cardName = card['name']
+    if (isFavoriteSpell(cardName)) {
+        unmarkFavoriteSpell(cardName)
+        cardsBySpellName[cardName].classList.remove('favorite')
+    } else {
+        markFavoriteSpell(cardName)
+        cardsBySpellName[cardName].classList.add('favorite')
     }
 }
 
@@ -192,6 +207,7 @@ function tag(text) {
     return element
 }
 
+// region card section
 function schoolTag(card) {
     return tag(card['school']);
 }
@@ -208,18 +224,12 @@ function sourceTag(card) {
     return tag(abbreviations[card['source']])
 }
 
-function spellNameTag(card) {
-    return tag(card['spell name'])
-}
-
 function cardTags(card) {
     const element = document.createElement('div')
-    element.classList.add('card-tags')
+    element.classList.add('spell-tags')
     element.appendChild(schoolTag(card))
     if (card['source'] !== "Player's Handbook")
         element.appendChild(sourceTag(card))
-    if ('spell name' in card)
-        element.appendChild(spellNameTag(card))
     return element
 }
 
@@ -237,6 +247,20 @@ function level(card) {
     return element
 }
 
+function cardSection(card, isOption) {
+    const element = document.createElement('section')
+    element.classList.add('card')
+    if (!isOption)
+        element.appendChild(cardTags(card))
+    element.appendChild(name(card))
+    if (!isOption)
+        element.appendChild(level(card))
+    return element
+}
+
+// endregion
+
+// region casting section
 function castingTimeTag(card) {
     return tag(card['casting time'])
 }
@@ -255,15 +279,6 @@ function somaticTag() {
 
 function materialTag() {
     return tag('M')
-}
-
-function cardSection(card) {
-    const element = document.createElement('section')
-    element.classList.add('card')
-    element.appendChild(cardTags(card))
-    element.appendChild(name(card))
-    element.appendChild(level(card))
-    return element
 }
 
 function castingTags(card) {
@@ -303,6 +318,9 @@ function castingSection(card) {
     return element
 }
 
+// endregion
+
+// region effects section
 function rangeTag(effect) {
     return tag(effect['range'])
 }
@@ -354,6 +372,10 @@ function effectsSection(card) {
     return element
 }
 
+// endregion
+
+// region expansion
+// region card description section
 function cardDescriptionSection(card) {
     const element = document.createElement('section')
     element.classList.add('card-description')
@@ -379,6 +401,9 @@ function cardDescriptionSection(card) {
     return element;
 }
 
+// endregion
+
+// region buttons section
 function chosenSegment(card) {
     const element = document.createElement('button')
     element.classList.add('button-segment', 'chosen-segment')
@@ -434,15 +459,18 @@ function favoriteButton(card) {
     return element
 }
 
-function buttonsSection(card) {
+function buttonsSection(card, isOption) {
     const element = document.createElement('section')
     element.classList.add('buttons')
     element.appendChild(favoriteButton(card))
-    element.appendChild(castabilityButton(card))
+    if (!isOption)
+        element.appendChild(castabilityButton(card))
     return element
 }
 
-function expansion(card, toggleFavorite) {
+// endregion
+
+function expansion(card, isOption) {
     const element = document.createElement('div')
     element.classList.add('expansion')
     const wrapper = document.createElement('div')
@@ -450,32 +478,36 @@ function expansion(card, toggleFavorite) {
     wrapper.appendChild(document.createElement('hr'))
     wrapper.appendChild(cardDescriptionSection(card))
     wrapper.appendChild(document.createElement('hr'))
-    wrapper.appendChild(buttonsSection(card, toggleFavorite))
+    wrapper.appendChild(buttonsSection(card, isOption))
     element.appendChild(wrapper)
     return element
 }
 
-function card(card) {
+// endregion
+
+function card(card, isOption) {
     const element = document.createElement('div')
     element.classList.add('spell-card')
 
-    const cardName = card['name'];
-    const spellName = spellNameOf(card);
-
-    cardsBySpellName[spellName].push(element)
-    cardsByCardName[cardName] = element
-
-    if (isChosen(spellName))
-        element.classList.add('chosen')
-    if (isKnown(spellName))
-        element.classList.add('known')
-    if (isPrepared(spellName))
-        element.classList.add('prepared')
-    if (isFavorite(cardName))
+    const name = card['name'];
+    cardsByCardName[name] = element
+    if (isFavorite(name))
         element.classList.add('favorite')
+    if (!isOption) {
+        cardsBySpellName[name] = element
+        if (isChosen(name))
+            element.classList.add('chosen')
+        if (isKnown(name))
+            element.classList.add('known')
+        if (isPrepared(name))
+            element.classList.add('prepared')
+    }
 
-    element.onclick = () => toggleCardSelection(element)
-    element.appendChild(cardSection(card))
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        toggleCardSelection(element)
+    }
+    element.appendChild(cardSection(card, isOption))
     if ('required material' in card) {
         let hr = document.createElement('hr')
         hr.classList.add('light')
@@ -484,7 +516,7 @@ function card(card) {
     element.appendChild(castingSection(card))
     element.appendChild(document.createElement('hr'))
     element.appendChild(effectsSection(card))
-    element.appendChild(expansion(card, () => toggleFavorite(card, element)))
+    element.appendChild(expansion(card, isOption))
     return element
 }
 
@@ -506,23 +538,12 @@ function load(cards) {
         }
     }
     scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
-    let group = null
-    let lastSpellName = undefined
     for (let i = 0; i < cards.length; i++) {
         const spellCard = cards[i];
         const scaffold = scaffolds[i];
-        if (!('spell name' in spellCard)) {
-            group = null
-        } else if (lastSpellName !== spellCard['spell name']) {
-            group = scaffold.insertAdjacentElement('beforebegin', spellGroup())
-        }
-        lastSpellName = spellCard['spell name']
-        if (group !== null) {
-            // noinspection JSUnresolvedFunction
-            group.appendChild(scaffold)
-        }
         setTimeout(() => {
-            scaffold.insertAdjacentElement('beforebegin', card(spellCard))
+            scaffold.insertAdjacentElement('beforebegin',
+                'options' in spellCard ? group(spellCard) : card(spellCard, false))
             scaffold.remove()
         }, i % 15)
     }

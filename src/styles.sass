@@ -71,6 +71,112 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
   &:active
     background-color: change_color(#49454F, $alpha: 0.12)
 
+@mixin card-spell-section
+  display: grid
+  grid-template-areas: "spell-tags level" "name level"
+  grid-template-columns: 1fr auto
+
+  .spell-tags
+    grid-area: spell-tags
+    margin-bottom: .2em
+    @include chips(0.65, 500, 0.5, 0.9, 0.5px)
+
+  .name
+    grid-area: name
+    font-size: 32px
+    font-weight: 500
+    letter-spacing: 0.5px
+
+  .level
+    position: relative
+    grid-area: level
+    width: 64px
+    height: 64px
+    display: grid
+    place-content: center
+
+    &:before
+      content: ''
+      position: absolute
+      width: 64px
+      height: 64px
+      opacity: .75
+
+    &:after
+      font-family: "Abril Fatface", serif
+      font-size: 32px
+
+    &-0
+      &:after
+        content: ''
+        background-image: url("../icons/clean.png")
+        background-size: cover
+        width: 32px
+        height: 32px
+
+    &-1
+      &:before
+        background-image: url("../icons/level outline 1.svg")
+
+      &:after
+        content: '1'
+
+    &-2
+      &:before
+        background-image: url("../icons/level outline 1.svg")
+
+      &:after
+        content: '2'
+
+    &-3
+      &:before
+        background-image: url("../icons/level outline 2.svg")
+
+      &:after
+        content: '3'
+
+    &-4
+      &:before
+        background-image: url("../icons/level outline 2.svg")
+
+      &:after
+        content: '4'
+
+    &-5
+      &:before
+        background-image: url("../icons/level outline 3.svg")
+
+      &:after
+        content: '5'
+
+    &-6
+      &:before
+        background-image: url("../icons/level outline 3.svg")
+
+      &:after
+        content: '6'
+
+    &-7
+      &:before
+        background-image: url("../icons/level outline 3.svg")
+
+      &:after
+        content: '7'
+
+    &-8
+      &:before
+        background-image: url("../icons/level outline 4.svg")
+
+      &:after
+        content: '8'
+
+    &-9
+      &:before
+        background-image: url("../icons/level outline 4.svg")
+
+      &:after
+        content: '9'
+
 @function elevation-shadow-1($color: black, $opacity: 1.0)
   @return 0 2px 1px -1px change_color($color, $alpha: 0.20 * $opacity), 0 1px 1px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 3px 0 change_color($color, $alpha: 0.12 * $opacity)
 
@@ -84,9 +190,23 @@ body
   display: flex
   flex-direction: column
 
+hr
+  margin-block-start: 1em
+  margin-block-end: 1em
+  border: none
+  height: 1px
+  background: rgba(0, 0, 0, 0.15)
+
+  &.light
+    margin-block-start: 0.8em
+    margin-block-end: 0.8em
+    height: 2px
+    width: 75%
+    background: radial-gradient(rgba(0, 0, 0, 0.1), transparent)
+
 .spell-card-list
   flex-grow: 1
-  overflow: auto
+  overflow: hidden auto
   display: flex
   flex-direction: column
   gap: 16px
@@ -96,209 +216,96 @@ body
     display: flex
     flex-direction: column
     gap: 16px
-    box-sizing: content-box
     padding: 10px
     border-radius: 8px
-    box-shadow: elevation-shadow-1()
+    box-shadow: elevation-shadow-2()
     background-color: rgba(0, 0, 0, 2%)
 
-  .spell-card
-    &, &-scaffold
-      border-radius: 4px
-      box-shadow: elevation-shadow-2()
-      padding: 16px
-      flex-shrink: 0
-      overflow: hidden
-      background-color: white
-
-    &-scaffold
-      // works for my phone, approximate value (desktop: 210)
-      height: 233px
+    .spell
+      @include card-spell-section
       box-sizing: border-box
+      padding: 6px 6px 0
 
-    &.favorite
-      box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
+    > .expansion hr
+      margin-block-start: 0 !important
 
-      .favorite-button
-        background-color: change_color(#49454F, $alpha: 0.08) !important
+    .options
+      display: flex
+      flex-direction: column
+      gap: 16px
 
-        &:before
-          background-image: url("../icons/favorite star filled.svg") !important
+      .spell-card
+        box-shadow: elevation-shadow-1()
 
+        &.favorite
+          box-shadow: elevation-shadow-1($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
+
+  // TODO:
+    //  for spell groups, how much information should be in the group, and how much should be in the cards?
+    //  ambiguous pieces of information:
+    //  - spell name
+    //  - spell level
+    //  - spell castability
+    //  - spell school
+    //  - spell source
+    //  - spell/card casting data (V S M are always the same, but sometimes the required material is different across cards)
+    //  spell name should definitely be displayed in the group in order to avoid chip clutter in the cards, and it's
+    //   also not really necessary to be visible with the cards
+    //  spell level is probably nicer in the cards for compositional (visual) reasons and to always have the power level
+    //   / spell slot needed at a glance with the effects
+    //  spell castability is similar in importance to the spell level, so should stay with in the cards in order to be
+    //   visible at a glance with the effects
+    //  spell school is not very important either way, for visual consistency with other cards it should stay in the cards
+    //  same goes for spell source
+    //  (counter argument: all these chips don't differ from card to card, and should therefore be placed at the start
+    //   of the group in order to reduce redundancy)
+    //  because some casting data (required material) sometimes differs from card to card, all of it should be placed
+    //   in the cards, as it is a group / section that belongs together
+    //  this also impacts where css classes should be placed
+    //.spell-name
+      margin-top: 16px
+      font-size: 32px
+      font-weight: 500
+      letter-spacing: 0.5px
+
+  .spell-card, .spell-group
     &.chosen
-      .card-tags:before
+      .spell-tags:before
         content: 'Chosen'
 
       .chosen-segment
         background: change_color(#49454F, $alpha: 0.08) !important
 
     &.known
-      .card-tags:before
+      .spell-tags:before
         content: 'Known'
 
       .known-segment
         background: change_color(#49454F, $alpha: 0.08) !important
 
     &.prepared
-      .card-tags:before
+      .spell-tags:before
         content: 'Prepared'
 
       .prepared-segment
         background: change_color(#49454F, $alpha: 0.08) !important
 
-    hr
-      margin-block-start: 1em
-      margin-block-end: 1em
-      border: none
-      height: 1px
-      background: rgba(0, 0, 0, 0.15)
-
-      &.light
-        margin-block-start: 0.8em
-        margin-block-end: 0.8em
-        height: 2px
-        width: 75%
-        background: radial-gradient(rgba(0, 0, 0, 0.1), transparent)
-
-    .card
-      display: grid
-      grid-template-areas: "card-tags level" "name level"
-      grid-template-columns: 1fr auto
-
-      .card-tags
-        grid-area: card-tags
-        @include chips(0.65, 500, 0.5, 0.9, 0.5px)
-
-      .name
-        grid-area: name
-        font-size: 32px
-        font-weight: 500
-        //line-height: 1.5
-        margin-top: .2em
-        letter-spacing: 0.5px
-
-      .level
-        position: relative
-        grid-area: level
-        width: 64px
-        height: 64px
-        display: grid
-        place-content: center
-
-        &:before
-          content: ''
-          position: absolute
-          width: 64px
-          height: 64px
-          opacity: .75
-
-        &:after
-          font-family: "Abril Fatface", serif
-          font-size: 32px
-
-        &-0
-          &:after
-            content: ''
-            background-image: url("../icons/clean.png")
-            background-size: cover
-            width: 32px
-            height: 32px
-
-        &-1
-          &:before
-            background-image: url("../icons/level outline 1.svg")
-
-          &:after
-            content: '1'
-
-        &-2
-          &:before
-            background-image: url("../icons/level outline 1.svg")
-
-          &:after
-            content: '2'
-
-        &-3
-          &:before
-            background-image: url("../icons/level outline 2.svg")
-
-          &:after
-            content: '3'
-
-        &-4
-          &:before
-            background-image: url("../icons/level outline 2.svg")
-
-          &:after
-            content: '4'
-
-        &-5
-          &:before
-            background-image: url("../icons/level outline 3.svg")
-
-          &:after
-            content: '5'
-
-        &-6
-          &:before
-            background-image: url("../icons/level outline 3.svg")
-
-          &:after
-            content: '6'
-
-        &-7
-          &:before
-            background-image: url("../icons/level outline 3.svg")
-
-          &:after
-            content: '7'
-
-        &-8
-          &:before
-            background-image: url("../icons/level outline 4.svg")
-
-          &:after
-            content: '8'
-
-        &-9
-          &:before
-            background-image: url("../icons/level outline 4.svg")
-
-          &:after
-            content: '9'
-
-    .casting
-      margin-top: .8em
-      color: rgba(0, 0, 0, 0.85)
-
-      .casting-tags
-        @include chips(0.8, $outline: true)
-
-      .required-material
-        margin-top: .5em
-
-        .material
-          font-weight: 480
-          letter-spacing: .2px
-
-    .effects
-      display: flex
-      flex-direction: column
-      gap: 1em
-
-      .effect-tags
-        @include chips(0.8)
-
-      .effect-description
-        margin-top: .5em
-
-
     &.selected
       .expansion
         margin-bottom: 0
 
+    &.favorite
+      box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
+
+      > .expansion .favorite-button
+        background-color: change_color(#49454F, $alpha: 0.08) !important
+
+        &:before
+          background-image: url("../icons/favorite star filled.svg") !important
+
     .expansion
       height: 0
+      overflow: clip
       margin-bottom: -1em
       transition-property: height, margin-bottom
       transition-timing-function: ease
@@ -359,6 +366,47 @@ body
             &:active
               background-color: change_color(#49454F, $alpha: 0.12)
 
+  .spell-card
+    &, &-scaffold
+      border-radius: 4px
+      box-shadow: elevation-shadow-2()
+      padding: 16px
+      flex-shrink: 0
+      overflow: hidden
+      background-color: white
+
+    &-scaffold
+      // works for my phone, approximate value (desktop: 210)
+      height: 233px
+      box-sizing: border-box
+
+    .card
+      @include card-spell-section
+
+    .casting
+      margin-top: .8em
+      color: rgba(0, 0, 0, 0.85)
+
+      .casting-tags
+        @include chips(0.8, $outline: true)
+
+      .required-material
+        margin-top: .5em
+
+        .material
+          font-weight: 480
+          letter-spacing: .2px
+
+    .effects
+      display: flex
+      flex-direction: column
+      gap: 1em
+
+      .effect-tags
+        @include chips(0.8)
+
+      .effect-description
+        margin-top: .5em
 
 .bottom-nav
   display: flex
