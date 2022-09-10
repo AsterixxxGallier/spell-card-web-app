@@ -459,6 +459,30 @@ hr.light {
   letter-spacing: 0.25px;
   color: rgb(0, 0, 0);
 }
+.spell-card-list .spell-card .effects .effect-tags .icon:before {
+  content: "";
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  margin-left: -3.2px;
+  margin-right: 0.5em;
+  background-size: cover;
+}
+.spell-card-list .spell-card .effects .effect-tags .cone-icon:before {
+  background-image: url("../icons/aoe cone.svg");
+}
+.spell-card-list .spell-card .effects .effect-tags .cube-icon:before {
+  background-image: url("../icons/aoe cube.svg");
+}
+.spell-card-list .spell-card .effects .effect-tags .cylinder-icon:before {
+  background-image: url("../icons/aoe cylinder.svg");
+}
+.spell-card-list .spell-card .effects .effect-tags .line-icon:before {
+  background-image: url("../icons/aoe line.svg");
+}
+.spell-card-list .spell-card .effects .effect-tags .sphere-icon:before {
+  background-image: url("../icons/aoe sphere.svg");
+}
 .spell-card-list .spell-card .effects .effect-description {
   margin-top: 0.5em;
 }

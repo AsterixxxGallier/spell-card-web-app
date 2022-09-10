@@ -204,8 +204,9 @@ function toggleFavorite(card) {
     }
 }
 
-function tag(text) {
+function tag(text, ...classes) {
     const element = document.createElement('div')
+    element.classList.add(...classes)
     element.appendChild(document.createTextNode(text))
     return element
 }
@@ -328,6 +329,41 @@ function rangeTag(effect) {
     return tag(effect['range'])
 }
 
+function coneTag(cone) {
+    return tag(cone['length'], 'icon', 'cone-icon')
+}
+
+function cubeTag(cube) {
+    return tag(cube['side length'], 'icon', 'cube-icon')
+}
+
+function cylinderTag(cylinder) {
+    return tag(`${cylinder['height']} / ${cylinder['radius']}`, 'icon', 'cylinder-icon')
+}
+
+function lineTag(line) {
+    return tag(`${line['length']} / ${line['width']}`, 'icon', 'line-icon')
+}
+
+function sphereTag(sphere) {
+    return tag(sphere['radius'], 'icon', 'sphere-icon')
+}
+
+function areaOfEffectTag(areaOfEffect) {
+    switch (areaOfEffect['shape']) {
+        case 'cone':
+            return coneTag(areaOfEffect)
+        case 'cube':
+            return cubeTag(areaOfEffect)
+        case 'cylinder':
+            return cylinderTag(areaOfEffect)
+        case 'line':
+            return lineTag(areaOfEffect)
+        case 'sphere':
+            return sphereTag(areaOfEffect)
+    }
+}
+
 function durationTag(effect) {
     return tag(effect['duration'])
 }
@@ -342,13 +378,12 @@ function effectTags(effect) {
     if (effect['range'] !== 'Touch' &&
         effect['range'] !== 'Self')
         element.appendChild(rangeTag(effect))
+    if ('area of effect' in effect)
+        element.appendChild(areaOfEffectTag(effect['area of effect']))
     if (effect['duration'] !== 'Instantaneous')
         element.appendChild(durationTag(effect))
     if (effect['concentration'])
         element.appendChild(concentrationTag())
-    // TODO
-    // if ('area of effect' in effect)
-    //     element.appendChild(areaOfEffectTag(effect))
     return element
 }
 

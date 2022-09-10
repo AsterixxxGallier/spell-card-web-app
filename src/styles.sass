@@ -403,7 +403,36 @@ hr
       gap: 1em
 
       .effect-tags
-        @include chips(0.8)
+        $scale: 0.8
+        $padding-left: 12px * $scale
+        $border-radius: 16px * $scale
+        @include chips($scale)
+
+        .icon:before
+          content: ""
+          box-sizing: border-box
+          $size: 16px
+          width: $size
+          height: $size
+          margin-left: $padding-left - $border-radius
+          margin-right: 0.5em
+          //border: 1px solid
+          background-size: cover
+
+        .cone-icon:before
+          background-image: url("../icons/aoe cone.svg")
+
+        .cube-icon:before
+          background-image: url("../icons/aoe cube.svg")
+
+        .cylinder-icon:before
+          background-image: url("../icons/aoe cylinder.svg")
+
+        .line-icon:before
+          background-image: url("../icons/aoe line.svg")
+
+        .sphere-icon:before
+          background-image: url("../icons/aoe sphere.svg")
 
       .effect-description
         margin-top: .5em
