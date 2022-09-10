@@ -1,4 +1,5 @@
 // TODO implement card drag-and-dropping
+// TODO maybe cache scaffolding information?
 
 const cardList = document.querySelector('.spell-card-list');
 
