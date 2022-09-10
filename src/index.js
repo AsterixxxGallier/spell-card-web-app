@@ -43,6 +43,11 @@ function arrayObject() {
 
 let allSpellCards
 
+console.timeStamp("starting fetching")
+if (currentMode() === 'castable')
+    prepareCastable()
+else if (currentMode() === 'all')
+    prepareAll()
 fetch("../data/effects.json").then(response => response.json()).then(json => {
     allSpellCards = Object
         .entries(json)
@@ -50,10 +55,11 @@ fetch("../data/effects.json").then(response => response.json()).then(json => {
             ...spell,
             'level': level
         })))
+    console.timeStamp("done fetching")
     if (currentMode() === 'castable')
-        showCastable()
+        loadCastable()
     else if (currentMode() === 'all')
-        showAll()
+        loadAll()
 });
 
 function currentMode() {
@@ -520,15 +526,20 @@ function load(cards) {
             scaffold.remove()
         }, i % 15)
     }
+    console.timeStamp("done loading")
 }
 
 function loadAll() {
     load(allSpellCards)
 }
 
-function showAll() {
+function prepareAll() {
     cardList.innerHTML = ''
     showScaffold(150)
+}
+
+function showAll() {
+    prepareAll();
     loadAll()
 }
 
@@ -536,9 +547,13 @@ function loadCastable() {
     load(allSpellCards.filter(isCastable))
 }
 
-function showCastable() {
+function prepareCastable() {
     cardList.innerHTML = ''
     showScaffold(10)
+}
+
+function showCastable() {
+    prepareCastable();
     loadCastable()
 }
 
@@ -552,6 +567,7 @@ function showScaffold(cards) {
     for (let i = 0; i < cards; i++) {
         cardList.appendChild(scaffold())
     }
+    console.timeStamp("done scaffolding")
 }
 
 const castableButton = document.getElementById('castable')
