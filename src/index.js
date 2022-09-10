@@ -520,9 +520,67 @@ function card(card, isOption) {
     return element
 }
 
-function spellGroup() {
+function spellSection(group) {
+    const element = document.createElement('section')
+    element.classList.add('spell')
+    element.appendChild(cardTags(group))
+    element.appendChild(name(group))
+    element.appendChild(level(group))
+    return element
+}
+
+function optionsSection(group) {
+    const element = document.createElement('section')
+    element.classList.add('options')
+    group['options'].forEach(option => element.appendChild(card(option, true)))
+    return element
+}
+
+function groupFavoriteButton(card) {
+    const element = document.createElement('button')
+    element.classList.add('button', 'favorite-button')
+    element.onclick = e => {
+        e.stopImmediatePropagation()
+        toggleFavoriteSpell(card)
+    }
+    return element
+}
+
+function groupButtonsSection(card) {
+    const element = document.createElement('section')
+    element.classList.add('buttons')
+    element.appendChild(groupFavoriteButton(card))
+    element.appendChild(castabilityButton(card))
+    return element
+}
+
+function groupExpansion(card) {
+    const element = document.createElement('div')
+    element.classList.add('expansion')
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('height-measuring-wrapper')
+    wrapper.appendChild(document.createElement('hr'))
+    wrapper.appendChild(groupButtonsSection(card))
+    element.appendChild(wrapper)
+    return element
+}
+
+function group(group) {
+    // TODO move spell name, chips and level all to the group, and rethink elevation (spell group 1 or 2, cards 1 or 2?)
     const element = document.createElement('div')
     element.classList.add('spell-group')
+    element.onclick = () => toggleCardSelection(element)
+    const name = group['name'];
+    cardsBySpellName[name] = element
+    if (isChosen(name))
+        element.classList.add('chosen')
+    if (isKnown(name))
+        element.classList.add('known')
+    if (isPrepared(name))
+        element.classList.add('prepared')
+    element.appendChild(spellSection(group))
+    element.appendChild(groupExpansion(group))
+    element.appendChild(optionsSection(group))
     return element
 }
 
