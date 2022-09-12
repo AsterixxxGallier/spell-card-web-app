@@ -207,10 +207,18 @@ hr
 .spell-card-list
   flex-grow: 1
   overflow: hidden auto
-  display: flex
-  flex-direction: column
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr))
+  grid-auto-rows: max-content
+  grid-template-rows: masonry
   gap: 16px
   padding: 16px
+  justify-items: center
+  align-items: start
+
+  > *
+    box-sizing: border-box
+    max-width: 400px
 
   .spell-group
     display: flex
