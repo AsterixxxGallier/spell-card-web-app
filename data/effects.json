@@ -1028,6 +1028,10 @@
           "effects": [
             {
               "range": "60 ft",
+              "area of effect": {
+                "shape": "sphere",
+                "radius": "20 ft"
+              },
               "duration": "1 min",
               "concentration": true,
               "description": "You suppress any effect causing humanoids to be charmed or frightened."
@@ -1045,6 +1049,10 @@
           "effects": [
             {
               "range": "60 ft",
+              "area of effect": {
+                "shape": "sphere",
+                "radius": "20 ft"
+              },
               "duration": "1 min",
               "concentration": true,
               "description": "You make humanoids indifferent to creatures they are hostile toward."
@@ -1263,54 +1271,147 @@
       "required material": "a small, straight piece of iron",
       "casting time": "1 action",
       "ritual": false,
-      "target": "A humanoid that you can see within range",
       "effects": [
         {
           "range": "60 ft",
           "duration": "1 min",
           "concentration": true,
-          "description": "The target is paralyzed."
+          "description": "You paralyze a creature."
         }
       ]
     },
     {
       "name": "Lesser Restoration",
-      "description": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
       "source": "Player's Handbook",
       "school": "Abjuration",
-      "verbal": true,
-      "somatic": true,
-      "material": false,
-      "casting time": "1 action",
-      "ritual": false,
-      "target": "A creature",
-      "effects": [
+      "options": [
         {
-          "range": "Touch",
-          "duration": "Instantaneous",
-          "concentration": false,
-          "description": "The target is healed from one disease or condition."
+          "name": "Cure Disease",
+          "description": "You touch a creature and end one disease afflicting it.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You cure a creature's disease."
+            }
+          ]
+        },
+        {
+          "name": "Restore Eyesight",
+          "description": "You touch a blinded creature and end the condition.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You end a blinded creature's condition."
+            }
+          ]
+        },
+        {
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You end a deafened creature's condition."
+            }
+          ],
+          "name": "Restore Hearing",
+          "description": "You touch a deafened creature and end the condition.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false
+        },
+        {
+          "name": "End Paralysis",
+          "description": "You touch a paralyzed creature and end the condition.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You end a paralyzed creature's condition."
+            }
+          ]
+        },
+        {
+          "name": "Detoxify",
+          "description": "You touch a poisoned creature and end the condition.",
+          "verbal": true,
+          "somatic": true,
+          "material": false,
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "Touch",
+              "duration": "Instantaneous",
+              "concentration": false,
+              "description": "You end a poisoned creature's condition."
+            }
+          ]
         }
       ]
     },
     {
       "name": "Locate Object",
-      "description": "Describe or name an object that is familiar to you. You sense the direction to the object's location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.\n\nThe spell can locate a specific object known to you, as long as you have seen it up close – within 30 feet – at least once. Alternatively, the spell can locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.\n\nThis spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.",
       "source": "Player's Handbook",
       "school": "Divination",
-      "verbal": true,
-      "somatic": true,
-      "material": true,
-      "required material": "a forked twig",
-      "casting time": "1 action",
-      "ritual": false,
-      "target": "Self",
-      "effects": [
+      "options": [
         {
-          "range": "Self",
-          "duration": "10 min",
-          "concentration": true,
-          "description": "The target senses a specific object's location."
+          "name": "Locate Familiar Object",
+          "description": "Describe or name an object that is familiar to you. You sense the direction to the object's location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.\n\nThe spell can locate a specific object known to you, as long as you have seen it up close – within 30 feet – at least once.\n\nThis spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a forked twig",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "1000 ft",
+              "duration": "10 min",
+              "concentration": true,
+              "description": "You sense the direction to and direction of movement of a familiar object."
+            }
+          ]
+        },
+        {
+          "name": "Locate Nearest Object",
+          "description": "You sense the direction to the location of the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.\n\nThis spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.",
+          "verbal": true,
+          "somatic": true,
+          "material": true,
+          "required material": "a forked twig",
+          "casting time": "1 action",
+          "ritual": false,
+          "effects": [
+            {
+              "range": "1000 ft",
+              "duration": "10 min",
+              "concentration": true,
+              "description": "You sense the direction to and direction of movement of the nearest object of a particular kind."
+            }
+          ]
         }
       ]
     },
@@ -1325,13 +1426,12 @@
       "material": false,
       "casting time": "10 min",
       "ritual": false,
-      "target": "Up to six creatures of your choice that you can see within range",
       "effects": [
         {
           "range": "30 ft",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "Each target regains (2+S)d8 + (spellcasting ability modifier) hit points."
+          "description": "Up to six creatures regain (2+S)d8 + (spellcasting ability modifier) hit points."
         }
       ]
     },
@@ -1345,13 +1445,18 @@
       "material": false,
       "casting time": "1 action",
       "ritual": false,
-      "target": "A creature",
       "effects": [
+        {
+          "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You neutralize a poison that afflicts a creature."
+        },
         {
           "range": "Touch",
           "duration": "1 h",
           "concentration": false,
-          "description": "The target is healed from one poison and gains poison resistance."
+          "description": "The creature has advantage on saving throws against being poisoned, and it has resistance to poison damage."
         }
       ]
     },
@@ -1365,13 +1470,16 @@
       "material": false,
       "casting time": "1 action",
       "ritual": true,
-      "target": "20-foot-radius sphere centered on a point you choose within range",
       "effects": [
         {
           "range": "120 ft",
+          "area of effect": {
+            "shape": "sphere",
+            "radius": "20 ft"
+          },
           "duration": "10 min",
           "concentration": true,
-          "description": "The target silences all sounds."
+          "description": "You silence all sounds."
         }
       ]
     },
@@ -1386,13 +1494,18 @@
       "material": false,
       "casting time": "1 bonus action",
       "ritual": false,
-      "target": "See text",
       "effects": [
+        {
+          "range": "60 ft",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You create a spectral weapon that deals (1+S)d8 + (spellcasting ability modifier) force damage to a creature within 5 feet of the weapon."
+        },
         {
           "range": "60 ft",
           "duration": "1 min",
           "concentration": false,
-          "description": "See text"
+          "description": "As a bonus action, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it."
         }
       ]
     },
@@ -1407,13 +1520,18 @@
       "required material": "a pair of platinum rings worth at least 50 gp each, which you and target must wear for the duration",
       "casting time": "1 action",
       "ritual": false,
-      "target": "A willing creature you touch",
       "effects": [
         {
           "range": "Touch",
+          "duration": "Instantaneous",
+          "concentration": false,
+          "description": "You create a warding bond to a creature."
+        },
+        {
+          "range": "60 ft",
           "duration": "1 h",
           "concentration": false,
-          "description": "The target is warded and connected with you."
+          "description": "The creature gains a +1 bonus to AC and saving throws, and resistance to all damage, but each time it takes damage, you take the same amount of damage."
         }
       ]
     },
@@ -1427,13 +1545,16 @@
       "material": false,
       "casting time": "1 action",
       "ritual": false,
-      "target": "A 15-foot-radius sphere centered on a point of your choice within range",
       "effects": [
         {
           "range": "60 ft",
+          "area of effect": {
+            "shape": "sphere",
+            "radius": "15 ft"
+          },
           "duration": "10 min",
           "concentration": false,
-          "description": "The target guards against deception."
+          "description": "Creatures can't speak deliberate lies."
         }
       ]
     }
