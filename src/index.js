@@ -270,7 +270,7 @@ function castingTimeTag(card) {
 }
 
 function ritualTag() {
-    return tag('Ritual')
+    return tag('R')
 }
 
 function verbalTag() {
@@ -369,7 +369,7 @@ function durationTag(effect) {
 }
 
 function concentrationTag() {
-    return tag('Concentration')
+    return tag('C')
 }
 
 function effectTags(effect) {
