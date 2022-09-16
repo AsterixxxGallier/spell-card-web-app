@@ -3106,8 +3106,8 @@
       "effects": [
         {
           "range": "Self (5-mile radius)",
-          "duration": "Concentration, Up to 8 hours",
-          "concentration": false,
+          "duration": "8 hours",
+          "concentration": true,
           "description": "The target is controlled by you."
         }
       ]
