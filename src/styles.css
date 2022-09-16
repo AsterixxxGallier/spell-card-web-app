@@ -64,8 +64,6 @@ hr.light:before {
 }
 .spell-card-list.small {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr));
-  gap: 12px;
-  padding: 12px;
 }
 .spell-card-list > * {
   box-sizing: border-box;
