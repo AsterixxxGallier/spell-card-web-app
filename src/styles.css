@@ -160,6 +160,7 @@ hr.light:before {
 .small .spell-group .spell .level {
   width: 16px;
   height: 16px;
+  margin-left: 4px;
 }
 .spell-group .spell .level:before {
   content: "";
@@ -496,6 +497,7 @@ hr.light:before {
 .small .spell-card .card .level {
   width: 16px;
   height: 16px;
+  margin-left: 4px;
 }
 .spell-card .card .level:before {
   content: "";
