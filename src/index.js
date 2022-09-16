@@ -228,12 +228,20 @@ function sourceTag(card) {
     return tag(abbreviations[card['source']])
 }
 
-function cardTags(card) {
+function levelTag(card) {
+    return tag(card['level'])
+}
+
+function cardTags(card, small) {
     const element = document.createElement('div')
     element.classList.add('spell-tags')
-    element.appendChild(schoolTag(card))
-    if (card['source'] !== "Player's Handbook")
-        element.appendChild(sourceTag(card))
+    if (!small) {
+        element.appendChild(schoolTag(card))
+        if (card['source'] !== "Player's Handbook")
+            element.appendChild(sourceTag(card))
+    } else {
+        element.appendChild(levelTag(card))
+    }
     return element
 }
 
@@ -251,13 +259,13 @@ function level(card) {
     return element
 }
 
-function cardSection(card, isOption) {
+function cardSection(card, isOption, small) {
     const element = document.createElement('section')
     element.classList.add('card')
     if (!isOption)
-        element.appendChild(cardTags(card))
+        element.appendChild(cardTags(card, small))
     element.appendChild(name(card))
-    if (!isOption)
+    if (!isOption && !small)
         element.appendChild(level(card))
     return element
 }
@@ -312,13 +320,14 @@ function requiredMaterial(card) {
     return element
 }
 
-function castingSection(card) {
+function castingSection(card, small) {
     const element = document.createElement('section')
     element.classList.add('casting')
     element.appendChild(castingTags(card))
-    if ('required material' in card) {
-        element.appendChild(requiredMaterial(card))
-    }
+    if (!small)
+        if ('required material' in card) {
+            element.appendChild(requiredMaterial(card))
+        }
     return element
 }
 
@@ -523,7 +532,7 @@ function expansion(card, isOption) {
 
 // endregion
 
-function card(card, isOption) {
+function card(card, isOption, small) {
     const element = document.createElement('div')
     element.classList.add('spell-card')
 
@@ -545,32 +554,26 @@ function card(card, isOption) {
         e.stopImmediatePropagation()
         toggleCardSelection(element)
     }
-    element.appendChild(cardSection(card, isOption))
-    if ('required material' in card) {
-        let hr = document.createElement('hr')
-        hr.classList.add('light')
-        element.appendChild(hr)
-    }
-    element.appendChild(castingSection(card))
+    element.appendChild(cardSection(card, isOption, small))
+    if (!small)
+        if ('required material' in card) {
+            let hr = document.createElement('hr')
+            hr.classList.add('light')
+            element.appendChild(hr)
+        }
+    element.appendChild(castingSection(card, small))
     element.appendChild(document.createElement('hr'))
     element.appendChild(effectsSection(card))
     element.appendChild(expansion(card, isOption))
     return element
 }
 
-function spellSection(group) {
+function spellSection(group, small) {
     const element = document.createElement('section')
     element.classList.add('spell')
-    element.appendChild(cardTags(group))
+    element.appendChild(cardTags(group, small))
     element.appendChild(name(group))
-    element.appendChild(level(group))
-    return element
-}
-
-function optionsSection(group) {
-    const element = document.createElement('section')
-    element.classList.add('options')
-    group['options'].forEach(option => element.appendChild(card(option, true)))
+    if (!small) element.appendChild(level(group))
     return element
 }
 
@@ -592,19 +595,25 @@ function groupButtonsSection(card) {
     return element
 }
 
-function groupExpansion(card) {
+function groupExpansion(group) {
     const element = document.createElement('div')
     element.classList.add('expansion')
     const wrapper = document.createElement('div')
     wrapper.classList.add('height-measuring-wrapper')
     wrapper.appendChild(document.createElement('hr'))
-    wrapper.appendChild(groupButtonsSection(card))
+    wrapper.appendChild(groupButtonsSection(group))
     element.appendChild(wrapper)
     return element
 }
 
-function group(group) {
-    // TODO move spell name, chips and level all to the group, and rethink elevation (spell group 1 or 2, cards 1 or 2?)
+function optionsSection(group, small) {
+    const element = document.createElement('section')
+    element.classList.add('options')
+    group['options'].forEach(option => element.appendChild(card(option, true, small)))
+    return element
+}
+
+function group(group, small) {
     const element = document.createElement('div')
     element.classList.add('spell-group')
     element.onclick = () => toggleCardSelection(element)
@@ -616,13 +625,16 @@ function group(group) {
         element.classList.add('known')
     if (isPrepared(name))
         element.classList.add('prepared')
-    element.appendChild(spellSection(group))
+    element.appendChild(spellSection(group, small))
     element.appendChild(groupExpansion(group))
-    element.appendChild(optionsSection(group))
+    element.appendChild(optionsSection(group, small))
     return element
 }
 
-function load(cards) {
+function load(cards, small) {
+    if (!small) cardList.classList.remove('small')
+    console.log('hi')
+    if (small) cardList.classList.add('small')
     let scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
     if (scaffolds.length > cards.length) {
         for (const scaffold of [].slice.call(scaffolds, cards.length)) {
@@ -639,7 +651,7 @@ function load(cards) {
         const scaffold = scaffolds[i];
         setTimeout(() => {
             scaffold.insertAdjacentElement('beforebegin',
-                'options' in spellCard ? group(spellCard) : card(spellCard, false))
+                'options' in spellCard ? group(spellCard, true) : card(spellCard, false, true))
             scaffold.remove()
         }, i % 15)
     }
@@ -647,7 +659,7 @@ function load(cards) {
 }
 
 function loadAll() {
-    load(allSpellCards)
+    load(allSpellCards, true)
 }
 
 function prepareAll() {
@@ -661,7 +673,7 @@ function showAll() {
 }
 
 function loadCastable() {
-    load(allSpellCards.filter(isCastable))
+    load(allSpellCards.filter(isCastable), true)
 }
 
 function prepareCastable() {
