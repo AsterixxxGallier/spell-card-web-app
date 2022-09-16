@@ -78,14 +78,12 @@ hr.light:before {
 .spell-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background-color: rgba(0, 0, 0, 0.02);
 }
 .small .spell-group {
-  gap: 12px;
   padding: 8px;
   border-radius: 6px;
 }
@@ -95,6 +93,9 @@ hr.light:before {
   grid-template-columns: 1fr auto;
   box-sizing: border-box;
   padding: 6px 6px 0;
+}
+.small .spell-group .spell {
+  grid-template-areas: "name level" "name spell-tags";
 }
 .spell-group .spell .spell-tags {
   grid-area: spell-tags;
@@ -121,6 +122,9 @@ hr.light:before {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 4px;
+  max-width: min-content;
 }
 .small .spell-group .spell .spell-tags *, .small .spell-group .spell .spell-tags:before {
   display: inline-flex;
@@ -153,16 +157,28 @@ hr.light:before {
   display: grid;
   place-content: center;
 }
+.small .spell-group .spell .level {
+  width: 16px;
+  height: 16px;
+}
 .spell-group .spell .level:before {
   content: "";
   position: absolute;
   width: 64px;
   height: 64px;
   opacity: 0.75;
+  background-size: contain;
+}
+.small .spell-group .spell .level:before {
+  width: 16px;
+  height: 16px;
 }
 .spell-group .spell .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
+}
+.small .spell-group .spell .level:after {
+  font-size: 8px;
 }
 .spell-group .spell .level-0:after {
   content: "";
@@ -170,6 +186,10 @@ hr.light:before {
   background-size: cover;
   width: 32px;
   height: 32px;
+}
+.small .spell-group .spell .level-0:after {
+  width: 8px;
+  height: 8px;
 }
 .spell-group .spell .level-1:before {
   background-image: url("../icons/level outline 1.svg");
@@ -232,11 +252,13 @@ hr.light:before {
   margin-block-start: 0 !important;
 }
 .spell-group .options {
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 .small .spell-group .options {
+  margin-top: 12px;
   gap: 12px;
 }
 .spell-group .options .spell-card {
@@ -249,17 +271,26 @@ hr.light:before {
 .spell-card.chosen .spell-tags:before, .spell-group.chosen .spell-tags:before {
   content: "Chosen";
 }
+.small .spell-card.chosen .spell-tags:before, .small .spell-group.chosen .spell-tags:before {
+  content: "C";
+}
 .spell-card.chosen .chosen-segment, .spell-group.chosen .chosen-segment {
   background: rgba(73, 69, 79, 0.08) !important;
 }
 .spell-card.known .spell-tags:before, .spell-group.known .spell-tags:before {
   content: "Known";
 }
+.small .spell-card.known .spell-tags:before, .small .spell-group.known .spell-tags:before {
+  content: "K";
+}
 .spell-card.known .known-segment, .spell-group.known .known-segment {
   background: rgba(73, 69, 79, 0.08) !important;
 }
 .spell-card.prepared .spell-tags:before, .spell-group.prepared .spell-tags:before {
   content: "Prepared";
+}
+.small .spell-card.prepared .spell-tags:before, .small .spell-group.prepared .spell-tags:before {
+  content: "P";
 }
 .spell-card.prepared .prepared-segment, .spell-group.prepared .prepared-segment {
   background: rgba(73, 69, 79, 0.08) !important;
@@ -284,7 +315,7 @@ hr.light:before {
   font-size: 14px;
 }
 .small .spell-card .expansion .card-description, .small .spell-group .expansion .card-description {
-  font-size: 10px;
+  font-size: 8px;
 }
 .spell-card .expansion .at-higher-levels, .spell-group .expansion .at-higher-levels {
   font-weight: 600;
@@ -399,6 +430,9 @@ hr.light:before {
   grid-template-areas: "spell-tags level" "name level";
   grid-template-columns: 1fr auto;
 }
+.small .spell-card .card {
+  grid-template-areas: "name level" "name spell-tags";
+}
 .spell-card .card .spell-tags {
   grid-area: spell-tags;
   margin-bottom: 0.2em;
@@ -424,6 +458,9 @@ hr.light:before {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 4px;
+  max-width: min-content;
 }
 .small .spell-card .card .spell-tags *, .small .spell-card .card .spell-tags:before {
   display: inline-flex;
@@ -456,16 +493,28 @@ hr.light:before {
   display: grid;
   place-content: center;
 }
+.small .spell-card .card .level {
+  width: 16px;
+  height: 16px;
+}
 .spell-card .card .level:before {
   content: "";
   position: absolute;
   width: 64px;
   height: 64px;
   opacity: 0.75;
+  background-size: contain;
+}
+.small .spell-card .card .level:before {
+  width: 16px;
+  height: 16px;
 }
 .spell-card .card .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
+}
+.small .spell-card .card .level:after {
+  font-size: 8px;
 }
 .spell-card .card .level-0:after {
   content: "";
@@ -473,6 +522,10 @@ hr.light:before {
   background-size: cover;
   width: 32px;
   height: 32px;
+}
+.small .spell-card .card .level-0:after {
+  width: 8px;
+  height: 8px;
 }
 .spell-card .card .level-1:before {
   background-image: url("../icons/level outline 1.svg");

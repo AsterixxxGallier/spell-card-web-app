@@ -240,7 +240,7 @@ function cardTags(card, small) {
         if (card['source'] !== "Player's Handbook")
             element.appendChild(sourceTag(card))
     } else {
-        element.appendChild(levelTag(card))
+        // element.appendChild(levelTag(card))
     }
     return element
 }
@@ -265,7 +265,7 @@ function cardSection(card, isOption, small) {
     if (!isOption)
         element.appendChild(cardTags(card, small))
     element.appendChild(name(card))
-    if (!isOption && !small)
+    if (!isOption/* && !small*/)
         element.appendChild(level(card))
     return element
 }
