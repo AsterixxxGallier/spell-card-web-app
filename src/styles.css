@@ -21,26 +21,33 @@ body {
 }
 
 hr {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin: 0;
+  padding: 1em;
   border: none;
+}
+.small hr {
+  padding: 0.6em 0;
+}
+hr:before {
+  content: "";
+  display: block;
   height: 1px;
   background: rgba(0, 0, 0, 0.15);
 }
-.small hr {
-  margin-block-start: 0.6em;
-  margin-block-end: 0.6em;
-}
 hr.light {
-  margin-block-start: 0.8em;
-  margin-block-end: 0.8em;
-  height: 2px;
+  margin: 0;
+  padding: 0.8em 0;
   width: 75%;
   background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
 }
+hr.light:before {
+  content: "";
+  display: block;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.15);
+}
 .small hr.light {
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
+  padding: 0.5em 0;
 }
 
 .spell-card-list {
@@ -257,9 +264,6 @@ hr.light {
 .spell-card.prepared .prepared-segment, .spell-group.prepared .prepared-segment {
   background: rgba(73, 69, 79, 0.08) !important;
 }
-.spell-card.selected .expansion, .spell-group.selected .expansion {
-  margin-bottom: 0;
-}
 .spell-card.favorite, .spell-group.favorite {
   box-shadow: 0 3px 1px -2px rgba(244, 161, 54, 0.4), 0 2px 2px 0 rgba(244, 161, 54, 0.28), 0 1px 5px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2);
 }
@@ -271,9 +275,8 @@ hr.light {
 }
 .spell-card .expansion, .spell-group .expansion {
   height: 0;
-  overflow: clip;
-  margin-bottom: -1em;
-  transition-property: height, margin-bottom;
+  overflow: hidden;
+  transition-property: height;
   transition-timing-function: ease;
 }
 .spell-card .expansion .card-description, .spell-group .expansion .card-description {

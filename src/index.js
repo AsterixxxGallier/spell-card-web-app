@@ -8,8 +8,8 @@ let selectedCard = null
 let resizeObserver = new ResizeObserver(entries => {
     const expansion = selectedCard.querySelector('.expansion')
     const wrapper = expansion.querySelector('.height-measuring-wrapper')
-    expansion.style.setProperty('transition-duration', `${Math.max(0.2, wrapper.clientHeight * 0.001)}s`)
-    expansion.style.setProperty('height', `${wrapper.clientHeight}px`)
+    expansion.style.setProperty('transition-duration', `${Math.max(0.2, Math.ceil(wrapper.getBoundingClientRect().height) * 0.001)}s`)
+    expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
 })
 
 function toggleCardSelection(card) {
@@ -27,8 +27,8 @@ function toggleCardSelection(card) {
         newCard.classList.add('selected')
         const expansion = newCard.querySelector('.expansion')
         const wrapper = expansion.querySelector('.height-measuring-wrapper')
-        expansion.style.setProperty('transition-duration', `${wrapper.clientHeight * 0.001}s`)
-        expansion.style.setProperty('height', `${wrapper.clientHeight}px`)
+        expansion.style.setProperty('transition-duration', `${Math.ceil(wrapper.getBoundingClientRect().height) * 0.001}s`)
+        expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
         resizeObserver.observe(wrapper)
     }
     selectedCard = newCard

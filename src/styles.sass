@@ -202,26 +202,33 @@ body
   flex-direction: column
 
 hr
-  margin-block-start: 1em
-  margin-block-end: 1em
+  margin: 0
+  padding: 1em
   border: none
-  height: 1px
-  background: rgba(0, 0, 0, 0.15)
 
   .small &
-    margin-block-start: .6em
-    margin-block-end: .6em
+    padding: .6em 0
+
+  &:before
+    content: ""
+    display: block
+    height: 1px
+    background: rgba(0, 0, 0, 0.15)
 
   &.light
-    margin-block-start: 0.8em
-    margin-block-end: 0.8em
-    height: 2px
+    margin: 0
+    padding: 0.8em 0
     width: 75%
     background: radial-gradient(rgba(0, 0, 0, 0.1), transparent)
 
+    &:before
+      content: ""
+      display: block
+      height: 2px
+      background: rgba(0, 0, 0, 0.15)
+
     .small &
-      margin-block-start: .5em
-      margin-block-end: .5em
+      padding: 0.5em 0
 
 .spell-card-list
   flex-grow: 1
@@ -309,10 +316,6 @@ hr
     .prepared-segment
       background: change_color(#49454F, $alpha: 0.08) !important
 
-  &.selected
-    .expansion
-      margin-bottom: 0
-
   &.favorite
     box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
 
@@ -324,9 +327,8 @@ hr
 
   .expansion
     height: 0
-    overflow: clip
-    margin-bottom: -1em
-    transition-property: height, margin-bottom
+    overflow: hidden
+    transition-property: height
     transition-timing-function: ease
 
     .card-description
