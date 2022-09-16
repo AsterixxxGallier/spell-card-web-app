@@ -262,7 +262,7 @@ function level(card) {
 function cardSection(card, isOption, small) {
     const element = document.createElement('section')
     element.classList.add('card')
-    if (!isOption)
+    if (!isOption && !small)
         element.appendChild(cardTags(card, small))
     element.appendChild(name(card))
     if (!isOption/* && !small*/)
@@ -571,9 +571,9 @@ function card(card, isOption, small) {
 function spellSection(group, small) {
     const element = document.createElement('section')
     element.classList.add('spell')
-    element.appendChild(cardTags(group, small))
+    if (!small) element.appendChild(cardTags(group, small))
     element.appendChild(name(group))
-    if (!small) element.appendChild(level(group))
+    element.appendChild(level(group))
     return element
 }
 
