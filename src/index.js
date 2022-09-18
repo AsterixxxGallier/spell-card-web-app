@@ -1,6 +1,8 @@
 // TODO implement card drag-and-dropping
 // TODO maybe cache scaffolding information?
 
+const {hyphenateSync} = require('hyphen/en')
+
 const cardList = document.querySelector('.spell-card-list');
 
 // region card selection
@@ -245,10 +247,10 @@ function cardTags(card, small) {
     return element
 }
 
-function name(card) {
+function name(card, small) {
     const element = document.createElement('div')
     element.classList.add('name')
-    element.appendChild(document.createTextNode(card['name']))
+    element.appendChild(document.createTextNode(small ? hyphenateSync(card['name']) : card['name']))
     return element
 }
 
@@ -264,7 +266,7 @@ function cardSection(card, isOption, small) {
     element.classList.add('card')
     if (!isOption && !small)
         element.appendChild(cardTags(card, small))
-    element.appendChild(name(card))
+    element.appendChild(name(card, small))
     if (!isOption/* && !small*/)
         element.appendChild(level(card))
     return element
@@ -396,25 +398,27 @@ function effectTags(effect) {
     return element
 }
 
-function effectDescription(effect) {
+function effectDescription(effect, small) {
     const element = document.createElement('div')
     element.classList.add('effect-description')
-    element.innerHTML = effect['description'].replace(/\n/g, '<br>')
+    element.innerHTML =
+        effect[small && 'summary' in effect ? 'summary' : 'description']
+            .replace(/\n/g, '<br>')
     return element
 }
 
-function effect(effect) {
+function effect(effect, small) {
     const element = document.createElement('div')
     element.appendChild(effectTags(effect))
-    element.appendChild(effectDescription(effect))
+    element.appendChild(effectDescription(effect, small))
     return element
 }
 
-function effectsSection(card) {
+function effectsSection(card, small) {
     const element = document.createElement('section')
     element.classList.add('effects')
     card['effects'].forEach(data => {
-        element.appendChild(effect(data))
+        element.appendChild(effect(data, small))
     })
     return element
 }
@@ -563,7 +567,7 @@ function card(card, isOption, small) {
         }
     element.appendChild(castingSection(card, small))
     element.appendChild(document.createElement('hr'))
-    element.appendChild(effectsSection(card))
+    element.appendChild(effectsSection(card, small))
     element.appendChild(expansion(card, isOption))
     return element
 }
@@ -572,7 +576,7 @@ function spellSection(group, small) {
     const element = document.createElement('section')
     element.classList.add('spell')
     if (!small) element.appendChild(cardTags(group, small))
-    element.appendChild(name(group))
+    element.appendChild(name(group, small))
     element.appendChild(level(group))
     return element
 }
@@ -633,7 +637,6 @@ function group(group, small) {
 
 function load(cards, small) {
     if (!small) cardList.classList.remove('small')
-    console.log('hi')
     if (small) cardList.classList.add('small')
     let scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
     if (scaffolds.length > cards.length) {
@@ -651,7 +654,7 @@ function load(cards, small) {
         const scaffold = scaffolds[i];
         setTimeout(() => {
             scaffold.insertAdjacentElement('beforebegin',
-                'options' in spellCard ? group(spellCard, true) : card(spellCard, false, true))
+                'options' in spellCard ? group(spellCard, small) : card(spellCard, false, small))
             scaffold.remove()
         }, i % 15)
     }

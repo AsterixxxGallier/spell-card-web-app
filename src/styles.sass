@@ -84,6 +84,7 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
 
   .small &
     grid-template-areas: "name level" "name spell-tags"
+    align-items: center
 
   .spell-tags
     grid-area: spell-tags
@@ -114,9 +115,9 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
     place-content: center
 
     .small &
-      width: 16px
-      height: 16px
-      margin-left: 4px
+      width: 32px
+      height: 32px
+      margin-left: 8px
 
     &:before
       content: ''
@@ -127,15 +128,15 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
       background-size: contain
 
       .small &
-        width: 16px
-        height: 16px
+        width: 32px
+        height: 32px
 
     &:after
       font-family: "Abril Fatface", serif
       font-size: 32px
 
       .small &
-        font-size: 8px
+        font-size: 16px
 
     &-0
       &:after
@@ -146,8 +147,8 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
         height: 32px
 
         .small &
-          width: 8px
-          height: 8px
+          width: 16px
+          height: 16px
 
     &-1
       &:before
@@ -226,7 +227,7 @@ body
 
 hr
   margin: 0
-  padding: 1em
+  padding: 1em 0
   border: none
 
   .small &
@@ -239,19 +240,17 @@ hr
     background: rgba(0, 0, 0, 0.15)
 
   &.light
-    margin: 0
-    padding: 0.8em 0
+    padding: 0
+    margin: 0.8em auto
     width: 75%
+    height: 2px
     background: radial-gradient(rgba(0, 0, 0, 0.1), transparent)
 
     &:before
-      content: ""
-      display: block
-      height: 2px
-      background: rgba(0, 0, 0, 0.15)
+      content: unset
 
     .small &
-      padding: 0.5em 0
+      margin: 0.5em auto
 
 .spell-card-list
   flex-grow: 1

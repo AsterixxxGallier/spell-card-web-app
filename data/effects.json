@@ -15,7 +15,8 @@
           "range": "Touch",
           "duration": "1 min",
           "concentration": false,
-          "description": "The corpse of a creature decomposes."
+          "description": "The corpse of a creature decomposes.",
+          "summary": "decompose a corpse"
         }
       ]
     },
@@ -34,7 +35,8 @@
           "range": "Touch",
           "duration": "1 min",
           "concentration": true,
-          "description": "A creature can add a d4 to one ability check."
+          "description": "A creature can add a d4 to one ability check.",
+          "summary": "add a d4 to one ability check"
         }
       ]
     },
@@ -58,7 +60,8 @@
           },
           "duration": "1 h",
           "concentration": false,
-          "description": "An object sheds bright light."
+          "description": "An object sheds bright light.",
+          "summary": "bright light"
         },
         {
           "range": "Touch",
@@ -68,7 +71,8 @@
           },
           "duration": "1 h",
           "concentration": false,
-          "description": "The object also sheds dim light."
+          "description": "The object also sheds dim light.",
+          "summary": "dim light"
         }
       ]
     },
@@ -88,7 +92,8 @@
           "range": "Touch",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "You repair a single break or tear in an object."
+          "description": "You repair a single break or tear in an object.",
+          "summary": "repair a break"
         }
       ]
     },
@@ -108,7 +113,8 @@
           "range": "Touch",
           "duration": "1 min",
           "concentration": true,
-          "description": "A creature can add a d4 to one saving throw."
+          "description": "A creature can add a d4 to one saving throw.",
+          "summary": "add a d4 to one saving throw"
         }
       ]
     },
@@ -128,7 +134,8 @@
           "range": "60 ft",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "A creature takes Ld8 radiant damage."
+          "description": "A creature takes Ld8 radiant damage.",
+          "summary": "Ld8 radiant damage"
         }
       ]
     },
@@ -147,7 +154,8 @@
           "range": "Touch",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "A living creature that has 0 hit points becomes stable."
+          "description": "A living creature that has 0 hit points becomes stable.",
+          "summary": "stabilize"
         }
       ]
     },
@@ -169,7 +177,8 @@
               "range": "Self",
               "duration": "1 min",
               "concentration": false,
-              "description": "Your voice booms up to three times as loud as normal."
+              "description": "Your voice booms up to three times as loud as normal.",
+              "summary": "louder voice"
             }
           ]
         },
@@ -186,7 +195,8 @@
               "range": "30 ft",
               "duration": "1 min",
               "concentration": false,
-              "description": "You cause flames to flicker, brighten, dim, or change color."
+              "description": "You cause flames to flicker, brighten, dim, or change color.",
+              "summary": "change appearance of flames"
             }
           ]
         },
@@ -203,7 +213,8 @@
               "range": "30 ft",
               "duration": "1 min",
               "concentration": false,
-              "description": "You cause harmless tremors in the ground."
+              "description": "You cause harmless tremors in the ground.",
+              "summary": "harmless tremors"
             }
           ]
         },
@@ -220,7 +231,8 @@
               "range": "30 ft",
               "duration": "Instantaneous",
               "concentration": false,
-              "description": "You create an instantaneous sound."
+              "description": "You create an instantaneous sound.",
+              "summary": "instantaneous sound"
             }
           ]
         },
@@ -237,7 +249,8 @@
               "range": "30 ft",
               "duration": "Instantaneous",
               "concentration": false,
-              "description": "You cause an unlocked door or window to fly open or slam shut."
+              "description": "You cause an unlocked door or window to fly open or slam shut.",
+              "summary": "open or close an unlocked door or window"
             }
           ]
         },
@@ -254,7 +267,8 @@
               "range": "Self",
               "duration": "1 min",
               "concentration": false,
-              "description": "You alter the appearance of your eyes."
+              "description": "You alter the appearance of your eyes.",
+              "summary": "change the appearance of your eyes"
             }
           ]
         }
@@ -276,7 +290,8 @@
           "range": "60 ft",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "A creature takes Ld8 necrotic damage, or Ld12 if it is missing any of its hit points."
+          "description": "A creature takes Ld8 necrotic damage, or Ld12 if it is missing any of its hit points.",
+          "summary": "Ld8 or Ld12 necrotic damage"
         }
       ]
     },
@@ -297,7 +312,8 @@
           "range": "5 ft",
           "duration": "Instantaneous",
           "concentration": false,
-          "description": "Any number of creatures take Ld6 radiant damage."
+          "description": "Any number of creatures take Ld6 radiant damage.",
+          "summary": "Ld6 radiant damage"
         }
       ]
     }

@@ -22,7 +22,7 @@ body {
 
 hr {
   margin: 0;
-  padding: 1em;
+  padding: 1em 0;
   border: none;
 }
 .small hr {
@@ -35,19 +35,17 @@ hr:before {
   background: rgba(0, 0, 0, 0.15);
 }
 hr.light {
-  margin: 0;
-  padding: 0.8em 0;
+  padding: 0;
+  margin: 0.8em auto;
   width: 75%;
+  height: 2px;
   background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
 }
 hr.light:before {
-  content: "";
-  display: block;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.15);
+  content: unset;
 }
 .small hr.light {
-  padding: 0.5em 0;
+  margin: 0.5em auto;
 }
 
 .spell-card-list {
@@ -94,6 +92,7 @@ hr.light:before {
 }
 .small .spell-group .spell {
   grid-template-areas: "name level" "name spell-tags";
+  align-items: center;
 }
 .spell-group .spell .spell-tags {
   grid-area: spell-tags;
@@ -156,9 +155,9 @@ hr.light:before {
   place-content: center;
 }
 .small .spell-group .spell .level {
-  width: 16px;
-  height: 16px;
-  margin-left: 4px;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
 }
 .spell-group .spell .level:before {
   content: "";
@@ -169,15 +168,15 @@ hr.light:before {
   background-size: contain;
 }
 .small .spell-group .spell .level:before {
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
 }
 .spell-group .spell .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
 }
 .small .spell-group .spell .level:after {
-  font-size: 8px;
+  font-size: 16px;
 }
 .spell-group .spell .level-0:after {
   content: "";
@@ -187,8 +186,8 @@ hr.light:before {
   height: 32px;
 }
 .small .spell-group .spell .level-0:after {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
 }
 .spell-group .spell .level-1:before {
   background-image: url("../icons/level outline 1.svg");
@@ -431,6 +430,7 @@ hr.light:before {
 }
 .small .spell-card .card {
   grid-template-areas: "name level" "name spell-tags";
+  align-items: center;
 }
 .spell-card .card .spell-tags {
   grid-area: spell-tags;
@@ -493,9 +493,9 @@ hr.light:before {
   place-content: center;
 }
 .small .spell-card .card .level {
-  width: 16px;
-  height: 16px;
-  margin-left: 4px;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
 }
 .spell-card .card .level:before {
   content: "";
@@ -506,15 +506,15 @@ hr.light:before {
   background-size: contain;
 }
 .small .spell-card .card .level:before {
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
 }
 .spell-card .card .level:after {
   font-family: "Abril Fatface", serif;
   font-size: 32px;
 }
 .small .spell-card .card .level:after {
-  font-size: 8px;
+  font-size: 16px;
 }
 .spell-card .card .level-0:after {
   content: "";
@@ -524,8 +524,8 @@ hr.light:before {
   height: 32px;
 }
 .small .spell-card .card .level-0:after {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
 }
 .spell-card .card .level-1:before {
   background-image: url("../icons/level outline 1.svg");
