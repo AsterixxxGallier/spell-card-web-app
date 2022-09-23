@@ -2,6 +2,7 @@
 
 $primary: #f44236
 $secondary: #f4a136
+$tertiary: #36e7f4
 // these filters change black to $secondary
 $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brightness(100%) contrast(92%)
 
@@ -214,10 +215,48 @@ $secondary-filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brig
         content: '9'
 
 @function elevation-shadow-1($color: black, $opacity: 1.0)
-  @return 0 2px 1px -1px change_color($color, $alpha: 0.20 * $opacity), 0 1px 1px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 3px 0 change_color($color, $alpha: 0.12 * $opacity)
+  @return 0 1px 1px 0 change_color($color, $alpha: 0.14 * $opacity), 0 2px 1px -1px change_color($color, $alpha: 0.20 * $opacity), 0 1px 3px 0 change_color($color, $alpha: 0.12 * $opacity)
 
 @function elevation-shadow-2($color: black, $opacity: 1.0)
-  @return 0 3px 1px -2px change_color($color, $alpha: 0.20 * $opacity), 0 2px 2px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 5px 0 change_color($color, $alpha: 0.12 * $opacity)
+  @return 0 2px 2px 0 change_color($color, $alpha: 0.14 * $opacity), 0 3px 1px -2px change_color($color, $alpha: 0.20 * $opacity), 0 1px 5px 0 change_color($color, $alpha: 0.12 * $opacity)
+
+// https://codepen.io/owens/pen/ZKeevY
+//
+// .shadow-2dp {
+//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+//               0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+//               0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+// }
+//
+// .shadow-3dp {
+//   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+//               0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+//               0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+// }
+//
+// .shadow-4dp {
+//   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+//               0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+//               0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+// }
+//
+// .shadow-6dp {
+//   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+//               0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+//               0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+// }
+//
+// .shadow-8dp {
+//   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+//               0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+//               0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+// }
+
+@function elevation-shadow-3($color: black, $opacity: 1.0)
+  @return 0 3px 4px 0 change_color($color, $alpha: 0.14 * $opacity), 0 3px 3px -2px change_color($color, $alpha: 0.20 * $opacity), 0 1px 8px 0 change_color($color, $alpha: 0.12 * $opacity)
+
+@function elevation-shadow-4($color: black, $opacity: 1.0)
+  @return 0 4px 5px 0 change_color($color, $alpha: 0.14 * $opacity), 0 1px 10px 0 change_color($color, $alpha: 0.20 * $opacity), 0 2px 4px -1px change_color($color, $alpha: 0.12 * $opacity)
 
 body
   height: 100vh
@@ -315,6 +354,9 @@ hr
         box-shadow: elevation-shadow-1($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
 
 .spell-card, .spell-group
+  .small.all &.chosen, &.known, &.prepared
+    box-shadow: elevation-shadow-2(), 0 0 8px 0px change-color($tertiary, $alpha: 0.35)
+
   &.chosen
     .spell-tags:before
       content: 'Chosen'
@@ -347,6 +389,9 @@ hr
 
   &.favorite
     box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20)
+
+    .small.all &.chosen, &.known, &.prepared
+      box-shadow: elevation-shadow-2($secondary, 2.0), 0 0 2em inset change_color($secondary, $alpha: 0.20), 0 0 8px 0px change-color($tertiary, $alpha: 0.5)
 
     > .expansion .favorite-button
       background-color: change_color(#49454F, $alpha: 0.08) !important

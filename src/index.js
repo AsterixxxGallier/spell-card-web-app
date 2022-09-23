@@ -53,10 +53,14 @@ fetch("../data/effects.json").then(response => response.json()).then(json => {
             'level': level
         })))
     console.timeStamp("done fetching")
-    if (currentMode() === 'castable')
+    if (currentMode() === 'castable') {
+        cardList.classList.add('castable')
         loadCastable()
-    else if (currentMode() === 'all')
+    }
+    else if (currentMode() === 'all') {
+        cardList.classList.add('all')
         loadAll()
+    }
 });
 
 function currentMode() {
@@ -709,6 +713,8 @@ function switchToAll() {
     if (currentMode() === 'castable') {
         castableButton.classList.remove('bottom-nav__destination--active')
         allButton.classList.add('bottom-nav__destination--active')
+        cardList.classList.remove('castable')
+        cardList.classList.add('all')
         showAll()
         setMode('all')
     }
@@ -718,10 +724,15 @@ function switchToCastable() {
     if (currentMode() === 'all') {
         allButton.classList.remove('bottom-nav__destination--active')
         castableButton.classList.add('bottom-nav__destination--active')
+        cardList.classList.remove('all')
+        cardList.classList.add('castable')
         showCastable()
         setMode('castable')
     }
 }
+
+window.switchToAll = switchToAll
+window.switchToCastable = switchToCastable
 
 if (currentMode() === 'all')
     allButton.classList.add('bottom-nav__destination--active')

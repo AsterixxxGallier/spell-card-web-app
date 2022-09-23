@@ -155,7 +155,7 @@
           "duration": "Instantaneous",
           "concentration": false,
           "description": "A living creature that has 0 hit points becomes stable.",
-          "summary": "stabilize"
+          "summary": "stabilize a creature with 0 hp"
         }
       ]
     },
