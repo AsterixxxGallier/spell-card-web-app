@@ -8,10 +8,11 @@ const cardList = document.querySelector('.spell-card-list');
 // region card selection
 let selectedCard = null
 let resizeObserver = new ResizeObserver(entries => {
-    const expansion = selectedCard.querySelector('.expansion')
-    const wrapper = expansion.querySelector('.height-measuring-wrapper')
-    expansion.style.setProperty('transition-duration', `${Math.max(0.2, Math.ceil(wrapper.getBoundingClientRect().height) * 0.001)}s`)
-    expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
+    for (const expansion of selectedCard.querySelectorAll('.expansion')) {
+        const wrapper = expansion.querySelector('.height-measuring-wrapper')
+        expansion.style.setProperty('transition-duration', `${Math.max(0.2, Math.ceil(wrapper.getBoundingClientRect().height) * 0.001)}s`)
+        expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
+    }
 })
 
 function toggleCardSelection(card) {
@@ -20,18 +21,20 @@ function toggleCardSelection(card) {
     if (oldCard) {
         oldCard.classList.remove('selected')
         resizeObserver.disconnect()
-        const expansion = oldCard.querySelector('.expansion')
-        expansion.style.removeProperty('height')
-        setTimeout(() => expansion.style.removeProperty('transition-duration'),
-            parseFloat(expansion.style.transitionDuration.slice(0, -1)) * 1000)
+        for (const expansion of oldCard.querySelectorAll('.expansion')) {
+            expansion.style.removeProperty('height')
+            setTimeout(() => expansion.style.removeProperty('transition-duration'),
+                parseFloat(expansion.style.transitionDuration.slice(0, -1)) * 1000)
+        }
     }
     if (newCard) {
         newCard.classList.add('selected')
-        const expansion = newCard.querySelector('.expansion')
-        const wrapper = expansion.querySelector('.height-measuring-wrapper')
-        expansion.style.setProperty('transition-duration', `${Math.ceil(wrapper.getBoundingClientRect().height) * 0.001}s`)
-        expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
-        resizeObserver.observe(wrapper)
+        for (const expansion of newCard.querySelectorAll('.expansion')) {
+            const wrapper = expansion.querySelector('.height-measuring-wrapper')
+            expansion.style.setProperty('transition-duration', `${Math.max(0.2, Math.ceil(wrapper.getBoundingClientRect().height) * 0.001)}s`)
+            expansion.style.setProperty('height', `${Math.ceil(wrapper.getBoundingClientRect().height)}px`)
+            resizeObserver.observe(wrapper)
+        }
     }
     selectedCard = newCard
 }
@@ -56,8 +59,7 @@ fetch("../data/effects.json").then(response => response.json()).then(json => {
     if (currentMode() === 'castable') {
         cardList.classList.add('castable')
         loadCastable()
-    }
-    else if (currentMode() === 'all') {
+    } else if (currentMode() === 'all') {
         cardList.classList.add('all')
         loadAll()
     }
@@ -230,7 +232,7 @@ function toggleFavorite(card) {
 
 function tag(text, ...classes) {
     const element = document.createElement('div')
-    element.classList.add(...classes)
+    if (classes.length) element.classList.add(...classes)
     element.appendChild(document.createTextNode(text))
     return element
 }
@@ -344,14 +346,26 @@ function requiredMaterial(card) {
     return element
 }
 
+function requiredMaterialExpansion(card) {
+    const element = document.createElement('div')
+    element.classList.add('expansion', 'required-material-expansion')
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('height-measuring-wrapper')
+    wrapper.appendChild(requiredMaterial(card))
+    element.appendChild(wrapper)
+    return element
+}
+
 function castingSection(card, small) {
     const element = document.createElement('section')
     element.classList.add('casting')
     element.appendChild(castingTags(card))
-    if (!small)
-        if ('required material' in card) {
+    if ('required material' in card) {
+        if (!small)
             element.appendChild(requiredMaterial(card))
-        }
+        else
+            element.appendChild(requiredMaterialExpansion(card))
+    }
     return element
 }
 

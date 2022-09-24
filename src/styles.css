@@ -75,6 +75,13 @@ hr.light:before {
   margin: 0.5em auto;
 }
 
+.expansion {
+  height: 0;
+  overflow: hidden;
+  transition-property: height;
+  transition-timing-function: ease;
+}
+
 .spell-card-list {
   flex-grow: 1;
   overflow: hidden auto;
@@ -335,32 +342,26 @@ hr.light:before {
 .spell-card.favorite > .expansion .favorite-button:before, .spell-group.favorite > .expansion .favorite-button:before {
   background-image: url("../icons/favorite star filled.svg") !important;
 }
-.spell-card .expansion, .spell-group .expansion {
-  height: 0;
-  overflow: hidden;
-  transition-property: height;
-  transition-timing-function: ease;
-}
-.spell-card .expansion .card-description, .spell-group .expansion .card-description {
+.spell-card .card-description, .spell-group .card-description {
   text-align: justify;
   font-size: 14px;
 }
-.small .spell-card .expansion .card-description, .small .spell-group .expansion .card-description {
+.small .spell-card .card-description, .small .spell-group .card-description {
   font-size: 8px;
 }
-.spell-card .expansion .at-higher-levels, .spell-group .expansion .at-higher-levels {
+.spell-card .at-higher-levels, .spell-group .at-higher-levels {
   font-weight: 600;
   font-variation-settings: "slnt" -8;
   letter-spacing: 0.2px;
 }
-.spell-card .expansion .buttons, .spell-group .expansion .buttons {
+.spell-card .buttons, .spell-group .buttons {
   display: flex;
   gap: 16px;
 }
-.small .spell-card .expansion .buttons, .small .spell-group .expansion .buttons {
+.small .spell-card .buttons, .small .spell-group .buttons {
   gap: 6px;
 }
-.spell-card .expansion .buttons .favorite-button, .spell-group .expansion .buttons .favorite-button {
+.spell-card .buttons .favorite-button, .spell-group .buttons .favorite-button {
   box-sizing: border-box;
   min-width: 40px;
   height: 40px;
@@ -370,18 +371,18 @@ hr.light:before {
   display: grid;
   place-content: center;
 }
-.small .spell-card .expansion .buttons .favorite-button, .small .spell-group .expansion .buttons .favorite-button {
+.small .spell-card .buttons .favorite-button, .small .spell-group .buttons .favorite-button {
   min-width: 20px;
   height: 20px;
   border-radius: 20px;
 }
-.spell-card .expansion .buttons .favorite-button:hover, .spell-group .expansion .buttons .favorite-button:hover {
+.spell-card .buttons .favorite-button:hover, .spell-group .buttons .favorite-button:hover {
   background-color: rgba(73, 69, 79, 0.08);
 }
-.spell-card .expansion .buttons .favorite-button:active, .spell-group .expansion .buttons .favorite-button:active {
+.spell-card .buttons .favorite-button:active, .spell-group .buttons .favorite-button:active {
   background-color: rgba(73, 69, 79, 0.12);
 }
-.spell-card .expansion .buttons .favorite-button:before, .spell-group .expansion .buttons .favorite-button:before {
+.spell-card .buttons .favorite-button:before, .spell-group .buttons .favorite-button:before {
   content: "";
   width: 24px;
   height: 24px;
@@ -389,52 +390,52 @@ hr.light:before {
   filter: invert(68%) sepia(88%) saturate(816%) hue-rotate(334deg) brightness(100%) contrast(92%);
   background-image: url("../icons/favorite star outline.svg");
 }
-.small .spell-card .expansion .buttons .favorite-button:before, .small .spell-group .expansion .buttons .favorite-button:before {
+.small .spell-card .buttons .favorite-button:before, .small .spell-group .buttons .favorite-button:before {
   width: 12px;
   height: 12px;
 }
-.spell-card .expansion .buttons .segmented-button, .spell-group .expansion .buttons .segmented-button {
+.spell-card .buttons .segmented-button, .spell-group .buttons .segmented-button {
   display: grid;
   grid-auto-flow: column;
   align-items: stretch;
   border: 1px solid #79747E;
   border-radius: 20px;
 }
-.small .spell-card .expansion .buttons .segmented-button, .small .spell-group .expansion .buttons .segmented-button {
+.small .spell-card .buttons .segmented-button, .small .spell-group .buttons .segmented-button {
   border-radius: 10px;
   font-size: 8px;
 }
-.spell-card .expansion .buttons .segmented-button .button-segment, .spell-group .expansion .buttons .segmented-button .button-segment {
+.spell-card .buttons .segmented-button .button-segment, .spell-group .buttons .segmented-button .button-segment {
   border: none;
   border-left: 1px solid #79747E;
   background: transparent;
   padding: 0 8px;
 }
-.small .spell-card .expansion .buttons .segmented-button .button-segment, .small .spell-group .expansion .buttons .segmented-button .button-segment {
+.small .spell-card .buttons .segmented-button .button-segment, .small .spell-group .buttons .segmented-button .button-segment {
   padding: 0 4px;
   font-size: inherit;
 }
-.spell-card .expansion .buttons .segmented-button .button-segment:nth-child(1), .spell-group .expansion .buttons .segmented-button .button-segment:nth-child(1) {
+.spell-card .buttons .segmented-button .button-segment:nth-child(1), .spell-group .buttons .segmented-button .button-segment:nth-child(1) {
   border: none;
   padding-left: 12px;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.small .spell-card .expansion .buttons .segmented-button .button-segment:nth-child(1), .small .spell-group .expansion .buttons .segmented-button .button-segment:nth-child(1) {
+.small .spell-card .buttons .segmented-button .button-segment:nth-child(1), .small .spell-group .buttons .segmented-button .button-segment:nth-child(1) {
   padding-left: 6px;
 }
-.spell-card .expansion .buttons .segmented-button .button-segment:last-child, .spell-group .expansion .buttons .segmented-button .button-segment:last-child {
+.spell-card .buttons .segmented-button .button-segment:last-child, .spell-group .buttons .segmented-button .button-segment:last-child {
   padding-right: 12px;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
 }
-.small .spell-card .expansion .buttons .segmented-button .button-segment:last-child, .small .spell-group .expansion .buttons .segmented-button .button-segment:last-child {
+.small .spell-card .buttons .segmented-button .button-segment:last-child, .small .spell-group .buttons .segmented-button .button-segment:last-child {
   padding-right: 6px;
 }
-.spell-card .expansion .buttons .segmented-button .button-segment:hover, .spell-group .expansion .buttons .segmented-button .button-segment:hover {
+.spell-card .buttons .segmented-button .button-segment:hover, .spell-group .buttons .segmented-button .button-segment:hover {
   background-color: rgba(73, 69, 79, 0.08);
 }
-.spell-card .expansion .buttons .segmented-button .button-segment:active, .spell-group .expansion .buttons .segmented-button .button-segment:active {
+.spell-card .buttons .segmented-button .button-segment:active, .spell-group .buttons .segmented-button .button-segment:active {
   background-color: rgba(73, 69, 79, 0.12);
 }
 
@@ -661,11 +662,14 @@ hr.light:before {
   letter-spacing: 0.25px;
   color: rgb(0, 0, 0);
 }
+.spell-card .casting .required-material-expansion {
+  font-size: 12px;
+}
 .spell-card .casting .required-material {
-  margin-top: 0.5em;
+  padding-top: 0.5em;
 }
 .small .spell-card .casting .required-material {
-  margin-top: 0.4em;
+  padding-top: 0.4em;
 }
 .spell-card .casting .required-material .material {
   font-weight: 480;
