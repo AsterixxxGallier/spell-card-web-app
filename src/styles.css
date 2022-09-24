@@ -300,7 +300,7 @@ hr.light:before {
   box-shadow: 0 1px 1px 0 rgba(244, 161, 54, 0.28), 0 2px 1px -1px rgba(244, 161, 54, 0.4), 0 1px 3px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2);
 }
 
-.small.all .spell-card.chosen, .spell-card.known, .spell-card.prepared, .small.all .spell-group.chosen, .spell-group.known, .spell-group.prepared {
+.small.all .spell-card.chosen, .small.all .spell-card.known, .small.all .spell-card.prepared, .small.all .spell-group.chosen, .small.all .spell-group.known, .small.all .spell-group.prepared {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 0 8px 0px rgba(54, 231, 244, 0.35);
 }
 .spell-card.chosen .spell-tags:before, .spell-group.chosen .spell-tags:before {
@@ -333,7 +333,7 @@ hr.light:before {
 .spell-card.favorite, .spell-group.favorite {
   box-shadow: 0 2px 2px 0 rgba(244, 161, 54, 0.28), 0 3px 1px -2px rgba(244, 161, 54, 0.4), 0 1px 5px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2);
 }
-.small.all .spell-card.favorite.chosen, .spell-card.favorite.known, .spell-card.favorite.prepared, .small.all .spell-group.favorite.chosen, .spell-group.favorite.known, .spell-group.favorite.prepared {
+.small.all .spell-card.favorite.chosen, .small.all .spell-card.favorite.known, .small.all .spell-card.favorite.prepared, .small.all .spell-group.favorite.chosen, .small.all .spell-group.favorite.known, .small.all .spell-group.favorite.prepared {
   box-shadow: 0 2px 2px 0 rgba(244, 161, 54, 0.28), 0 3px 1px -2px rgba(244, 161, 54, 0.4), 0 1px 5px 0 rgba(244, 161, 54, 0.24), 0 0 2em inset rgba(244, 161, 54, 0.2), 0 0 8px 0px rgba(54, 231, 244, 0.5);
 }
 .spell-card.favorite > .expansion .favorite-button, .spell-group.favorite > .expansion .favorite-button {
