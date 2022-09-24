@@ -675,6 +675,8 @@ hr.light:before {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+.small .spell-card .effects {
   font-size: 12px;
 }
 .spell-card .effects .effect-tags {
