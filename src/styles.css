@@ -20,6 +20,33 @@ body {
   flex-direction: column;
 }
 
+.fab {
+  position: fixed;
+  right: 32px;
+  bottom: 85px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #f44236;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.2), 0 3px 5px -1px rgba(0, 0, 0, 0.12);
+  display: grid;
+  place-content: center;
+}
+.fab:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  filter: invert(100%);
+}
+.fab.expand:before {
+  background-image: url("../icons/maximize.png");
+}
+.fab.shrink:before {
+  background-image: url("../icons/minimize.png");
+}
+
 hr {
   margin: 0;
   padding: 1em 0;

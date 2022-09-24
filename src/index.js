@@ -63,6 +63,10 @@ fetch("../data/effects.json").then(response => response.json()).then(json => {
     }
 });
 
+function id(name) {
+    return name.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, '-').toLowerCase();
+}
+
 function currentMode() {
     let mode = localStorage.getItem('mode')
     if (mode === null) {
@@ -74,6 +78,20 @@ function currentMode() {
 
 function setMode(mode) {
     localStorage.setItem('mode', mode)
+}
+
+// TODO implement expand/shrink fab and store the card size etc., also summarize 1st- and maybe 2nd-level spells
+function currentSize() {
+    let size = localStorage.getItem('size')
+    if (size === null) {
+        size = 'big'
+        setSize(size)
+    }
+    return size
+}
+
+function setSize(size) {
+    localStorage.setItem('size', size)
 }
 
 function markChosen(spellName) {
@@ -543,8 +561,9 @@ function expansion(card, isOption) {
 function card(card, isOption, small) {
     const element = document.createElement('div')
     element.classList.add('spell-card')
+    const name = card['name']
+    element.id = id(name)
 
-    const name = card['name'];
     cardsByCardName[name] = element
     if (isFavorite(name))
         element.classList.add('favorite')
@@ -624,8 +643,9 @@ function optionsSection(group, small) {
 function group(group, small) {
     const element = document.createElement('div')
     element.classList.add('spell-group')
+    const name = group['name']
+    element.id = id(name)
     element.onclick = () => toggleCardSelection(element)
-    const name = group['name'];
     cardsBySpellName[name] = element
     if (isChosen(name))
         element.classList.add('chosen')
@@ -639,7 +659,7 @@ function group(group, small) {
     return element
 }
 
-function load(cards, small) {
+function load(cards, small, done) {
     if (!small) cardList.classList.remove('small')
     if (small) cardList.classList.add('small')
     let scaffolds = cardList.querySelectorAll('.spell-card-scaffold')
@@ -662,11 +682,12 @@ function load(cards, small) {
             scaffold.remove()
         }, i % 15)
     }
+    setTimeout(done, 15)
     console.timeStamp("done loading")
 }
 
-function loadAll() {
-    load(allSpellCards, true)
+function loadAll(done) {
+    load(allSpellCards, currentSize() === 'small', done)
 }
 
 function prepareAll() {
@@ -675,12 +696,14 @@ function prepareAll() {
 }
 
 function showAll() {
-    prepareAll();
-    loadAll()
+    return new Promise(resolve => {
+        prepareAll();
+        loadAll(resolve);
+    })
 }
 
-function loadCastable() {
-    load(allSpellCards.filter(isCastable), true)
+function loadCastable(done) {
+    load(allSpellCards.filter(isCastable), currentSize() === 'small', done)
 }
 
 function prepareCastable() {
@@ -689,8 +712,10 @@ function prepareCastable() {
 }
 
 function showCastable() {
-    prepareCastable();
-    loadCastable()
+    return new Promise(resolve => {
+        prepareCastable();
+        loadCastable(resolve);
+    })
 }
 
 function scaffold() {
@@ -706,8 +731,16 @@ function showScaffold(cards) {
     console.timeStamp("done scaffolding")
 }
 
+function show() {
+    if (currentMode() === 'all')
+        return showAll()
+    else
+        return showCastable()
+}
+
 const castableButton = document.getElementById('castable')
 const allButton = document.getElementById('all')
+const sizeButton = document.getElementById('size')
 
 function switchToAll() {
     if (currentMode() === 'castable') {
@@ -731,10 +764,43 @@ function switchToCastable() {
     }
 }
 
+function switchSize() {
+    let firstInView = null
+    let extra = null
+    for (let child of cardList.childNodes) {
+        if (child.getBoundingClientRect().bottom >= 0) {
+            firstInView = child.id
+            extra = child.getBoundingClientRect().top
+            break
+        }
+    }
+    console.log(firstInView)
+    if (currentSize() === 'big') {
+        sizeButton.classList.remove('shrink')
+        sizeButton.classList.add('expand')
+        setSize('small')
+    } else {
+        sizeButton.classList.remove('expand')
+        sizeButton.classList.add('shrink')
+        setSize('big')
+    }
+    show()
+        .then(() => {
+            document.getElementById(firstInView).scrollIntoView()
+            cardList.scrollBy(0, extra)
+        })
+}
+
 window.switchToAll = switchToAll
 window.switchToCastable = switchToCastable
+window.switchSize = switchSize
 
 if (currentMode() === 'all')
     allButton.classList.add('bottom-nav__destination--active')
 else if (currentMode() === 'castable')
     castableButton.classList.add('bottom-nav__destination--active')
+
+if (currentSize() === 'big')
+    sizeButton.classList.add('shrink')
+else if (currentSize() === 'small')
+    sizeButton.classList.add('expand')
